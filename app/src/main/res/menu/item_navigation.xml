@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <item-->
+<!--        android:id="@+id/login"-->
+<!--        android:icon="@drawable/ic_login2"-->
+<!--        android:title="Login"-->
+<!--        />-->
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        android:title="Home"
+        />
+    <item
+        android:id="@+id/diary"
+        android:icon="@drawable/ic_diary2"
+        android:title="Diary"
+        />
+    <item
+        android:id="@+id/home_training"
+        android:icon="@drawable/ic_home_training2"
+        android:title="Home Training"
+        />
+
+
+</menu>

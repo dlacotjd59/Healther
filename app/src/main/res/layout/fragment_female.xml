@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FemaleFragment"
+    android:background="#81DA84"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="여성 홈트레이닝 영상"
+        android:textSize="25sp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="60dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        />
+
+</FrameLayout>

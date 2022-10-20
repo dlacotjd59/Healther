@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/male"
+        android:icon="@drawable/ic_male"
+        android:title="남성"
+        />
+    <item
+        android:id="@+id/female"
+        android:icon="@drawable/ic_female"
+        android:title="여성"
+        />
+    <item
+        android:id="@+id/time1"
+        android:icon="@drawable/ic_10_minute"
+        android:title="10분"
+        />
+    <item
+        android:id="@+id/time2"
+        android:icon="@drawable/ic_20_minute"
+        android:title="20분"
+        />
+</menu>

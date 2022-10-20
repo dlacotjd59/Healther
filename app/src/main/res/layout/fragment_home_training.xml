@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeTrainingFragment"
+    android:background="#81DA84"
+    >
+    <!--<FrameLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:id="@+id/container_layout"-->
+    <!--android:layout_above="@+id/navigation_view"/>-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="원하는 메뉴를 선택해 주세요"
+        android:textSize="30sp"
+        android:layout_centerInParent="true"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="150dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="300dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:layout_marginLeft="10dp"
+            android:text="남성"
+            />
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:layout_marginLeft="10dp"
+            android:text="여성"
+            />        <Button
+        android:id="@+id/btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="10dp"
+        android:text="10분"
+        />        <Button
+        android:id="@+id/btn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="10dp"
+        android:text="20분"
+        />
+
+
+
+    </LinearLayout>
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="675dp"-->
+        <!--android:id="@+id/navigation_view"-->
+        <!-- android:elevation="2dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--app:menu="@menu/item_navigation2"/>-->
+
+</RelativeLayout>
