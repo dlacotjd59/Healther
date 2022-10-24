@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Healther Login</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="Id" />
+    <string name="save_ID">아이디</string>
+    <string name="save_PW">비밀번호</string>
+    <string name="save_AGE">나이</string>
+    <string name="save_HEI">키</string>
+    <string name="save_WEI">몸무게</string>
+    <string name="signup_but2">Sign up</string>
+    <string name="texyView">Password</string>
+    <string name="id">Id</string>
+    <string name="login_but">Log in</string>
+    <string name="signup_but">Sign up</string>
+</resources>
