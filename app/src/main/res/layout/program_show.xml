@@ -28,17 +28,19 @@
         android:orientation="horizontal">
 
         <LinearLayout
-        android:padding="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp"
         android:orientation="vertical"
-        android:layout_width="80dp"
+        android:layout_width="79dp"
+        android:includeFontPadding="false"
         android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/week1"
-            android:layout_width="70dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="2"
             android:layout_marginBottom="3dp"
-            android:layout_marginStart="-18dp"
             android:alpha="0.87"
             android:gravity="center"
             android:textColor="#000"
@@ -46,11 +48,12 @@
 
         <TextView
             android:id="@+id/week1txt1"
-            android:layout_width="70dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:maxLines="2"
+            android:includeFontPadding="false"
             android:layout_marginBottom="3dp"
-            android:layout_marginStart="-18dp"
             android:alpha="0.87"
             android:textColor="#000"
             android:textSize="15sp" />
@@ -60,10 +63,11 @@
             android:textSize="15sp"
             android:textColor="#000"
             android:alpha="0.87"
+            android:maxLines="2"
+            android:includeFontPadding="false"
             android:layout_marginBottom="3dp"
-            android:layout_marginStart="-18dp"
             android:gravity="center"
-            android:layout_width="70dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <TextView
@@ -71,24 +75,26 @@
             android:textSize="15sp"
             android:textColor="#000"
             android:alpha="0.87"
+            android:includeFontPadding="false"
+            android:maxLines="2"
             android:gravity="center"
             android:layout_marginBottom="3dp"
-            android:layout_marginStart="-18dp"
-            android:layout_width="70dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout
-        android:padding="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp"
         android:orientation="vertical"
-        android:layout_width="80dp"
+        android:layout_width="79dp"
         android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/week2"
-            android:layout_width="70dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="2"
             android:layout_marginBottom="3dp"
-            android:layout_marginStart="-18dp"
             android:alpha="0.87"
             android:gravity="center"
             android:textColor="#000"
@@ -97,16 +103,17 @@
 
     </LinearLayout>
     <LinearLayout
-        android:padding="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp"
         android:orientation="vertical"
-        android:layout_width="80dp"
+        android:layout_width="79dp"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/week3"
-            android:layout_width="70dp"
+            android:layout_width="match_parent"
+            android:maxLines="2"
             android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
-            android:layout_marginStart="-18dp"
             android:alpha="0.87"
             android:gravity="center"
             android:textColor="#000"
@@ -116,44 +123,48 @@
             android:id="@+id/week3txt1"
             android:textSize="15sp"
             android:textColor="#000"
+            android:maxLines="2"
             android:alpha="0.87"
+            android:includeFontPadding="false"
             android:gravity="center"
             android:layout_marginBottom="3dp"
-            android:layout_marginStart="-18dp"
-            android:layout_width="70dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/week3txt2"
             android:textSize="15sp"
             android:textColor="#000"
             android:alpha="0.87"
+            android:maxLines="2"
+            android:includeFontPadding="false"
             android:gravity="center"
             android:layout_marginBottom="3dp"
-            android:layout_marginStart="-18dp"
-            android:layout_width="70dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/week3txt3"
             android:textSize="15sp"
             android:textColor="#000"
             android:alpha="0.87"
+            android:maxLines="2"
             android:gravity="center"
+            android:includeFontPadding="false"
             android:layout_marginBottom="3dp"
-            android:layout_marginStart="-18dp"
-            android:layout_width="70dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout
-        android:padding="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp"
         android:orientation="vertical"
-        android:layout_width="80dp"
+        android:layout_width="79dp"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/week4"
-            android:layout_width="70dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="2"
             android:layout_marginBottom="3dp"
-            android:layout_marginStart="-18dp"
             android:gravity="center"
             android:alpha="0.87"
             android:textColor="#000"
@@ -162,17 +173,18 @@
 
     </LinearLayout>
     <LinearLayout
-        android:padding="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp"
         android:orientation="vertical"
-        android:layout_width="80dp"
+        android:layout_width="79dp"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/week5"
-            android:layout_width="70dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="2"
             android:gravity="center"
             android:layout_marginBottom="3dp"
-            android:layout_marginStart="-18dp"
             android:alpha="0.87"
             android:textColor="#000"
             android:textSize="15sp" />
@@ -184,8 +196,9 @@
             android:alpha="0.87"
             android:gravity="center"
             android:layout_marginBottom="3dp"
-            android:layout_marginStart="-18dp"
-            android:layout_width="70dp"
+            android:maxLines="2"
+            android:includeFontPadding="false"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/week5txt2"
@@ -194,8 +207,9 @@
             android:alpha="0.87"
             android:gravity="center"
             android:layout_marginBottom="3dp"
-            android:layout_marginStart="-18dp"
-            android:layout_width="70dp"
+            android:maxLines="2"
+            android:includeFontPadding="false"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/week5txt3"
@@ -204,8 +218,9 @@
             android:alpha="0.87"
             android:gravity="center"
             android:layout_marginBottom="3dp"
-            android:layout_marginStart="-18dp"
-            android:layout_width="70dp"
+            android:maxLines="2"
+            android:includeFontPadding="false"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
     </LinearLayout>
