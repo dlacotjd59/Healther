@@ -63,7 +63,7 @@ public class Program_do extends AppCompatActivity {
         type = intent.getStringExtra("type");
         info= intent.getDoubleArrayExtra("info");
 
-        if (type=="A"){
+        if (type.equals("A")){
             health1.setText("스쿼트" + info[0]);
             health2.setText("오버헤드프레스"+info[3]);
             health3.setText("데드리프트"+info[4]);
@@ -84,13 +84,11 @@ public class Program_do extends AppCompatActivity {
                 if(h1c3.isChecked()){
                     if(h1c4.isChecked()){
                         if(h1c5.isChecked()){
-                            if(type=="A"){
+                            if(type.equals("A")){
                                 info[0]=info[0]+2.5;
-                                type="B";
                             }
                             else{
                                 info[0]=info[0]+2.5;
-                                type="A";
                             }
                         }
                     }
@@ -102,13 +100,11 @@ public class Program_do extends AppCompatActivity {
                 if(h2c3.isChecked()){
                     if(h2c4.isChecked()){
                         if(h2c5.isChecked()){
-                            if(type=="A"){
+                            if(type.equals("A")){
                                 info[3]=info[3]+2.5;
-                                type="B";
                             }
                             else{
                                 info[1]=info[1]+2.5;
-                                type="A";
                             }
                         }
                     }
@@ -120,29 +116,35 @@ public class Program_do extends AppCompatActivity {
                 if(h3c3.isChecked()){
                     if(h3c4.isChecked()){
                         if(h3c5.isChecked()){
-                            if(type=="A"){
+                            if(type.equals("A")){
                                 info[4]=info[4]+5;
-                                type="B";
                             }
                             else{
                                 info[2]=info[2]+2.5;
-                                type="A";
                             }
                         }
                     }
                 }
             }
         }
+        if(type.equals("A")){
+            type="B";
+        }
+        else{
+            type="A";
+        }
+//        date="20221108";
+
         saveRM(String.valueOf(info[0]*2),String.valueOf(info[1]*2),String.valueOf(info[2]*2),String.valueOf(info[3]*2),String.valueOf(info[4]*2));
         savedinfo(type,date);
+
         Intent complete = new Intent(Program_do.this, Program.class);
         startActivity(complete);
     }
     public void saveRM(String squat, String bench, String babel, String over, String dead){
         RM_save saveRM = new RM_save(squat,bench,babel,over,dead);
-        databaseReference.child("User").child(UID).setValue(saveRM);
+        databaseReference.child("User").child(UID).child("5RM").setValue(saveRM);
     }
-
     public void savedinfo(String type, String date){
         Routine_save savedinfo = new Routine_save(type,date);
         databaseReference.child("User").child(UID).child(date).setValue(savedinfo);
