@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-mergeDebugResources-5:\\layout\\program.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\program.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-mergeDebugResources-5:\\layout\\activity_main1.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\activity_main1.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-mergeDebugResources-5:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-mergeDebugResources-5:\\layout\\sign_up.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\sign_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-mergeDebugResources-5:\\layout\\main.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\main.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-mergeDebugResources-5:\\layout\\program_input.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\program_input.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-mergeDebugResources-5:\\layout\\fragment_notifications.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\fragment_notifications.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-mergeDebugResources-5:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-mergeDebugResources-5:\\layout\\program_do.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\program_do.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-mergeDebugResources-5:\\layout\\program1.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\program1.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-mergeDebugResources-5:\\layout\\program_show.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\program_show.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-mergeDebugResources-5:\\layout\\bmi.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\bmi.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-mergeDebugResources-5:\\layout\\fragment_dashboard.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.example.healtherlogin.app-mergeDebugResources-5:/layout/bmi.xml",
+        "source": "com.example.healtherlogin.app-main-8:/layout/bmi.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-mergeDebugResources-5:\\layout\\program_activity.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\program_activity.xml"
+    }
+]

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d2ddfd">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="\n저체중 ~ 18.5 \n\n정상 18.5 ~ 25.0 \n\n과체중 25.0 ~ 30.0 \n\n고도비만 30.0 ~ "
+        android:id="@+id/textView5"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:textColor="#4f4f4f"
+        android:textSize="17dp"
+        android:gravity="right"
+        android:layout_above="@+id/BMI_view"
+        android:paddingRight="7dp"
+        android:paddingLeft="3dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bmi_image"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignBottom="@+id/BMI_view"
+        android:layout_marginBottom="97dp"
+        android:layout_toLeftOf="@+id/textView5"
+        android:layout_toStartOf="@+id/textView5"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/BMI_view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="200dp"
+        android:textAlignment="center"
+        android:allowUndo="false"
+        android:autoText="false"
+        android:background="#bdecff"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:singleLine="false"
+        android:textSize="50dp"
+        android:gravity="center_vertical|center_horizontal" />
+
+    <EditText
+        android:id="@+id/bmi_edit_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bmi_image"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toStartOf="@+id/bmi_toggle"
+        android:layout_toLeftOf="@+id/bmi_toggle"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="나이 입력"
+        android:inputType="number"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/bmi_edit_tall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bmi_edit_age"
+        android:layout_alignEnd="@+id/bmi_edit_age"
+        android:layout_alignRight="@+id/bmi_edit_age"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toStartOf="@+id/bmi_toggle"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="키 입력"
+        android:inputType="number"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/bmi_edit_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bmi_edit_tall"
+        android:layout_alignEnd="@+id/bmi_edit_tall"
+        android:layout_alignRight="@+id/bmi_edit_tall"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="몸무게 입력"
+        android:inputType="number"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ToggleButton
+        android:id="@+id/bmi_toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bmi_edit_tall"
+        android:layout_alignTop="@+id/bmi_edit_age"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:checked="false"
+        android:text="성별"
+        android:textOff="여자"
+        android:textOn="남자"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Cm"
+        android:id="@+id/textView7"
+        android:layout_below="@+id/bmi_edit_age"
+        android:layout_toRightOf="@+id/bmi_edit_age"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/bmi_edit_weight"
+        android:gravity="left|center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Kg"
+        android:id="@+id/textView8"
+        android:layout_below="@+id/bmi_edit_tall"
+        android:layout_toRightOf="@+id/bmi_edit_tall"
+        android:layout_alignBottom="@+id/bmi_edit_weight"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="left|center" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="프로그램보기"
+        android:id="@+id/btn_bmi"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/bmi_image"
+        android:layout_alignRight="@+id/textView5"
+        android:layout_alignEnd="@+id/textView5"
+        android:onClick="btn_bmi"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMI계산"
+        android:id="@+id/bmi_count"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/btn_bmi"
+        android:layout_toStartOf="@+id/btn_bmi" />
+
+</RelativeLayout>

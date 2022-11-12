@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: io.grpc:grpc-android:1.48.1@aar">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../MyApplication/caches/transforms-3/cee940f422bd89a2b80db5226fb6a6fd/transformed/grpc-android-1.48.1/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../MyApplication/caches/transforms-3/cee940f422bd89a2b80db5226fb6a6fd/transformed/grpc-android-1.48.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../MyApplication/caches/modules-2/files-2.1/io.grpc/grpc-android/1.48.1/92745c99bdae38ca7c2847d52fb0cb33458a6c61/grpc-android-1.48.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../MyApplication/caches/modules-2/files-2.1/io.grpc/grpc-android/1.48.1/bfbf9f9587f0f687742153f644d805ddfad45b4b/grpc-android-1.48.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,226 @@
+[
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\layout_sign_up.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\sign_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_buffy1.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\buffy1.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_pushup2.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\pushup2.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_lungy1.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\lungy1.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_pullup3.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\pullup3.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_body_small03.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\body_small03.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_ic_dashboard_black_24dp.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\ic_dashboard_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_lungy2.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\lungy2.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_running1.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\running1.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_pushup3.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\pushup3.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-pngs-1:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_body_small02.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\body_small02.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_pullup2.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\pullup2.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_lungy3.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\lungy3.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_bench1.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\bench1.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\layout_bmi.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\bmi.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\layout_program1.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\program1.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\layout_program_input.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\program_input.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_buffy3.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\buffy3.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_pullup1.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\pullup1.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_body_small01.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\body_small01.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_ic_notifications_black_24dp.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\ic_notifications_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_ic_home_black_24dp.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\ic_home_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\layout_program_show.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\program_show.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\layout_program_do.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\program_do.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\layout_main.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\main.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\layout_activity_main1.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\activity_main1.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_pushup1.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\pushup1.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\layout_fragment_notifications.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\fragment_notifications.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_running2.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\running2.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_body_small04.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\body_small04.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\navigation_mobile_navigation.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\navigation\\mobile_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_bench2.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\bench2.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\layout_program_activity.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\program_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\layout_fragment_dashboard.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.example.healtherlogin.app-merged_res-6:/layout_bmi.xml.flat",
+        "source": "com.example.healtherlogin.app-main-8:/layout/bmi.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\layout_program.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\layout\\program.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-merged_res-6:\\drawable_buffy2.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\MyApplication\\daemon\\7.4\\com.example.healtherlogin.app-main-8:\\drawable\\buffy2.png"
+    }
+]

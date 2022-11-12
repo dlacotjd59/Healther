@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="black">#FF000000</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <string name="Id"/>
+    <string name="app_intro">\n 이 앱은 사용자에게 목적에 맞는 운동을 보다 편리하고 간편하게 관련된 정보, 방법을 제공하는 앱 입니다.</string>
+    <string name="app_name">Healther Login</string>
+    <string name="bench">벤치프레스</string>
+    <string name="benchInfo">"\n\n\n\n\n벤치프레스\n\n가슴 운동을 하는 프리 웨이트 중에서 숙련도를 요구하는 상체 전체 운동\n\n자신의 근력을 벗어난 무거운 중량을 사용하지 않으며 손목이 지나치게 꺾이지 않도록 한다"</string>
+    <string name="bmi">BMI 입력</string>
+    <string name="buffy">버피테스트</string>
+    <string name="buffyInfo">"\n\n\n\n\n버피테스트\n\n짧은 시간 안에 운동 효과를 극대화 할 수 있는 유산소 근력 운동\n\n허리가 편다는 느낌으로 하면 허리 근육이 다칠 수 있으므로 가슴을 편다는 느낌으로 한다"</string>
+    <string name="default_web_client_id" translatable="false">449172918019-mr9n2f9p6lc8h7oqt2qmfo3b5u7cubea.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://precise-treat-312208-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">449172918019</string>
+    <string name="google_api_key" translatable="false">AIzaSyByg_62Bt8_15y8Y8w-KLu_dpdGdre3qgU</string>
+    <string name="google_app_id" translatable="false">1:449172918019:android:69b4bb001261d3d0a62336</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyByg_62Bt8_15y8Y8w-KLu_dpdGdre3qgU</string>
+    <string name="google_storage_bucket" translatable="false">precise-treat-312208.appspot.com</string>
+    <string name="id">Id</string>
+    <string name="login_but">Log in</string>
+    <string name="lungy">런지</string>
+    <string name="lungyInfo">"\n\n\n\n\n런지\n\n대표적인 다리 운동 중 하나로 허벅지와 엉덩이에 탄력을 주며 하체 근력을 강화하는 운동\n\n앞으로 내민 무릎이 발 끝을 벗어나지 않도록 하며 허리가 앞으로 숙여지지 않도록 한다"</string>
+    <string name="program1">설명\n\n일정 12 주\n당신의 몸상태를 고려한 목표를 설정하고 최적의 운동 프로그램으로 구성됩니다. 목표에 근거한 자신만의 운동 프로그램으로 높은 운동 효과를 누릴 수 있습니다.\n하지만 다이어트에서 가장 중요한 것은 식사량의 조절입니다. 다이어트식을 병행하고 무리한 운동은 건강을 해칠 수 있으니 고도비만의 경우 의사와 상의 하시길 권장합니다.\n\n\n주요 운동부위\n\n어깨, 가슴, 옆구리, 대퇴부, 종아리, 엉덩이, 견갑골\n\n\n 서킷 트레이닝\n\n서킷 트레이닝은 여러 가지 운동을 연속적으로 반복하는 운동방법입니다. 선정된 운동을 모두 한 바퀴 돌고 나서, 그 과정을 원하는 만큼 반복하는 것입니다. 근력을 강화시키고 심폐 건강을 높이면서 동시에 지방을 줄이고도 부상당할 우려나 오버 트레이닝이 없는 최적의 프로그램입니다. 서킷 트레이닝은 완벽한 운동방법으로서 모든 근육, 특히 대 근육을 골고루 발달시켜 주며, 시간에 쫓기는 사람에게는 운동의 효과를 만끽하면서 시간을 절약할 수 있습니다. 각 운동과 운동 사이에 휴식시간은 1분이며, 한 서킷을 끝내고 3분의 휴식을 취하도록 합니다. 휴식시간을 짧게 할 수 록 운동 효과가 올라가지만 자신의 몸 상태를 고려하여 휴식 시간을 조절하기 바랍니다.</string>
+    <string name="program2">설명\n\n일정 8 주\n요일별로 정해진 부위를 단련하는 전신 운동 프로그램으로 초보자도 쉽게 따라 할 수 있게 구성하였습니다.\n하지만 다이어트에서 가장 중요한 것은 식사량의 조절입니다. 다이어트 식을 병행하고 무리한 운동은 건강을 해칠 수 있으니 고도비만의 경우 의사와 상의하시길 권장합니다.\n\n\n주요 운동부위\n\n어깨, 가슴, 옆구리, 대퇴부, 종아리, 엉덩이, 견갑골\n\n\n 서킷 트레이닝\n\n서킷 트레이닝은 여러 가지 운동을 연속적으로 반복하는 운동방법입니다. 선정된 운동을 모두 한 바퀴 돌고 나서, 그 과정을 원하는 만큼 반복하는 것입니다. 근력을 강화시키고 심폐 건강을 높이면서 동시에 지방을 줄이고도 부상당할 우려나 오버 트레이닝이 없는 최적의 프로그램입니다. 서킷 트레이닝은 완벽한 운동방법으로서 모든 근육, 특히 대 근육을 골고루 발달시켜 주며, 시간에 쫓기는 사람에게는 운동의 효과를 만끽하면서 시간을 절약할 수 있습니다. 각 운동과 운동 사이에 휴식시간은 1분이며, 한 서킷을 끝내고 3분의 휴식을 취하도록 합니다. 휴식시간을 짧게 할 수 록 운동 효과가 올라가지만 자신의 몸 상태를 고려하여 휴식 시간을 조절하기 바랍니다.</string>
+    <string name="program3">설명\n\n일정 4 주\n8주간 고강도 기초체력 강화 훈련으로 구성된 프로그램입니다. 단기간의 체중감량에 효과적이며 체력 증진의 효과를 거둘 수 있습니다. 운동 강도가 높은 만큼 충분한 스트레칭은 물론 마무리 운동도 필수입니다.\n하지만 다이어트에서 가장 중요한 것은 식사량의 조절입니다. 다이어트 식을 병행하고 무리한 운동은 건강을 해칠 수 있으니 고도비만의 경우 의사와 상의하시길 권장합니다.\n\n\n주요 운동부위\n\n어깨, 가슴, 옆구리, 대퇴부, 종아리\n엉덩이, 견갑골, 복부\n\n\n 서킷 트레이닝\n\n서킷 트레이닝은 여러 가지 운동을 연속적으로 반복하는 운동방법입니다. 선정된 운동을 모두 한 바퀴 돌고 나서, 그 과정을 원하는 만큼 반복하는 것입니다. 근력을 강화시키고 심폐 건강을 높이면서 동시에 지방을 줄이고도 부상당할 우려나 오버 트레이닝이 없는 최적의 프로그램입니다. 서킷 트레이닝은 완벽한 운동방법으로서 모든 근육, 특히 대 근육을 골고루 발달시켜 주며, 시간에 쫓기는 사람에게는 운동의 효과를 만끽하면서 시간을 절약할 수 있습니다. 각 운동과 운동 사이에 휴식시간은 1분이며, 한 서킷을 끝내고 3분의 휴식을 취하도록 합니다. 휴식시간을 짧게 할 수 록 운동 효과가 올라가지만 자신의 몸 상태를 고려하여 휴식 시간을 조절하기 바랍니다.</string>
+    <string name="program4">설명\n\n일정 6 주\n결혼을 앞두고 남자다운 몸을 만들고 싶은 신랑을 위한 최적의 운동 프로그램입니다. 턱시도의 핏을 살리는 어깨 강화 운동과 허니문에서의 낭만적인 하룻밤을 위한 허리, 힙, 하체 강화 운동으로 8주만에 최고의 신랑으로 만들어 드립니다.\n하지만 무리한 운동은 건강을 해칠 수 있으니 고도비만의 경우 의사와 상의하시길 권장합니다.\n\n\n주요 운동부위\n\n어깨, 가슴, 허리, 대퇴부, 엉덩이, 종아리\n\n\n 서킷 트레이닝\n\n서킷 트레이닝은 여러 가지 운동을 연속적으로 반복하는 운동방법입니다. 선정된 운동을 모두 한 바퀴 돌고 나서, 그 과정을 원하는 만큼 반복하는 것입니다. 근력을 강화시키고 심폐 건강을 높이면서 동시에 지방을 줄이고도 부상당할 우려나 오버 트레이닝이 없는 최적의 프로그램입니다. 서킷 트레이닝은 완벽한 운동방법으로서 모든 근육, 특히 대 근육을 골고루 발달시켜 주며, 시간에 쫓기는 사람에게는 운동의 효과를 만끽하면서 시간을 절약할 수 있습니다. 각 운동과 운동 사이에 휴식시간은 1분이며, 한 서킷을 끝내고 3분의 휴식을 취하도록 합니다. 휴식시간을 짧게 할 수 록 운동 효과가 올라가지만 자신의 몸 상태를 고려하여 휴식 시간을 조절하기 바랍니다.</string>
+    <string name="program5">설명\n\n일정 6 주\n생애 가장 아름다워야 할 결혼식의 신부님을 위한 6주 완성 운동 프로그램입니다. 팔뚝살, 쇄골라인, 복부라인을 예쁘게 만드는 운동 중심으로 웨딩드레스의 핏을 극대화 시키며 가슴근육과 엉덩이 근육을 강화시키는 운동으로 여성스러움을 돋보이게 합니다.\n하지만 무리한 운동은 건강을 해칠 수 있으니 고도비만의 경우 의사와 상의하시길 권장합니다.\n\n\n주요 운동부위\n\n팔, 쇄골, 옆구리, 복부, 엉덩이\n\n\n 서킷 트레이닝\n\n서킷 트레이닝은 여러 가지 운동을 연속적으로 반복하는 운동방법입니다. 선정된 운동을 모두 한 바퀴 돌고 나서, 그 과정을 원하는 만큼 반복하는 것입니다. 근력을 강화시키고 심폐 건강을 높이면서 동시에 지방을 줄이고도 부상당할 우려나 오버 트레이닝이 없는 최적의 프로그램입니다. 서킷 트레이닝은 완벽한 운동방법으로서 모든 근육, 특히 대 근육을 골고루 발달시켜 주며, 시간에 쫓기는 사람에게는 운동의 효과를 만끽하면서 시간을 절약할 수 있습니다. 각 운동과 운동 사이에 휴식시간은 1분이며, 한 서킷을 끝내고 3분의 휴식을 취하도록 합니다. 휴식시간을 짧게 할 수 록 운동 효과가 올라가지만 자신의 몸 상태를 고려하여 휴식 시간을 조절하기 바랍니다.</string>
+    <string name="program6">설명\n\n일정 6 주\n예쁜 비키니를 입기 위한 최적화된 운동 프로그램입니다. 6주 동안 전신 근육운동을 기본으로 복부 지방 제거와 각선미 라인을 잡아주며 가슴 근육과 엉덩이 근육 강화를 통해 볼륨감 넘치는 몸매의 섹시함을 만들어 드립니다 비키니, 자신있게 입으세요! \n하지만 무리한 운동은 건강을 해칠 수 있으니 고도비만의 경우 의사와 상의하시길 권장합니다.\n\n\n주요 운동부위\n\n가슴, 옆구리, 복부, 엉덩이\n\n\n 서킷 트레이닝\n\n서킷 트레이닝은 여러 가지 운동을 연속적으로 반복하는 운동방법입니다. 선정된 운동을 모두 한 바퀴 돌고 나서, 그 과정을 원하는 만큼 반복하는 것입니다. 근력을 강화시키고 심폐 건강을 높이면서 동시에 지방을 줄이고도 부상당할 우려나 오버 트레이닝이 없는 최적의 프로그램입니다. 서킷 트레이닝은 완벽한 운동방법으로서 모든 근육, 특히 대 근육을 골고루 발달시켜 주며, 시간에 쫓기는 사람에게는 운동의 효과를 만끽하면서 시간을 절약할 수 있습니다. 각 운동과 운동 사이에 휴식시간은 1분이며, 한 서킷을 끝내고 3분의 휴식을 취하도록 합니다. 휴식시간을 짧게 할 수 록 운동 효과가 올라가지만 자신의 몸 상태를 고려하여 휴식 시간을 조절하기 바랍니다.</string>
+    <string name="project_id" translatable="false">precise-treat-312208</string>
+    <string name="pullup">풀업</string>
+    <string name="pullupInfo">"\n\n\n\n\n풀업\n\n머신의 플레이트 무게만큼 체중의 부담을 줄여서 할 수 있는 턱걸이 운동\n\n허리를 지나치게 뒤로 젖히지 않으며 팔 힘의 사용을 최소화한다."</string>
+    <string name="pushup">푸쉬업</string>
+    <string name="pushupInfo">"\n\n\n\n\n푸쉬업\n\n가장 널리 알려진 운동으로 초보자들에게 안전하고 효과적으로 상체를 단련할 수 있는 운동\n\n손목이 많이 꺾이지 않도록 하며 여성의 경우 푹신한 쿠션에 무릎을 꿇어 실시하도록 한다"</string>
+    <string name="running">런닝</string>
+    <string name="runningInfo">"\n\n\n\n\n런닝\n\n천천히 걷기 또는 조깅 달리기 등과 같이 자신의 페이스에 맞게 조절하는 운동\n\n운동량을 서서히 증가시켜 부상의 위험을 줄이고 어지러움이 오면 즉시 가볍게 걷는다"</string>
+    <string name="save_AGE">나이</string>
+    <string name="save_HEI">키</string>
+    <string name="save_ID">아이디</string>
+    <string name="save_PW">비밀번호</string>
+    <string name="save_WEI">몸무게</string>
+    <string name="signup_but">Sign up</string>
+    <string name="signup_but2">Sign up</string>
+    <string name="site_1">다이어트신 - 다신</string>
+    <string name="site_2">씨씨앙 다이어트 - 네이버카페</string>
+    <string name="texyView">Password</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_home">Home</string>
+    <string name="title_notifications">Notifications</string>
+    <style name="Theme.HealtherLogin" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+        
+    </style>
+</resources>

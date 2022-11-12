@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d2ddfd"
+    android:gravity="center_vertical|center_horizontal">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="프로그램"
+        android:id="@+id/btn_program"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/btn_alarm"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="알람"
+        android:id="@+id/btn_alarm"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/btn_program" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="앱 소개"
+        android:id="@+id/btn_intro"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btn_alarm"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_text"
+      android:layout_below="@+id/btn_program"
+          android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+      android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+          android:layout_above="@+id/btn_exerA"
+        android:background="#f1e1e1"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="운동 A"
+        android:id="@+id/btn_exerA"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/btn_exerB"
+        android:layout_toStartOf="@+id/exerA_moer"
+        android:layout_toLeftOf="@+id/exerA_moer" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="운동 B"
+        android:id="@+id/btn_exerB"
+        android:layout_above="@+id/btn_exerC"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/radio_exer"
+        android:layout_alignRight="@+id/btn_exerA"
+        android:layout_alignEnd="@+id/btn_exerA" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="운동 C"
+        android:id="@+id/btn_exerC"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/exerB_more"
+        android:layout_toStartOf="@+id/exerB_more" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="자세히"
+        android:id="@+id/exerA_moer"
+        android:layout_above="@+id/exerB_more"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="자세히"
+        android:id="@+id/exerB_more"
+        android:layout_above="@+id/exerC_more"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="자세히"
+        android:id="@+id/exerC_more"
+        android:layout_below="@+id/btn_exerB"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
