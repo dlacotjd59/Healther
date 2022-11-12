@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d2ddfd">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d2ddfd">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#d2ddfd">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="운동1"
+                android:id="@+id/program_1"
+                android:textStyle="bold"
+                android:textSize="20dp" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="운동2"
+                android:id="@+id/program_2"
+                android:textStyle="bold"
+                android:textSize="20dp" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="운동3"
+                android:id="@+id/program_3"
+                android:textStyle="bold"
+                android:textSize="20dp" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="운동4"
+                android:id="@+id/program_4"
+                android:textStyle="bold"
+                android:textSize="20dp" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="운동5"
+                android:id="@+id/program_5"
+                android:textStyle="bold"
+                android:textSize="20dp" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="운동6"
+                android:id="@+id/program_6"
+                android:textStyle="bold"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/program_do.xml" value="0.33967391304347827" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/program_input.xml" value="0.33967391304347827" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/program_show.xml" value="0.2651975683890577" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android API 32 Platform" project-jdk-type="Android SDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
