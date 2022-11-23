@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/unit4"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="312dp"
+        android:gravity="center"
+        android:text="kg"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/input_barbell_gs" />
+
+    <TextView
+        android:id="@+id/golden_six_title"
+        android:layout_width="410dp"
+        android:layout_height="55dp"
+        android:background="#673AB7"
+        android:gravity="center"
+        android:text="골든 식스"
+        android:textColor="#72E685"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="355dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:autoText="false"
+        android:gravity="center"
+        android:text="원하는 중량을 입력해보세요"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/golden_six_title" />
+
+    <TextView
+        android:id="@+id/Squat"
+        android:layout_width="95dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
+        android:text="스쿼트"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/bench_press"
+        app:layout_constraintEnd_toStartOf="@+id/input_squat_gs"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/bench_press"
+        android:layout_width="95dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
+        android:text="와이드 그립 벤치프레스"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/neck_press"
+        app:layout_constraintEnd_toStartOf="@+id/input_wide_gs"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/neck_press"
+        android:layout_width="95dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
+        android:text="비하인드 \n넥 프레스"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/barbell_curl"
+        app:layout_constraintEnd_toStartOf="@+id/input_neck_gs"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/barbell_curl"
+        android:layout_width="95dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="312dp"
+        android:gravity="center"
+        android:text="바벨 컬"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/input_barbell_gs"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/input_squat_gs"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:hint="스쿼트"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/input_wide_gs"
+        app:layout_constraintEnd_toStartOf="@+id/unit1"
+        app:layout_constraintStart_toEndOf="@+id/Squat"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/input_wide_gs"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:hint="와이드 그립 벤치프레스"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/input_neck_gs"
+        app:layout_constraintEnd_toStartOf="@+id/unit2"
+        app:layout_constraintStart_toEndOf="@+id/bench_press" />
+
+    <EditText
+        android:id="@+id/input_neck_gs"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:hint="비하인드 넥 프레스"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/input_barbell_gs"
+        app:layout_constraintEnd_toStartOf="@+id/unit3"
+        app:layout_constraintStart_toEndOf="@+id/neck_press" />
+
+    <EditText
+        android:id="@+id/input_barbell_gs"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="312dp"
+        android:ems="10"
+        android:hint="바벨 컬"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/unit4"
+        app:layout_constraintStart_toEndOf="@+id/barbell_curl" />
+
+    <TextView
+        android:id="@+id/unit1"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
+        android:text="kg"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/unit2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/unit2"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
+        android:text="kg"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/unit3"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/unit3"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
+        android:text="kg"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/unit4"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/calculate_weight"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:text="추천받기"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toEndOf="@+id/for_you"
+        app:layout_constraintTop_toBottomOf="@+id/input_barbell_gs" />
+
+    <TextView
+        android:id="@+id/for_you"
+        android:layout_width="256dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text="적당한 중량을 제공합니다"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toStartOf="@+id/calculate_weight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_barbell_gs" />
+
+    <Button
+        android:id="@+id/set_complete"
+        android:layout_width="284dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="36dp"
+        android:text="설정 완료 및 시작하기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

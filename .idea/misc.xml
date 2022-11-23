@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.39" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/drawable/ic_baseline_search.xml" value="0.379" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.39" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.39" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/drawable/ic_launcher_background.xml" value="0.39" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.39" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/activity_main.xml" value="0.3283514492753623" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/activity_main1.xml" value="0.3283514492753623" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/diary_home.xml" value="0.45" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/ex.xml" value="0.35597826086956524" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/ex1.xml" value="0.421195652173913" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/for_obese_program_list.xml" value="0.5" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/for_ordinary_program_list.xml" value="0.5484375" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/for_underweight_program_list.xml" value="0.421195652173913" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/fragment_dashboard.xml" value="0.3283514492753623" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/fragment_home.xml" value="0.3283514492753623" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/fragment_notifications.xml" value="0.3283514492753623" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/fragment_program_home.xml" value="0.5" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/golden_six_program.xml" value="0.5479166666666667" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/golden_six_program_do.xml" value="0.4352278545826933" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/golden_six_program_input.xml" value="0.5489583333333333" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/golden_six_program_show.xml" value="0.31023550724637683" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/goldensix_program.xml" value="0.5479166666666667" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/program.xml" value="0.5489583333333333" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/program_bmi.xml" value="0.3976449275362319" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/program_do.xml" value="0.33967391304347827" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/program_input.xml" value="0.33967391304347827" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/program_recommendation.xml" value="0.33" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/program_show.xml" value="0.2651975683890577" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/sign_up.xml" value="0.39010416666666664" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/layout/update_user.xml" value="0.5479166666666667" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/menu/bottom_nav_menu.xml" value="0.5489583333333333" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/menu/healther_navigation.xml" value="0.4427083333333333" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.39" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.367" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/drawable/drawable_circle_inner.xml" value="0.2695" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/drawable/drawable_circle_outer.xml" value="0.343" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.313" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.367" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.367" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/drawable/triangle.xml" value="0.4035" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/drawable/triangle_up.xml" value="0.4035" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/activity_main1.xml" value="0.5494791666666666" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/aerobic_running.xml" value="0.542572463768116" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/diary_home.xml" value="0.536" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/golden_six_program.xml" value="0.5407608695652174" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/golden_six_program_do_ben.xml" value="0.39311594202898553" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/golden_six_program_do_chin.xml" value="0.3098958333333333" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/golden_six_program_do_curl.xml" value="0.4" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/golden_six_program_do_neck.xml" value="0.4" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/golden_six_program_do_situp.xml" value="0.3098958333333333" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/golden_six_program_do_squ.xml" value="0.4" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/program_bmi.xml" value="0.5494791666666666" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/recommendation_exercise.xml" value="0.5479166666666667" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/setting_weight.xml" value="0.33" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/sign_up.xml" value="0.5494791666666666" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/timer.xml" value="0.408984375" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/layout/update_user.xml" value="0.5494791666666666" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master-2/app/src/main/res/menu/healther_navigation.xml" value="0.5494791666666666" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/activity_main1.xml" value="0.5453125" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/aerobic_running.xml" value="0.5453125" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/diary_home.xml" value="0.5453125" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/fragment_dashboard.xml" value="0.5453125" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/fragment_home.xml" value="0.5453125" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/fragment_notifications.xml" value="0.5453125" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program.xml" value="0.5453125" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program_do_ben.xml" value="0.5453125" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program_do_chin.xml" value="0.5453125" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program_do_curl.xml" value="0.5453125" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program_do_situp.xml" value="0.5453125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android API 32 Platform" project-jdk-type="Android SDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

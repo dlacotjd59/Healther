@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="412dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Recommendation_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="운동 추천"
+            app:autoSizeTextType="uniform" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="81dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/BMI"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:text="BMI"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/Setting_Weight"
+        app:layout_constraintEnd_toStartOf="@+id/Recommend_Exercise"
+        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.942" />
+
+    <TextView
+        android:id="@+id/Recommend_Exercise"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:text="추천운동"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/Exercise_Start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.947" />
+
+    <Button
+        android:id="@+id/Exercise_Start"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="160dp"
+        android:text="운동 시작"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/Setting_Weight"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="160dp"
+        android:text="무게 수정"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toStartOf="@+id/Exercise_Start"
+        app:layout_constraintHorizontal_bias="0.975"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="409dp"
+        android:layout_height="71dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/healther_navigation"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

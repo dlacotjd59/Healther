@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+
+   android:innerRadiusRatio= "2.3"
+    android:shape="ring"
+    android:thickness="10dp"
+    android:useLevel="true"
+    >
+
+  <gradient
+      android:angle="45"
+      android:type="radial"
+      android:color="@color/purple_700"
+      />
+
+
+</shape>
