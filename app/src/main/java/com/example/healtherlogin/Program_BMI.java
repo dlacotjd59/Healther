@@ -46,7 +46,7 @@ public class Program_BMI extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        strGender = intent.getExtras().getString("gender");
+        strGender = intent.getExtras().getString("Gender");
 
 
         databaseReference.child("User").child(user.getUid()).child("유저정보").addValueEventListener(new ValueEventListener() {
@@ -68,19 +68,39 @@ public class Program_BMI extends AppCompatActivity {
                     }
                 } else if (BMI >= 18.5 && BMI < 23) {
                     BMI_Type_View.setText("정상");
-                    BMI_Image.setImageResource(R.drawable.normal);
+                    if(strGender.equals("남자")){
+                        BMI_Image.setImageResource(R.drawable.male2);
+                    }else if(strGender.equals("여자")){
+                        BMI_Image.setImageResource(R.drawable.female2);
+                    }
                 } else if (BMI >= 23 && BMI < 25) {
                     BMI_Type_View.setText("과체중");
-                    BMI_Image.setImageResource(R.drawable.overweight);
+                    if(strGender.equals("남자")){
+                        BMI_Image.setImageResource(R.drawable.male3);
+                    }else if(strGender.equals("여자")){
+                        BMI_Image.setImageResource(R.drawable.female3);
+                    }
                 } else if (BMI >= 25 && BMI < 30) {
                     BMI_Type_View.setText("1단계 비만");
-                    BMI_Image.setImageResource(R.drawable.obesity1);
+                    if(strGender.equals("남자")){
+                        BMI_Image.setImageResource(R.drawable.male4);
+                    }else if(strGender.equals("여자")){
+                        BMI_Image.setImageResource(R.drawable.female4);
+                    }
                 } else if (BMI >= 30 && BMI < 35) {
                     BMI_Type_View.setText("2단계 비만");
-                    BMI_Image.setImageResource(R.drawable.obesity2);
+                    if(strGender.equals("남자")){
+                        BMI_Image.setImageResource(R.drawable.male5);
+                    }else if(strGender.equals("여자")){
+                        BMI_Image.setImageResource(R.drawable.female5);
+                    }
                 } else {
                     BMI_Type_View.setText("3단계 비만");
-                    BMI_Image.setImageResource(R.drawable.obesity3);
+                    if(strGender.equals("남자")){
+                        BMI_Image.setImageResource(R.drawable.male5);
+                    }else if(strGender.equals("여자")){
+                        BMI_Image.setImageResource(R.drawable.female5);
+                    }
                 }
             }
             @Override
@@ -98,6 +118,7 @@ public class Program_BMI extends AppCompatActivity {
                 Intent strength_exercise = new Intent(Program_BMI.this, Recommend_Exercise.class);
                 strength_exercise.putExtra("strBMI_Type",BMI_Type_View.getText());
                 strength_exercise.putExtra("BMI",BMI);
+                strength_exercise.putExtra("Gender",strGender);
                 startActivity(strength_exercise);
             }
         });

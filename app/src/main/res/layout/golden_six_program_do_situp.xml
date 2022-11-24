@@ -20,46 +20,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/Record"
-        android:layout_width="122dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="9dp"
-        android:backgroundTint="@color/light_white"
-        android:text="운동 시작"
-        android:textColor="@color/hint_background"
-        app:layout_constraintEnd_toStartOf="@+id/Pause"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="660dp" />
-
-    <Button
         android:id="@+id/Next"
         android:layout_width="122dp"
         android:layout_height="55dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="@color/light_white"
         android:onClick="Next"
         android:text="다음 운동"
         android:textColor="@color/hint_background"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Pause"
-        tools:layout_editor_absoluteY="660dp"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/Pause"
-        android:layout_width="122dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginEnd="9dp"
-        android:backgroundTint="@color/light_white"
-        android:text="일시정지"
-        android:textColor="@color/hint_background"
-        app:layout_constraintEnd_toStartOf="@+id/Next"
-        app:layout_constraintStart_toEndOf="@+id/Record"
-        tools:layout_editor_absoluteY="660dp"
+        app:layout_constraintHorizontal_bias="0.975"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <ScrollView
@@ -109,14 +81,7 @@
                             android:text="세트"
                             android:textColor="@color/light_white"
                             android:textSize="18dp" />
-                        <TextView
-                            android:id="@+id/textView47"
-                            android:layout_width="100dp"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:textSize="18dp"
-                            android:text="중량(kg)"
-                            android:textColor="@color/light_white"/>
+
 
                         <TextView
                             android:id="@+id/textView48"
@@ -150,15 +115,6 @@
                             android:gravity="center"
                             android:textColor="@color/light_white"/>
 
-                        <EditText
-                            android:id="@+id/editTextNumber9"
-                            android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="입력"
-                            android:textColorHint="@color/hint_light_white"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck" />
 
                         <EditText
                             android:id="@+id/editTextNumber10"
@@ -192,15 +148,7 @@
                             android:gravity="center"
                             android:textColor="@color/light_white"/>
 
-                        <EditText
-                            android:id="@+id/editTextNumber11"
-                            android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="입력"
-                            android:textColorHint="@color/hint_light_white"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck" />
+
 
                         <EditText
                             android:id="@+id/editTextNumber12"
@@ -234,15 +182,7 @@
                             android:gravity="center"
                             android:textColor="@color/light_white"/>
 
-                        <EditText
-                            android:id="@+id/editTextNumber13"
-                            android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="입력"
-                            android:textColorHint="@color/hint_light_white"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck" />
+
 
                         <EditText
                             android:id="@+id/editTextNumber14"
@@ -276,15 +216,7 @@
                             android:gravity="center"
                             android:textColor="@color/light_white"/>
 
-                        <EditText
-                            android:id="@+id/editTextNumber15"
-                            android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="입력"
-                            android:textColorHint="@color/hint_light_white"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck" />
+
 
                         <EditText
                             android:id="@+id/editTextNumber16"

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/hint_background">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -16,12 +17,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="105dp"
-            android:background="#A37BEA"
+            android:id="@+id/Recommendation_title"
+            android:layout_width="410dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:text="BMI"
+            android:text="현재 BMI"
+            android:textColor="@color/light_white"
             app:autoSizeTextType="uniform" />
 
         <View
@@ -31,15 +34,28 @@
             android:background="?android:attr/listDivider" />
 
     </LinearLayout>
-
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="@drawable/show_ui_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintHeight_percent=".78"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <Button
         android:id="@+id/Recommendation"
         android:layout_width="170dp"
-        android:layout_height="75dp"
+        android:layout_height="60dp"
         android:layout_marginStart="122dp"
         android:layout_marginEnd="120dp"
         android:layout_marginBottom="24dp"
         android:text="추천프로그램 보기"
+        android:backgroundTint="@color/light_white"
+        android:textColor="@color/hint_background"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,6 +69,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="28dp"
         android:text="BMI"
+        android:textColor="@color/light_white"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toStartOf="@+id/BMI_View"
         app:layout_constraintHorizontal_bias="1.0"
@@ -76,6 +93,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="상태"
+        android:textColor="@color/light_white"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toStartOf="@+id/BMI_View_Type"
         app:layout_constraintHorizontal_bias="0.034"
@@ -89,6 +107,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
+        android:textColor="@color/teal_200"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BMI_View" />
@@ -100,17 +119,22 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
+        android:textColor="@color/teal_200"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BMI_Image" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navi"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        app:labelVisibilityMode="labeled"
+        android:layout_margin="15dp"
+        android:background="@drawable/round_corner"
+        android:elevation="2dp"
+        app:itemIconSize="35dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@color/teal_200"
+        app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -117,9 +117,6 @@ public class Diary_Home extends AppCompatActivity {
 
 
             }
-
-
-
         });
 
 
@@ -133,7 +130,7 @@ public class Diary_Home extends AppCompatActivity {
                 }else if(item.getItemId()==R.id.Recommendation){
                     str_Gender = Gender.getText().toString();
                     Intent Recommendation= new Intent(Diary_Home.this, Program_BMI.class);
-                    Recommendation.putExtra("gender",str_Gender);
+                    Recommendation.putExtra("Gender",str_Gender);
                     startActivity(Recommendation);
                 }
 
@@ -150,15 +147,16 @@ public class Diary_Home extends AppCompatActivity {
         off.setTitle("종료");
         off.setMessage("종료하시겠습니까?");
 
+        off.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+
         off.setPositiveButton("네", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finishAffinity();
-            }
-        });
-        off.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
             }
         });
 

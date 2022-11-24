@@ -3,37 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ProgressBar
-        android:id="@+id/Timer_ProgressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="270dp"
-        android:layout_height="309dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/drawable_circle_inner"
-        android:indeterminate="false"
-        android:max="100"
-        android:progress="100"
-        android:progressDrawable="@drawable/drawable_circle_outer"
-        android:rotation="-90"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:layout_height="match_parent"
+    android:background="@color/hint_background">
 
     <TextView
         android:id="@+id/Time"
-        android:layout_width="120dp"
-        android:layout_height="80dp"
+        android:layout_width="154dp"
+        android:layout_height="97dp"
         android:gravity="center"
         android:text="Time"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="@+id/Timer_ProgressBar"
         app:layout_constraintEnd_toEndOf="@+id/Timer_ProgressBar"
         app:layout_constraintStart_toStartOf="@+id/Timer_ProgressBar"
-        app:layout_constraintTop_toTopOf="@+id/Timer_ProgressBar" />
+        app:layout_constraintTop_toTopOf="@+id/Timer_ProgressBar"
+        app:layout_constraintVertical_bias="0.433" />
 
     <TextView
         android:id="@+id/time_unit"
@@ -41,23 +27,44 @@
         android:layout_height="40dp"
         android:gravity="center"
         android:text="초"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="@+id/Timer_ProgressBar"
         app:layout_constraintEnd_toEndOf="@+id/Timer_ProgressBar"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="@+id/Timer_ProgressBar"
-        app:layout_constraintTop_toTopOf="@+id/Time" />
+        app:layout_constraintTop_toTopOf="@+id/Time"
+        app:layout_constraintVertical_bias="0.418" />
 
     <Button
         android:id="@+id/Skip"
-        android:layout_width="127dp"
-        android:layout_height="55dp"
+        android:layout_width="184dp"
+        android:layout_height="63dp"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="141dp"
         android:text="바로 시작하기"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Timer_ProgressBar" />
+
+    <ProgressBar
+        android:id="@+id/Timer_ProgressBar"
+        android:layout_width="348dp"
+        android:layout_height="403dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/circle_shape"
+        android:indeterminate="false"
+        android:max="120"
+        android:progress="0"
+        android:progressDrawable="@drawable/circle_progress_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.466" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

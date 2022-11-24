@@ -23,13 +23,15 @@
         android:id="@+id/Next"
         android:layout_width="122dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="@color/light_white"
         android:onClick="Next"
         android:text="다음 운동"
         android:textColor="@color/hint_background"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="660dp" />
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
         android:layout_width="416dp"
@@ -109,7 +111,9 @@
                         <TextView
                             android:id="@+id/textView62"
                             android:layout_width="57dp"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="성공여부" />
 
                     </TableRow>
 
@@ -126,15 +130,14 @@
                             android:gravity="center"
                             android:textColor="@color/light_white"/>
 
-                        <EditText
-                            android:id="@+id/editTextNumber17"
+                        <TextView
+                            android:id="@+id/weight_set1"
                             android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="입력"
-                            android:textColorHint="@color/hint_light_white"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="중량"
+                            android:textColor="@color/light_white"
+                            android:textSize="22dp" />
 
                         <EditText
                             android:id="@+id/editTextNumber18"
@@ -151,7 +154,7 @@
                             android:id="@+id/setcount1"
                             android:layout_width="55dp"
                             android:layout_height="match_parent"
-                            android:text="CheckBox" />
+                            android:text="성공" />
 
                     </TableRow>
 
@@ -168,15 +171,14 @@
                             android:gravity="center"
                             android:textColor="@color/light_white"/>
 
-                        <EditText
-                            android:id="@+id/editTextNumber19"
+                        <TextView
+                            android:id="@+id/weight_set2"
                             android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="입력"
-                            android:textColorHint="@color/hint_light_white"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="중량"
+                            android:textColor="@color/light_white"
+                            android:textSize="22dp" />
 
                         <EditText
                             android:id="@+id/editTextNumber20"
@@ -188,11 +190,12 @@
                             tools:ignore="SpeakableTextPresentCheck"
                             android:gravity="center"
                             android:textColorHint="@color/hint_light_white"/>
+
                         <CheckBox
                             android:id="@+id/setcount2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="CheckBox" />
+                            android:text="성공" />
 
                     </TableRow>
 
@@ -209,15 +212,14 @@
                             android:gravity="center"
                             android:textColor="@color/light_white"/>
 
-                        <EditText
-                            android:id="@+id/editTextNumber21"
+                        <TextView
+                            android:id="@+id/weight_set3"
                             android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="입력"
-                            android:textColorHint="@color/hint_light_white"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="중량"
+                            android:textColor="@color/light_white"
+                            android:textSize="22dp" />
 
                         <EditText
                             android:id="@+id/editTextNumber22"
@@ -229,11 +231,12 @@
                             tools:ignore="SpeakableTextPresentCheck"
                             android:gravity="center"
                             android:textColorHint="@color/hint_light_white"/>
+
                         <CheckBox
                             android:id="@+id/setcount3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="CheckBox" />
+                            android:text="성공" />
 
                         <ImageView/>
                     </TableRow>

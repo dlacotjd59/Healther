@@ -92,14 +92,7 @@
                             android:textColor="@color/light_white"
                             android:text="세트" />
 
-                        <TextView
-                            android:id="@+id/textView120"
-                            android:layout_width="100dp"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:textSize="18dp"
-                            android:text="중량(kg)"
-                            android:textColor="@color/light_white"/>
+
 
                         <TextView
                             android:id="@+id/textView121"
@@ -114,6 +107,7 @@
                             android:layout_width="109dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
+                            android:textColor="@color/light_white"
                             android:text="성공여부" />
 
                     </TableRow>
@@ -131,15 +125,6 @@
                             android:gravity="center"
                             android:textColor="@color/light_white"/>
 
-                        <EditText
-                            android:id="@+id/editTextNumber46"
-                            android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="입력"
-                            android:textColorHint="@color/hint_light_white"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck" />
 
                         <EditText
                             android:id="@+id/editTextNumber47"
@@ -173,15 +158,6 @@
                             android:gravity="center"
                             android:textColor="@color/light_white"/>
 
-                        <EditText
-                            android:id="@+id/editTextNumber48"
-                            android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="입력"
-                            android:textColorHint="@color/hint_light_white"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck" />
 
                         <EditText
                             android:id="@+id/editTextNumber49"
@@ -213,15 +189,7 @@
                             android:textSize="22dp"
                             android:gravity="center"
                             android:textColor="@color/light_white"/>
-                        <EditText
-                            android:id="@+id/editTextNumber50"
-                            android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="입력"
-                            android:textColorHint="@color/hint_light_white"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck" />
+
 
                         <EditText
                             android:id="@+id/editTextNumber51"

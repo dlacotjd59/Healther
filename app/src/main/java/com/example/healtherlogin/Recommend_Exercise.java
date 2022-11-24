@@ -3,15 +3,19 @@ package com.example.healtherlogin;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Recommend_Exercise extends AppCompatActivity {
 
@@ -40,6 +44,7 @@ public class Recommend_Exercise extends AppCompatActivity {
 
         Intent intent = getIntent();
         String BMI_Type = intent.getExtras().getString("strBMI_Type");
+        String Gender = intent.getExtras().getString("Gender");
         Double BMI = intent.getExtras().getDouble("BMI");
 
 
@@ -243,6 +248,27 @@ public class Recommend_Exercise extends AppCompatActivity {
             });
         }
 
+
+
+        //바텀 네비게이션
+        BottomNavigationView bottom_navi = (BottomNavigationView) findViewById(R.id.bottom_navi);
+        bottom_navi.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                if(item.getItemId()==R.id.Diary){
+                    Intent Diary= new Intent(Recommend_Exercise.this, Diary_Home.class);
+                    startActivity(Diary);
+                }else if(item.getItemId()==R.id.Recommendation){
+                    Intent Recommendation= new Intent(Recommend_Exercise.this, Program_BMI.class);
+                    Recommendation.putExtra("Gender",Gender);
+                    startActivity(Recommendation);
+                }
+
+                return false;
+
+            }
+        });
 
 
     }

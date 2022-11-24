@@ -114,7 +114,9 @@
                         <TextView
                             android:id="@+id/textView44"
                             android:layout_width="50dp"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="성공여부" />
 
                     </TableRow>
 
@@ -131,15 +133,14 @@
                             android:textColor="@color/light_white"
                             android:textSize="22dp" />
 
-                        <EditText
-                            android:id="@+id/editTextNumber"
+                        <TextView
+                            android:id="@+id/weight_set1"
                             android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="입력"
-                            android:inputType="number"
-                            android:textColorHint="@color/hint_light_white"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="중량"
+                            android:textColor="@color/light_white"
+                            android:textSize="22dp" />
 
                         <EditText
                             android:id="@+id/editTextNumber2"
@@ -156,7 +157,7 @@
                             android:id="@+id/setcount1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="CheckBox" />
+                            android:text="성공" />
 
                     </TableRow>
 
@@ -173,15 +174,14 @@
                             android:textColor="@color/light_white"
                             android:textSize="22dp" />
 
-                        <EditText
-                            android:id="@+id/editTextNumber3"
+                        <TextView
+                            android:id="@+id/weight_set2"
                             android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="입력"
-                            android:inputType="number"
-                            android:textColorHint="@color/hint_light_white"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="중량"
+                            android:textColor="@color/light_white"
+                            android:textSize="22dp" />
 
                         <EditText
                             android:id="@+id/editTextNumber4"
@@ -197,7 +197,8 @@
                             android:id="@+id/setcount2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="CheckBox" />
+                            android:text="성공" />
+
 
                     </TableRow>
 
@@ -214,15 +215,14 @@
                             android:textColor="@color/light_white"
                             android:textSize="22dp" />
 
-                        <EditText
-                            android:id="@+id/editTextNumber5"
+                        <TextView
+                            android:id="@+id/weight_set3"
                             android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="입력"
-                            android:inputType="number"
-                            android:textColorHint="@color/hint_light_white"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="중량"
+                            android:textColor="@color/light_white"
+                            android:textSize="22dp" />
 
                         <EditText
                             android:id="@+id/editTextNumber6"
@@ -238,7 +238,8 @@
                             android:id="@+id/setcount3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="CheckBox" />
+                            android:text="성공" />
+
 
                     </TableRow>
 
@@ -255,15 +256,14 @@
                             android:textColor="@color/light_white"
                             android:textSize="22dp" />
 
-                        <EditText
-                            android:id="@+id/editTextNumber07"
+                        <TextView
+                            android:id="@+id/weight_set4"
                             android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="입력"
-                            android:inputType="number"
-                            android:textColorHint="@color/hint_light_white"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="중량"
+                            android:textColor="@color/light_white"
+                            android:textSize="22dp" />
 
                         <EditText
                             android:id="@+id/editTextNumber8"
@@ -275,6 +275,12 @@
                             android:inputType="number"
                             android:textColorHint="@color/hint_light_white"
                             tools:ignore="SpeakableTextPresentCheck" />
+                        <CheckBox
+                            android:id="@+id/setcount4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="성공" />
+
 
                         <ImageView />
                     </TableRow>

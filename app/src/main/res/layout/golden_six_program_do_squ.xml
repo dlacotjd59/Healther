@@ -128,15 +128,14 @@
                             android:gravity="center"
                             android:textColor="@color/light_white"/>
 
-                        <EditText
-                            android:id="@+id/editTextNumber31"
+                        <TextView
+                            android:id="@+id/weight_set1"
                             android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="중량없음"
-                            android:textColorHint="@color/hint_light_white"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="중량"
+                            android:textColor="@color/light_white"
+                            android:textSize="22dp" />
 
                         <EditText
                             android:id="@+id/editTextNumber36"
@@ -171,15 +170,14 @@
                             android:gravity="center"
                             android:textColor="@color/light_white"/>
 
-                        <EditText
-                            android:id="@+id/editTextNumber33"
+                        <TextView
+                            android:id="@+id/weight_set2"
                             android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="중량없음"
-                            android:textColorHint="@color/hint_light_white"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="중량"
+                            android:textColor="@color/light_white"
+                            android:textSize="22dp" />
 
                         <EditText
                             android:id="@+id/editTextNumber37"
@@ -214,15 +212,14 @@
                             android:gravity="center"
                             android:textColor="@color/light_white"/>
 
-                        <EditText
-                            android:id="@+id/editTextNumber34"
+                        <TextView
+                            android:id="@+id/weight_set3"
                             android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="중량없음"
-                            android:textColorHint="@color/hint_light_white"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="중량"
+                            android:textColor="@color/light_white"
+                            android:textSize="22dp" />
 
                         <EditText
                             android:id="@+id/editTextNumber38"
@@ -257,16 +254,14 @@
                             android:gravity="center"
                             android:textColor="@color/light_white"/>
 
-                        <EditText
-                            android:id="@+id/editTextNumber35"
+                        <TextView
+                            android:id="@+id/weight_set4"
                             android:layout_width="50dp"
-                            android:layout_height="62.5dp"
-                            android:ems="10"
-                            android:hint="중량없음"
-                            android:textColorHint="@color/hint_light_white"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck" />
-
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="중량"
+                            android:textColor="@color/light_white"
+                            android:textSize="22dp" />
                         <EditText
                             android:id="@+id/editTextNumber39"
                             android:layout_width="50dp"

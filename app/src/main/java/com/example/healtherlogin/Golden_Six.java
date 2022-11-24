@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,8 +32,8 @@ public class Golden_Six extends AppCompatActivity {
     private Button Next,Skip;
     private CheckBox setcount1,setcount2,setcount3,setcount4;
     private ProgressBar circle_progressbar;
-    private CountDownTimer countDownTimer;
     private TextView time, time_unit;
+    private TextView weight_set1,weight_set2,weight_set3,weight_set4;
     private EditText set1,set2,set3,set4;
 
     private int countcycle = 0;
@@ -46,7 +47,7 @@ public class Golden_Six extends AppCompatActivity {
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
     private String strDate = dateFormat.format(date);
     private String strS_or_F;
-    private int time_ms = 0;
+    private long time_ms = 0;
     private final DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -54,16 +55,28 @@ public class Golden_Six extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.golden_six_program_do_squ);
-        record = findViewById(R.id.Record);
-        pause = findViewById(R.id.Pause);
         Next = findViewById(R.id.Next);
-       // setcount1= findViewById(R.id.countset1);
-        //setcount2= findViewById(R.id.countset2);
-        //setcount3= findViewById(R.id.countset3);
-        //setcount4= findViewById(R.id.countset4);
+
+        setcount1= (CheckBox) findViewById(R.id.setcount1);
+        setcount2= (CheckBox)findViewById(R.id.setcount2);
+        setcount3= (CheckBox)findViewById(R.id.setcount3);
+        setcount4= (CheckBox)findViewById(R.id.setcount4);
+
+        weight_set1 = (TextView) findViewById(R.id.weight_set1);
+        weight_set2 = (TextView) findViewById(R.id.weight_set2);
+        weight_set3 = (TextView) findViewById(R.id.weight_set3);
+        weight_set4 = (TextView) findViewById(R.id.weight_set4);
 
         Intent intent = getIntent();
-        weights = intent.getStringArrayExtra("Weights");
+        weights = intent.getStringArrayExtra("Weights"); // 설정한 무게 값을 가져옴
+
+        weight_set1.setText(weights[0]);
+        weight_set2.setText(weights[0]);
+        weight_set3.setText(weights[0]);
+        weight_set4.setText(weights[0]);
+
+
+        time_ms = 120*1000;
     }
 
     public void Next(View v) {
@@ -76,28 +89,21 @@ public class Golden_Six extends AppCompatActivity {
                 AlertDialog Rest = builder.create();
                 Rest.setView(dialogView);
                 Rest.setCancelable(false); // 백버튼 및 다른 영역 버튼 클릭시 팝업창 닫음을 막음
+
                 time = (TextView) dialogView.findViewById(R.id.Time);
                 time_unit = (TextView) dialogView.findViewById(R.id.time_unit);
                 circle_progressbar = (ProgressBar) dialogView.findViewById(R.id.Timer_ProgressBar);
                 Skip = (Button) dialogView.findViewById(R.id.Skip);
 
-                time_ms = 90*1000;
-                circle_progressbar.setMax((int) time_ms/1000);
-                circle_progressbar.setProgress((int) time_ms/1000);
-
-
-                countDownTimer = new CountDownTimer(time_ms,1000) {
+                CountDownTimer countDownTimer = new CountDownTimer(time_ms,1000) {
                     @Override
                     public void onTick(long l) {
-
                         time.setText(String.format("%d", TimeUnit.MILLISECONDS.toSeconds(l)));
-                        circle_progressbar.setProgress((int) (l / 1000));
                     }
                     @Override
                     public void onFinish() {
                         time.setText(String.format("%d",TimeUnit.MILLISECONDS.toSeconds(time_ms)));
-                        circle_progressbar.setMax((int) time_ms/1000);
-                        circle_progressbar.setProgress((int) time_ms/1000);
+                        circle_progressbar.setMax( (int)time_ms/1000);
                         Rest.dismiss();
                     }
                 }.start();
@@ -120,7 +126,16 @@ public class Golden_Six extends AppCompatActivity {
                 else{
                     strS_or_F = "스쿼트 실패";
                 }
+                time_ms = 90*1000;
                 setContentView(R.layout.golden_six_program_do_ben);
+                weight_set1 = (TextView) findViewById(R.id.weight_set1);
+                weight_set2 = (TextView) findViewById(R.id.weight_set2);
+                weight_set3 = (TextView) findViewById(R.id.weight_set3);
+
+                weight_set1.setText(weights[1]);
+                weight_set2.setText(weights[1]);
+                weight_set3.setText(weights[1]);
+
                 countcycle=countcycle+1;
                 countset=0;
                 break;
@@ -138,6 +153,14 @@ public class Golden_Six extends AppCompatActivity {
             case 3:
                 strS_or_F = strS_or_F + "\n친업 수행";
                 setContentView(R.layout.golden_six_program_do_neck);
+                weight_set1 = (TextView) findViewById(R.id.weight_set1);
+                weight_set2 = (TextView) findViewById(R.id.weight_set2);
+                weight_set3 = (TextView) findViewById(R.id.weight_set3);
+                weight_set4 = (TextView) findViewById(R.id.weight_set4);
+                weight_set1.setText(weights[2]);
+                weight_set2.setText(weights[2]);
+                weight_set3.setText(weights[2]);
+                weight_set4.setText(weights[2]);
                 countcycle=countcycle+1;
                 countset=0;
                 break;
@@ -149,6 +172,14 @@ public class Golden_Six extends AppCompatActivity {
                     strS_or_F = strS_or_F + "\n비하인드 넥 프레스 실패";
                 }
                 setContentView(R.layout.golden_six_program_do_curl);
+                weight_set1 = (TextView) findViewById(R.id.weight_set1);
+                weight_set2 = (TextView) findViewById(R.id.weight_set2);
+                weight_set3 = (TextView) findViewById(R.id.weight_set3);
+
+                weight_set1.setText(weights[3]);
+                weight_set2.setText(weights[3]);
+                weight_set3.setText(weights[3]);
+
                 countcycle=countcycle+1;
                 countset=0;
 
@@ -168,13 +199,12 @@ public class Golden_Six extends AppCompatActivity {
                 strS_or_F = strS_or_F + "\n싯업 수행";
                 //Manage_Diary Diary = new Manage_Diary(strDate, strS_or_F);
                 //databaseReference.child("User").child(user.getUid()).child(strDate).setValue(Diary);
+                Toast.makeText(Golden_Six.this, "운동 완료", Toast.LENGTH_SHORT).show();
                 Intent end = new Intent(Golden_Six.this, Diary_Home.class);
                 startActivity(end);
                 finish();
                 break;
         }
     }
-
-
 
 }
