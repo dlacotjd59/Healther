@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,12 +34,17 @@ public class Diary_Home extends AppCompatActivity {
     private final String UID = user.getUid();
 
     private TextView Height, Weight,Age, Gender;
+    private TextView SelectedDate,SelectedDate_Exercise,SelectedDate_Time;
     private EditText update_height,update_weight,update_age;
-    private ConstraintLayout dialogView;
+    private ConstraintLayout Update_MyPhysicalInformation,Show_Details;
+    private CalendarView CalenderView;
+
 
     private String str_Height,str_Weight, str_Age,str_Gender;
+    private String year, month, day, date;
     private Button Fix;
     private User og_user;
+    private Manage_Diary Diary_SelectedDay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,8 @@ public class Diary_Home extends AppCompatActivity {
         Height = (TextView) findViewById(R.id.Height);
         Weight = (TextView) findViewById(R.id.Weight);
         Age = (TextView) findViewById(R.id.Age);
+        CalenderView = (CalendarView) findViewById(R.id.calendarView);
+
 
         databaseReference.child("User").child(UID).child("유저정보").addValueEventListener(new ValueEventListener() {
             @Override
@@ -72,16 +80,74 @@ public class Diary_Home extends AppCompatActivity {
 
         });
 
+        CalenderView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() { // 날짜 선택시 그 날 상세내용
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
+
+                year = Integer.toString(i);
+                if(i1<10&&i1>0){
+                     month = "0"+i1;
+                }else{
+                    month = Integer.toString(i1);
+                }
+                if(i2<10&&i2>0){
+                     day = "0"+i2;
+                }else{
+                    day = Integer.toString(i2);
+                }
+
+                date = year+month+day;
+
+
+                    databaseReference.child("User").child(UID).child(date).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                            Show_Details = (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.diary_detail,null);
+                            AlertDialog.Builder Diary = new AlertDialog.Builder(Diary_Home.this);
+                            Diary.setView(Show_Details);
+
+                            SelectedDate = (TextView) Show_Details.findViewById(R.id.Date);
+                            Diary_SelectedDay = snapshot.getValue(Manage_Diary.class);
+                           // try {
+
+                                Diary_SelectedDay.getdate();
+                                Diary_SelectedDay.getexercise();
+                                Diary_SelectedDay.gettime();
+                                Diary.show();
+                            //}catch (NullPointerException e){
+                           //     Toast.makeText(Diary_Home.this, "이날에는 운동을 하지 않았습니다", Toast.LENGTH_SHORT).show();
+                          // }
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+
+
+            }
+        });
+
+
+
+
+
+
         Fix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialogView= (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.update_user,null);
+                Update_MyPhysicalInformation = (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.update_user,null);
                 AlertDialog.Builder Update = new AlertDialog.Builder(Diary_Home.this);
-                Update.setView(dialogView);
+                Update.setView(Update_MyPhysicalInformation);
 
-                update_height=(EditText)dialogView.findViewById(R.id.Update_Height);
-                update_weight=(EditText)dialogView.findViewById(R.id.Update_Weight);
-                update_age=(EditText)dialogView.findViewById(R.id.Update_Age);
+                update_height=(EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Height);
+                update_weight=(EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Weight);
+                update_age=(EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Age);
 
                 update_height.setText(og_user.getheight());
                 update_weight.setText(og_user.getweight());

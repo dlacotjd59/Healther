@@ -52,7 +52,7 @@
                 android:id="@+id/ben"
                 android:layout_width="280dp"
                 android:layout_height="280dp"
-                android:layout_marginLeft="0dp"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout"
@@ -89,7 +89,7 @@
 
                         <TextView
                             android:id="@+id/textView102"
-                            android:layout_width="100dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="62.5dp"
                             android:gravity="center"
                             android:text="세트"
@@ -98,7 +98,7 @@
 
                         <TextView
                             android:id="@+id/textView103"
-                            android:layout_width="100dp"
+                            android:layout_width="78dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="중량(kg)"
@@ -107,7 +107,7 @@
 
                         <TextView
                             android:id="@+id/textView104"
-                            android:layout_width="100dp"
+                            android:layout_width="86dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="횟수"
@@ -116,9 +116,12 @@
 
                         <TextView
                             android:id="@+id/textView105"
-                            android:layout_width="50dp"
+                            android:layout_width="74dp"
                             android:layout_height="match_parent"
-                            android:gravity="center" />
+                            android:gravity="center"
+                            android:text="성공여부"
+                            android:textColor="@color/hint_light_white"
+                            android:textSize="16dp" />
 
 
                     </TableRow>
@@ -138,7 +141,7 @@
 
                         <TextView
                             android:id="@+id/weight_set1"
-                            android:layout_width="50dp"
+                            android:layout_width="78dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="중량"
@@ -160,6 +163,7 @@
                             android:id="@+id/setcount1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:textColor="@color/hint_light_white"
                             android:text="성공" />
 
                     </TableRow>
@@ -201,6 +205,7 @@
                             android:id="@+id/setcount2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:textColor="@color/hint_light_white"
                             android:text="성공" />
 
                     </TableRow>
@@ -242,9 +247,16 @@
                             android:id="@+id/setcount3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:textColor="@color/hint_light_white"
                             android:text="성공" />
 
-                        <ImageView />
+                        <CheckBox
+                            android:id="@+id/plus_weight"
+                            android:layout_width="110dp"
+                            android:layout_height="match_parent"
+                            android:text="13회 이상"
+                            android:textColor="@color/hint_light_white" />
+
                     </TableRow>
                 </TableLayout>
             </TableRow>

@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -39,19 +40,18 @@ public class Aerobic extends AppCompatActivity {
     private Date today = cal.getInstance().getTime();
     private String date = new SimpleDateFormat("yyyyMMdd").format(today);
 
-
-
     private Button start_pause, finish;
     private ImageView running_image;
     private ProgressBar Time_Bar;
     private TextView time_record;
 
-
     private String record;
     private CountDownTimer countDownTimer;
     private boolean isRunning;
+    private boolean animate;
     private long Left_Time_ms = 100*1000;
     private long Init_Time_sec = 100;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,15 +68,20 @@ public class Aerobic extends AppCompatActivity {
         Time_Bar.setMax((int)Left_Time_ms/1000);
         time_record.setText("00분 00초");
 
+        Glide.with(this).load(R.raw.running).into(running_image);
+
+
         start_pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(isRunning){ //달리기 멈춤
                     countDownTimer.cancel();
                     isRunning = false;
+
                     start_pause.setText("다시 시작");
                 }else{//달리기 시작
-                    Time_Bar.setProgress(Time_Bar.getMax()-(int)Left_Time_ms);
+
+                    Time_Bar.setProgress(Time_Bar.getMax()-(int)Left_Time_ms/1000);
 
                     countDownTimer = new CountDownTimer(Left_Time_ms,1000) {
                         @Override
@@ -110,8 +115,7 @@ public class Aerobic extends AppCompatActivity {
             public void onClick(View view) {
 
                 Manage_Diary Today_Diary= new Manage_Diary(date, "런닝",time_record.getText().toString());
-                databaseReference.child("User").child(user.getUid()).child(date).setValue(Today_Diary);
-
+                databaseReference.child("User").child(user.getUid()).child(date).child("유산소운동").setValue(Today_Diary);
                 time_record.setText("00분 00초");
                 start_pause.setText("운동 시작");
                 Intent Finish_Aerobic= new Intent(Aerobic.this, Diary_Home.class);

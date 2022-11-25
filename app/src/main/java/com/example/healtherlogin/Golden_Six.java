@@ -32,7 +32,7 @@ public class Golden_Six extends AppCompatActivity {
 
     private Button record, pause, Finish;
     private Button Next,Skip;
-    private CheckBox setcount1,setcount2,setcount3,setcount4;
+    private CheckBox setcount1,setcount2,setcount3,setcount4,plus_weight;
     private ProgressBar circle_progressbar;
     private TextView time, time_unit;
     private TextView weight_set1,weight_set2,weight_set3,weight_set4;
@@ -43,12 +43,13 @@ public class Golden_Six extends AppCompatActivity {
     private int[] setconfirm={0,0,0,1,0,0,2,0,0,3,0,0,0,4,0,0,5,0,0,0,6};
 
     private String [] weights = new String[4];
+    private String[] strS_or_F = new String[6];
 
     private ConstraintLayout dialogView;
     Date date = Calendar.getInstance().getTime();
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
     private String strDate = dateFormat.format(date);
-    private String strS_or_F;
+
     private long time_ms = 0;
     private final DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -63,6 +64,7 @@ public class Golden_Six extends AppCompatActivity {
         setcount2= (CheckBox)findViewById(R.id.setcount2);
         setcount3= (CheckBox)findViewById(R.id.setcount3);
         setcount4= (CheckBox)findViewById(R.id.setcount4);
+        plus_weight = (CheckBox) findViewById(R.id.plus_weight);
 
         weight_set1 = (TextView) findViewById(R.id.weight_set1);
         weight_set2 = (TextView) findViewById(R.id.weight_set2);
@@ -132,11 +134,11 @@ public class Golden_Six extends AppCompatActivity {
                 Rest.show();
                 break;
             case 1:
-                if(setcount1.isChecked() && setcount2.isChecked() && setcount3.isChecked() && setcount4.isChecked()) {
-                    strS_or_F = "스쿼트 성공";
+                if(setcount1.isChecked() && setcount2.isChecked() && setcount3.isChecked() && (setcount4.isChecked()||plus_weight.isChecked())) {
+                    strS_or_F[0] = "스쿼트 성공";
                 }
                 else{
-                    strS_or_F = "스쿼트 실패";
+                    strS_or_F[0] = "스쿼트 실패";
                 }
                 time_ms = 90*1000;
                 setContentView(R.layout.golden_six_program_do_ben);
@@ -152,18 +154,18 @@ public class Golden_Six extends AppCompatActivity {
                 countset=0;
                 break;
             case 2:
-                if(setcount1.isChecked() && setcount2.isChecked() && setcount3.isChecked()) {
-                    strS_or_F = strS_or_F + "\n벤치프레스 성공";
+                if(setcount1.isChecked() && setcount2.isChecked() && (setcount3.isChecked()||plus_weight.isChecked())) {
+                    strS_or_F[1] = "벤치프레스 성공";
                 }
                 else{
-                    strS_or_F = strS_or_F + "\n벤치프레스 실패";
+                    strS_or_F[1] = "벤치프레스 실패";
                 }
                 setContentView(R.layout.golden_six_program_do_chin);
                 countcycle=countcycle+1;
                 countset=0;
                 break;
             case 3:
-                strS_or_F = strS_or_F + "\n친업 수행";
+                strS_or_F[2] = "친업 수행";
                 setContentView(R.layout.golden_six_program_do_neck);
                 weight_set1 = (TextView) findViewById(R.id.weight_set1);
                 weight_set2 = (TextView) findViewById(R.id.weight_set2);
@@ -177,11 +179,11 @@ public class Golden_Six extends AppCompatActivity {
                 countset=0;
                 break;
             case 4:
-                if(setcount1.isChecked() && setcount2.isChecked() && setcount3.isChecked() && setcount4.isChecked()) {
-                    strS_or_F = strS_or_F + "\n비하인드 넥 프레스 성공";
+                if(setcount1.isChecked() && setcount2.isChecked() && setcount3.isChecked() && (setcount4.isChecked()||plus_weight.isChecked())) {
+                    strS_or_F[3] = "비하인드 넥 프레스 성공";
                 }
                 else{
-                    strS_or_F = strS_or_F + "\n비하인드 넥 프레스 실패";
+                    strS_or_F[3] = "비하인드 넥 프레스 실패";
                 }
                 setContentView(R.layout.golden_six_program_do_curl);
                 weight_set1 = (TextView) findViewById(R.id.weight_set1);
@@ -197,20 +199,20 @@ public class Golden_Six extends AppCompatActivity {
 
                 break;
             case 5:
-                if(setcount1.isChecked() && setcount2.isChecked() && setcount3.isChecked() && setcount4.isChecked()) {
-                    strS_or_F = strS_or_F + "\n바벨컬 성공";
+                if(setcount1.isChecked() && setcount2.isChecked() && setcount3.isChecked() && (setcount4.isChecked()||plus_weight.isChecked())) {
+                    strS_or_F[4] = "바벨컬 성공";
                 }
                 else{
-                    strS_or_F = strS_or_F + "\n바벨컬 실패";
+                    strS_or_F[4] = "바벨컬 실패";
                 }
                 setContentView(R.layout.golden_six_program_do_situp);
                 countcycle=countcycle+1;
                 countset=0;
                 break;
             case 6:
-                strS_or_F = strS_or_F + "\n싯업 수행";
-                //Manage_Diary Diary = new Manage_Diary(strDate, strS_or_F);
-                //databaseReference.child("User").child(user.getUid()).child(strDate).setValue(Diary);
+                strS_or_F[5] = "싯업 수행";
+                Manage_Diary Diary = new Manage_Diary(strDate, strS_or_F[0],strS_or_F[1],strS_or_F[2],strS_or_F[3],strS_or_F[4],strS_or_F[5]);
+                databaseReference.child("User").child(user.getUid()).child(strDate).setValue(Diary);
                 Toast.makeText(Golden_Six.this, "운동 완료", Toast.LENGTH_SHORT).show();
                 Intent end = new Intent(Golden_Six.this, Diary_Home.class);
                 startActivity(end);

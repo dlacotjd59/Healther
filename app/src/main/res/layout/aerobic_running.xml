@@ -23,6 +23,7 @@
             android:layout_height="57dp"
             android:gravity="center"
             android:text="런닝"
+            android:textColor="#FFFFFF"
             app:autoSizeTextType="uniform" />
 
     </LinearLayout>
@@ -34,8 +35,8 @@
         app:layout_constraintBottom_toTopOf="@+id/time_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"/>
+
 
     <ProgressBar
         android:id="@+id/time_bar"

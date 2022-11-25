@@ -83,37 +83,39 @@
 
                         <TextView
                             android:id="@+id/textView59"
-                            android:layout_width="100dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="62.5dp"
                             android:gravity="center"
-                            android:textSize="18dp"
+                            android:text="세트"
                             android:textColor="@color/light_white"
-                            android:text="세트" />
+                            android:textSize="18dp" />
 
                         <TextView
                             android:id="@+id/textView60"
-                            android:layout_width="100dp"
+                            android:layout_width="81dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:textSize="18dp"
                             android:text="중량(kg)"
-                            android:textColor="@color/light_white"/>
+                            android:textColor="@color/light_white"
+                            android:textSize="18dp" />
 
                         <TextView
                             android:id="@+id/textView61"
-                            android:layout_width="100dp"
+                            android:layout_width="109dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:textSize="18dp"
                             android:text="횟수"
-                            android:textColor="@color/light_white"/>
+                            android:textColor="@color/light_white"
+                            android:textSize="18dp" />
 
                         <TextView
                             android:id="@+id/textView62"
-                            android:layout_width="57dp"
+                            android:layout_width="72dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="성공여부" />
+                            android:textColor="@color/light_white"
+                            android:text="성공여부"
+                            android:textSize="16dp" />
 
                     </TableRow>
 
@@ -154,6 +156,7 @@
                             android:id="@+id/setcount1"
                             android:layout_width="55dp"
                             android:layout_height="match_parent"
+                            android:textColor="@color/light_white"
                             android:text="성공" />
 
                     </TableRow>
@@ -195,6 +198,7 @@
                             android:id="@+id/setcount2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:textColor="@color/light_white"
                             android:text="성공" />
 
                     </TableRow>
@@ -226,19 +230,26 @@
                             android:layout_width="50dp"
                             android:layout_height="62.5dp"
                             android:ems="10"
-                            android:hint="10회"
-                            android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck"
                             android:gravity="center"
-                            android:textColorHint="@color/hint_light_white"/>
+                            android:hint="최대한 많이"
+                            android:inputType="number"
+                            android:textColorHint="@color/hint_light_white"
+                            tools:ignore="SpeakableTextPresentCheck" />
 
                         <CheckBox
                             android:id="@+id/setcount3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:textColor="@color/light_white"
                             android:text="성공" />
 
-                        <ImageView/>
+                        <CheckBox
+                            android:id="@+id/plus_weight"
+                            android:layout_width="101dp"
+                            android:layout_height="match_parent"
+                            android:text="13회 이상"
+                            android:textColor="@color/light_white" />
+
                     </TableRow>
                 </TableLayout>
             </TableRow>

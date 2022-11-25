@@ -85,23 +85,22 @@
 
                         <TextView
                             android:id="@+id/textView119"
-                            android:layout_width="100dp"
+                            android:layout_width="72dp"
                             android:layout_height="62.5dp"
                             android:gravity="center"
-                            android:textSize="18dp"
+                            android:text="세트"
                             android:textColor="@color/light_white"
-                            android:text="세트" />
-
+                            android:textSize="18dp" />
 
 
                         <TextView
                             android:id="@+id/textView121"
-                            android:layout_width="100dp"
+                            android:layout_width="139dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:textSize="18dp"
                             android:text="횟수"
-                            android:textColor="@color/light_white"/>
+                            android:textColor="@color/light_white"
+                            android:textSize="18dp" />
 
                         <TextView
                             android:layout_width="109dp"
@@ -131,7 +130,7 @@
                             android:layout_width="50dp"
                             android:layout_height="62.5dp"
                             android:ems="10"
-                            android:hint="10회"
+                            android:hint="최대한 많이"
                             android:inputType="number"
                             tools:ignore="SpeakableTextPresentCheck"
                             android:gravity="center"
@@ -139,6 +138,7 @@
 
                         <CheckBox
                             android:id="@+id/setcount1"
+                            android:textColor="@color/light_white"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="성공" />
@@ -164,13 +164,14 @@
                             android:layout_width="50dp"
                             android:layout_height="62.5dp"
                             android:ems="10"
-                            android:hint="10회"
+                            android:hint="최대한 많이"
                             android:inputType="number"
                             tools:ignore="SpeakableTextPresentCheck"
                             android:gravity="center"
                             android:textColorHint="@color/hint_light_white"/>
                         <CheckBox
                             android:id="@+id/setcount2"
+                            android:textColor="@color/light_white"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="성공" />
@@ -196,13 +197,14 @@
                             android:layout_width="50dp"
                             android:layout_height="62.5dp"
                             android:ems="10"
-                            android:hint="10회"
+                            android:hint="최대한 많이"
                             android:inputType="number"
                             tools:ignore="SpeakableTextPresentCheck"
                             android:gravity="center"
                             android:textColorHint="@color/hint_light_white"/>
                         <CheckBox
                             android:id="@+id/setcount3"
+                            android:textColor="@color/light_white"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="성공" />

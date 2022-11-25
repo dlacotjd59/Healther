@@ -43,7 +43,7 @@
 
         <TextView
             android:id="@+id/textView84"
-            android:layout_width="65dp"
+            android:layout_width="40dp"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="kg"
@@ -113,7 +113,7 @@
 
         <TextView
             android:id="@+id/textView86"
-            android:layout_width="65dp"
+            android:layout_width="40dp"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="kg"
@@ -181,7 +181,7 @@
 
         <TextView
             android:id="@+id/textView100"
-            android:layout_width="65dp"
+            android:layout_width="40dp"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="kg"
@@ -248,7 +248,7 @@
 
         <TextView
             android:id="@+id/textView110"
-            android:layout_width="65dp"
+            android:layout_width="40dp"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="kg"
@@ -281,5 +281,16 @@
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
         </LinearLayout>
     </TableRow>
+
+    <Button
+        android:id="@+id/FIxButton"
+        android:layout_width="208dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="28dp"
+        android:text="수정하기"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
