@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/hint_background">
 
     <TableRow
         android:id="@+id/tableRow4"
@@ -19,9 +20,10 @@
         <TextView
             android:id="@+id/textView83"
             android:layout_width="100dp"
-            android:layout_height="68dp"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:text="스쿼트"
+            android:textColor="#FFFFFF"
             app:autoSizeTextType="uniform" />
 
         <EditText
@@ -30,14 +32,22 @@
             android:layout_height="68dp"
             android:ems="10"
             android:hint="스쿼트 중량 입력"
+            android:textColor="@color/light_white"
+            android:textColorHint="@color/light_white"
             android:inputType="number" />
 
         <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:id="@+id/textView84"
-            android:layout_width="29dp"
+            android:layout_width="65dp"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="kg"
+            android:textColor="#FFFFFF"
             app:autoSizeTextType="uniform" />
 
         <LinearLayout
@@ -50,19 +60,22 @@
                 android:layout_width="45dp"
                 android:layout_height="30dp"
                 android:background="@drawable/triangle_up"
+                android:backgroundTintMode="screen"
+
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <View
                 android:id="@+id/divider3"
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
-                android:background="?android:attr/listDivider" />
+                android:background="@color/hint_background" />
 
             <Button
                 android:id="@+id/substract_squat_weight"
                 android:layout_width="45dp"
                 android:layout_height="31dp"
                 android:background="@drawable/triangle_down"
+                android:backgroundTint="@color/teal_200"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
         </LinearLayout>
 
@@ -85,6 +98,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="와이드 그립 벤치 프레스"
+            android:textColor="#FFFFFF"
             app:autoSizeTextType="uniform" />
 
         <EditText
@@ -93,14 +107,17 @@
             android:layout_height="68dp"
             android:ems="10"
             android:hint="벤치 프레스 중량 입력"
+            android:textColor="@color/light_white"
+            android:textColorHint="@color/light_white"
             android:inputType="number" />
 
         <TextView
             android:id="@+id/textView86"
-            android:layout_width="29dp"
+            android:layout_width="65dp"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="kg"
+            android:textColor="#FFFFFF"
             app:autoSizeTextType="uniform" />
 
         <LinearLayout
@@ -120,7 +137,7 @@
                 android:id="@+id/divider4"
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
-                android:background="?android:attr/listDivider" />
+                android:background="@color/hint_background" />
 
             <Button
                 android:id="@+id/substract_bench_weight"
@@ -149,6 +166,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="비하인드 넥 프레스"
+            android:textColor="#FFFFFF"
             app:autoSizeTextType="uniform" />
 
         <EditText
@@ -157,14 +175,17 @@
             android:layout_height="68dp"
             android:ems="10"
             android:hint="넥 프레스 중량 입력"
+            android:textColor="@color/light_white"
+            android:textColorHint="@color/light_white"
             android:inputType="number" />
 
         <TextView
             android:id="@+id/textView100"
-            android:layout_width="29dp"
+            android:layout_width="65dp"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="kg"
+            android:textColor="#FFFFFF"
             app:autoSizeTextType="uniform" />
 
         <LinearLayout
@@ -183,7 +204,7 @@
                 android:id="@+id/divider6"
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
-                android:background="?android:attr/listDivider" />
+                android:background="@color/hint_background" />
 
             <Button
                 android:id="@+id/substract_neck_weight"
@@ -212,6 +233,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="바벨 컬"
+            android:textColor="#FFFFFF"
             app:autoSizeTextType="uniform" />
 
         <EditText
@@ -220,14 +242,17 @@
             android:layout_height="68dp"
             android:ems="10"
             android:hint="바벨 컬 중량 입력"
+            android:textColor="@color/light_white"
+            android:textColorHint="@color/light_white"
             android:inputType="number" />
 
         <TextView
             android:id="@+id/textView110"
-            android:layout_width="29dp"
+            android:layout_width="65dp"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="kg"
+            android:textColor="#FFFFFF"
             app:autoSizeTextType="uniform" />
 
         <LinearLayout
@@ -246,7 +271,7 @@
                 android:id="@+id/divider7"
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
-                android:background="?android:attr/listDivider" />
+                android:background="@color/hint_background" />
 
             <Button
                 android:id="@+id/substract_barbell_weight"

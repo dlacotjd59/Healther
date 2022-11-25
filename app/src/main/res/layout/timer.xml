@@ -54,17 +54,43 @@
         android:layout_width="348dp"
         android:layout_height="403dp"
         android:layout_centerInParent="true"
-        android:background="@drawable/circle_shape"
+        style="?android:attr/progressBarStyleHorizontal"
         android:indeterminate="false"
         android:max="120"
         android:progress="0"
-        android:progressDrawable="@drawable/circle_progress_bar"
+        tools:progress="60"
+        android:background="@drawable/circle_shape"
+        android:progressDrawable="@drawable/progressbar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.466" />
+
+    <TextView
+        android:id="@+id/Rest"
+        android:layout_width="241dp"
+        android:layout_height="96dp"
+        android:gravity="center"
+        android:text="휴식 시간"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/Timer_ProgressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/imageFilterView"
+        android:layout_width="217dp"
+        android:layout_height="241dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Timer_ProgressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Timer_ProgressBar"
+        app:srcCompat="@drawable/circle_shape" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

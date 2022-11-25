@@ -2,106 +2,125 @@ package com.example.healtherlogin;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
+import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+
 public class Aerobic extends AppCompatActivity {
 
-    private Button start, pause, finish;
+    private final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private final DatabaseReference databaseReference= firebaseDatabase.getInstance().getReference();
+    private final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+    private Calendar cal = Calendar.getInstance();
+    private Date today = cal.getInstance().getTime();
+    private String date = new SimpleDateFormat("yyyyMMdd").format(today);
+
+
+
+    private Button start_pause, finish;
     private ImageView running_image;
     private ProgressBar Time_Bar;
-
     private TextView time_record;
-    private Chronometer tb;
 
-    private Thread thread =null;
-    private Boolean Running=true;
-    private String result;
+
+    private String record;
+    private CountDownTimer countDownTimer;
+    private boolean isRunning;
+    private long Left_Time_ms = 100*1000;
+    private long Init_Time_sec = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aerobic_running);
 
-        start = (Button) findViewById(R.id.Start_Running);
-        pause = (Button) findViewById(R.id.Pause_Running);
+        start_pause = (Button) findViewById(R.id.Start_Pause_Running);
         finish = (Button) findViewById(R.id.Finish_Running);
         running_image = (ImageView) findViewById(R.id.running_image);
         Time_Bar = (ProgressBar) findViewById(R.id.time_bar);
+        time_record = (TextView) findViewById(R.id.time);
 
-        //time_record = (TextView) findViewById(R.id.textView11);
+        Time_Bar.setProgress(0);
+        Time_Bar.setMax((int)Left_Time_ms/1000);
+        time_record.setText("00분 00초");
 
-    }
+        start_pause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(isRunning){ //달리기 멈춤
+                    countDownTimer.cancel();
+                    isRunning = false;
+                    start_pause.setText("다시 시작");
+                }else{//달리기 시작
+                    Time_Bar.setProgress(Time_Bar.getMax()-(int)Left_Time_ms);
 
-    public void Start_Running(View v){
+                    countDownTimer = new CountDownTimer(Left_Time_ms,1000) {
+                        @Override
+                        public void onTick(long l) {
+                            Left_Time_ms = (int) (l);
+                            Time_Bar.setProgress(Time_Bar.getMax()-(int) Left_Time_ms/1000);
 
-        thread = new Thread(new time_thread());
-        thread.start();
-    }
+                            int min = ((int)Init_Time_sec - (int)Left_Time_ms/1000)/60;
+                            int sec = ((int)Init_Time_sec - (int)Left_Time_ms/1000)%60;
+                            record = String.format(Locale.getDefault(),"%02d"+"분 "+"%02d"+"초",min,sec);
+                            time_record.setText(record);
+                        }
+                        @Override
+                        public void onFinish() {
+                            Left_Time_ms = 100*1000;
+                            isRunning = false;
+                            Toast.makeText(Aerobic.this, "설정한 시간이 끝났습니다.", Toast.LENGTH_SHORT).show();
+                            Time_Bar.setProgress(0);
+                        }
+                    }.start();
 
-    public void Pause_Running(View v){
+                    isRunning = true;
+                    start_pause.setText("일시 정지");
 
-        Running = !Running;
-        if(Running){
-            pause.setText("일시정지");
-        }else{
-            pause.setText("계속하기");
-        }
-    }
-
-    public void Finish_Running(View v){
-
-        thread.interrupt();
-        Intent Finish_Aerobic= new Intent(Aerobic.this, Diary_Home.class);
-        startActivity(Finish_Aerobic);
-
-    }
-
-
-    public class time_thread implements Runnable{
-
-        @Override
-        public void run() {
-
-            int tmp = 0;
-
-            while (true){
-                while (Running){
-                    Message m = new Message();
-                    m.arg1 = tmp++;
-                    handler.sendMessage(m);
-
-                    try{
-                        Thread.sleep(50);
-                    }catch(InterruptedException e){
-                        e.printStackTrace();
-                        return;
-                    }
                 }
             }
-        }
+        });
+
+        finish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Manage_Diary Today_Diary= new Manage_Diary(date, "런닝",time_record.getText().toString());
+                databaseReference.child("User").child(user.getUid()).child(date).setValue(Today_Diary);
+
+                time_record.setText("00분 00초");
+                start_pause.setText("운동 시작");
+                Intent Finish_Aerobic= new Intent(Aerobic.this, Diary_Home.class);
+                startActivity(Finish_Aerobic);
+                Toast.makeText(Aerobic.this, "운동 완료", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
-
-    public static Handler handler = new Handler(){
-        @Override
-            public void handleMessage(Message msg){
-                int ms = msg.arg1%100;
-                int sec= (msg.arg1/100)%60;
-                int min = (msg.arg1/100)/60;
-                String result = String.format("%03d:%02d:%02d",min,sec,ms);
-
-
-             }
-
-    };
 }
 

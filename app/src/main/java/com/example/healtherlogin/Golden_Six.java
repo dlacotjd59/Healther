@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -83,7 +85,7 @@ public class Golden_Six extends AppCompatActivity {
 
         switch(setconfirm[countcycle]) {
             case 0:
-                countcycle=countcycle+1;
+                countcycle++;
                 dialogView= (ConstraintLayout) View.inflate(Golden_Six.this,R.layout.timer,null);
                 AlertDialog.Builder builder = new AlertDialog.Builder(Golden_Six.this);
                 AlertDialog Rest = builder.create();
@@ -95,10 +97,19 @@ public class Golden_Six extends AppCompatActivity {
                 circle_progressbar = (ProgressBar) dialogView.findViewById(R.id.Timer_ProgressBar);
                 Skip = (Button) dialogView.findViewById(R.id.Skip);
 
+                circle_progressbar.setProgress((int)time_ms/1000);
+                circle_progressbar.setMax((int)time_ms/1000);
+
+                Animation anima = new RotateAnimation(0.0f, 90.0f);
+                anima.setFillAfter(false);
+                circle_progressbar.startAnimation(anima);
+
                 CountDownTimer countDownTimer = new CountDownTimer(time_ms,1000) {
+
                     @Override
                     public void onTick(long l) {
                         time.setText(String.format("%d", TimeUnit.MILLISECONDS.toSeconds(l)));
+                        circle_progressbar.setProgress(circle_progressbar.getMax()-(int)l/1000);
                     }
                     @Override
                     public void onFinish() {
@@ -107,6 +118,7 @@ public class Golden_Six extends AppCompatActivity {
                         Rest.dismiss();
                     }
                 }.start();
+
                 countDownTimer.start();
 
                 Skip.setOnClickListener(new View.OnClickListener() {

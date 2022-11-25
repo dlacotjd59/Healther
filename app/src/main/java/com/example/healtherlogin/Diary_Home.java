@@ -30,7 +30,6 @@ public class Diary_Home extends AppCompatActivity {
     private final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private final DatabaseReference databaseReference= firebaseDatabase.getInstance().getReference();
     private final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
     private final String UID = user.getUid();
 
     private TextView Height, Weight,Age, Gender;
@@ -78,25 +77,31 @@ public class Diary_Home extends AppCompatActivity {
             public void onClick(View view) {
                 dialogView= (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.update_user,null);
                 AlertDialog.Builder Update = new AlertDialog.Builder(Diary_Home.this);
-                Update.setIcon(R.mipmap.ic_launcher);
-                Update.setTitle("정보 수정");;
                 Update.setView(dialogView);
 
+                update_height=(EditText)dialogView.findViewById(R.id.Update_Height);
+                update_weight=(EditText)dialogView.findViewById(R.id.Update_Weight);
+                update_age=(EditText)dialogView.findViewById(R.id.Update_Age);
+
+                update_height.setText(og_user.getheight());
+                update_weight.setText(og_user.getweight());
+                update_age.setText(og_user.getage());
 
                 Update.setPositiveButton("수정하기", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        update_height=(EditText)dialogView.findViewById(R.id.Update_Height);
-                        update_weight=(EditText)dialogView.findViewById(R.id.Update_Weight);
-                        update_age=(EditText)dialogView.findViewById(R.id.Update_Age);
+                        if(update_height.getText().toString().equals("")||
+                           update_weight.getText().toString().equals("")||
+                           update_age.getText().toString().equals("")){
 
-                        str_Height = update_height.getText().toString();
-                        str_Weight = update_weight.getText().toString();
-                        str_Age = update_age.getText().toString();
-                        if(str_Height.equals("")||str_Weight.equals("")||str_Age.equals("")){ //어떻게 할지 논의하기
-                            Toast.makeText(Diary_Home.this, "빈칸을 모두 채워주세요", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Diary_Home.this, "빈칸이 없어야 합니다.", Toast.LENGTH_SHORT).show();
+
                         }else{
+                            str_Height = update_height.getText().toString();
+                            str_Weight = update_weight.getText().toString();
+                            str_Age = update_age.getText().toString();
+
                             Height.setText(str_Height);
                             Weight.setText(str_Weight);
                             Age.setText(str_Age);
