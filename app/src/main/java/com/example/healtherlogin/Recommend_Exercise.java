@@ -276,7 +276,6 @@ public class Recommend_Exercise extends AppCompatActivity {
                            if(dou_squ == 0.0 || dou_ben == 0.0 || dou_neck == 0.0 || dou_barbell == 0.0 ){
                                Toast.makeText(Recommend_Exercise.this, "무게가 0인 운동이 있습니다. 수정하세요.", Toast.LENGTH_SHORT).show();
                            }else{
-                               Manage_Weights Init_Weights = new Manage_Weights();
                                str_squ = set_squ.getText().toString();
                                str_ben = set_ben.getText().toString();
                                str_neck = set_neck.getText().toString();
@@ -292,10 +291,7 @@ public class Recommend_Exercise extends AppCompatActivity {
                                Neck_Weight.setText(weights[2]+"kg");
                                Barbell_Weight.setText(weights[3]+"kg");
 
-                               Init_Weights.setSquat(weights[0]);
-                               Init_Weights.setBench(weights[1]);
-                               Init_Weights.setNeck(weights[2]);
-                               Init_Weights.setCurl(weights[3]);
+                               Manage_Weights Init_Weights = new Manage_Weights(weights[0],weights[1],weights[2],weights[3]);
                                databaseReference.child("User").child(UID).child("골든식스무게").setValue(Init_Weights);
                                Set_Weight.dismiss();
                                Toast.makeText(Recommend_Exercise.this, "수정됐습니다.", Toast.LENGTH_SHORT).show();

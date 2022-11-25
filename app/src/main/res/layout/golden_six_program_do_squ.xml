@@ -269,7 +269,7 @@
                             android:textSize="22dp" />
 
                         <EditText
-                            android:id="@+id/editTextNumber39"
+                            android:id="@+id/last_set_count"
                             android:layout_width="50dp"
                             android:layout_height="62.5dp"
                             android:ems="10"

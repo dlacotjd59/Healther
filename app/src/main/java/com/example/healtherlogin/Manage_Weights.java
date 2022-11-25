@@ -43,7 +43,7 @@ public class Manage_Weights {
         this.neck = neck;
     }
 
-    public Manage_Weights(String squat, String bench, String curl, String neck) {
+    public Manage_Weights(String squat, String bench, String neck, String curl) {
         this.squat = squat;
         this.bench = bench;
         this.curl = curl;
