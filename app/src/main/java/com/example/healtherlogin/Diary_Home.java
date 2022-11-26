@@ -1,10 +1,12 @@
 package com.example.healtherlogin;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -14,10 +16,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+import com.github.sundeepk.compactcalendarview.domain.Event;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -26,10 +31,18 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.CalendarMode;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.Executors;
 
 public class Diary_Home extends AppCompatActivity {
 
@@ -43,13 +56,20 @@ public class Diary_Home extends AppCompatActivity {
     private TextView SelectedDate, SelectedDate_Exercise, SelectedDate_Time;
     private EditText update_height, update_weight, update_age;
     private ConstraintLayout Update_MyPhysicalInformation, Show_Details;
+
     private CalendarView CalenderView;
+    private CompactCalendarView compactCalendarView;
+    private MaterialCalendarView materialCalendarView;
 
 
     private String str_Height, str_Weight, str_Age, str_Gender;
     private String year, month, day, date;
+    private ArrayList<String> result = new ArrayList<String>();
     private Button Fix;
     private User og_user;
+
+
+    private final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMMM-yyyy", Locale.getDefault());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +81,8 @@ public class Diary_Home extends AppCompatActivity {
         Height = (TextView) findViewById(R.id.Height);
         Weight = (TextView) findViewById(R.id.Weight);
         Age = (TextView) findViewById(R.id.Age);
-        CalenderView = (CalendarView) findViewById(R.id.calendarView);
+        //CalenderView = (CalendarView) findViewById(R.id.calendarView);
+
 
 
         databaseReference.child("User").child(UID).child("유저정보").addValueEventListener(new ValueEventListener() {
@@ -87,7 +108,48 @@ public class Diary_Home extends AppCompatActivity {
         });
 
 
-       CalenderView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() { // 날짜 선택시 그 날 상세내용
+
+
+
+
+
+
+        materialCalendarView =  (MaterialCalendarView) findViewById(R.id.calendarView);
+        materialCalendarView.state().edit()
+                .setFirstDayOfWeek(Calendar.SUNDAY)
+                .setMinimumDate(CalendarDay.from(2010, 0, 1))
+                .setMaximumDate(CalendarDay.from(2030, 11, 31))
+                .setCalendarDisplayMode(CalendarMode.MONTHS)
+                .commit();
+
+
+
+        result.add("2022,11,18");
+        result.add("2022,12,18");
+        new ApiSimulator(result).executeOnExecutor(Executors.newSingleThreadExecutor());
+
+        materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
+            @Override
+            public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
+                int Year = date.getYear();
+                int Month = date.getMonth() + 1;
+                int Day = date.getDay();
+
+                Log.i("Year test", Year + "");
+                Log.i("Month test", Month + "");
+                Log.i("Day test", Day + "");
+
+                String shot_Day = Year + "," + Month + "," + Day;
+
+                Log.i("shot_Day test", shot_Day + "");
+                materialCalendarView.clearSelection();
+
+                Toast.makeText(getApplicationContext(), shot_Day , Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+       /*CalenderView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() { // 날짜 선택시 그 날 상세내용
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
 
@@ -137,7 +199,7 @@ public class Diary_Home extends AppCompatActivity {
                     });
 
             }
-        });
+        }); */
 
 
         Fix.setOnClickListener(new View.OnClickListener() {
@@ -236,6 +298,60 @@ public class Diary_Home extends AppCompatActivity {
         off.show();
 
     }
+
+
+    private class ApiSimulator extends AsyncTask<Void, Void, List<CalendarDay>> {
+
+        ArrayList<String> Time_Result;
+
+        ApiSimulator(ArrayList<String> Time_Result){
+            this.Time_Result = Time_Result;
+        }
+
+        @Override
+        protected List<CalendarDay> doInBackground(@NonNull Void... voids) {
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            Calendar calendar = Calendar.getInstance();
+            ArrayList<CalendarDay> dates = new ArrayList<>();
+
+            /*특정날짜 달력에 점표시해주는곳*/
+            /*월은 0이 1월 년,일은 그대로*/
+            //string 문자열인 Time_Result 을 받아와서 ,를 기준으로짜르고 string을 int 로 변환
+            for(int i = 0 ; i < Time_Result.size() ; i ++){
+                CalendarDay day = CalendarDay.from(calendar);
+                String[] time = Time_Result.get(i).split(",");
+                int year = Integer.parseInt(time[0]);
+                int month = Integer.parseInt(time[1]);
+                int dayy = Integer.parseInt(time[2]);
+
+                dates.add(day);
+                calendar.set(year,month-1,dayy);
+            }
+
+
+
+            return dates;
+        }
+
+        @Override
+        protected void onPostExecute(@NonNull List<CalendarDay> calendarDays) {
+            super.onPostExecute(calendarDays);
+
+            if (isFinishing()) {
+                return;
+            }
+
+            materialCalendarView.addDecorator(new EventDecorator(Color.GREEN, calendarDays,Diary_Home.this));
+        }
+    }
+
+
+
 
 
 

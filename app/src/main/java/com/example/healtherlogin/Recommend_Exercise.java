@@ -25,6 +25,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Locale;
+
 public class Recommend_Exercise extends AppCompatActivity {
 
     private final DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
@@ -155,10 +157,10 @@ public class Recommend_Exercise extends AppCompatActivity {
                        set_neck.setText(weights[2]);
                        set_barbell.setText(weights[3]);
                    }else{
-                       set_squ.setText(String.format("%.1f",dou_squ));
-                       set_ben.setText(String.format("%.1f",dou_ben));
-                       set_neck.setText(String.format("%.1f",dou_neck));
-                       set_barbell.setText(String.format("%.1f",dou_barbell));
+                       set_squ.setText(String.format(Locale.getDefault(),"%.1f",dou_squ));
+                       set_ben.setText(String.format(Locale.getDefault(),"%.1f",dou_ben));
+                       set_neck.setText(String.format(Locale.getDefault(),"%.1f",dou_neck));
+                       set_barbell.setText(String.format(Locale.getDefault(),"%.1f",dou_barbell));
                    }
 
 
@@ -184,7 +186,7 @@ public class Recommend_Exercise extends AppCompatActivity {
                                Toast.makeText(Recommend_Exercise.this, "더 이상 줄일 수 없습니다", Toast.LENGTH_SHORT).show();
                                dou_squ +=2.5;
                            }else {
-                               str_squ = String.format("%.1f", dou_squ);
+                               str_squ = String.format(Locale.getDefault(),"%.1f", dou_squ);
                                set_squ.setText(str_squ);
                            }
                        }
@@ -196,7 +198,7 @@ public class Recommend_Exercise extends AppCompatActivity {
                            str_ben = set_ben.getText().toString();
                            dou_ben = Double.parseDouble(str_ben);
                            dou_ben +=2.5;
-                           str_ben=String.format("%.1f",dou_ben);
+                           str_ben=String.format(Locale.getDefault(),"%.1f",dou_ben);
                            set_ben.setText(str_ben);
                        }
                    });
@@ -211,7 +213,7 @@ public class Recommend_Exercise extends AppCompatActivity {
                                Toast.makeText(Recommend_Exercise.this, "더 이상 줄일 수 없습니다", Toast.LENGTH_SHORT).show();
                                dou_ben +=2.5;
                            }else {
-                               str_ben = String.format("%.1f", dou_ben);
+                               str_ben = String.format(Locale.getDefault(),"%.1f", dou_ben);
                                set_ben.setText(str_ben);
                            }
                        }
@@ -223,7 +225,7 @@ public class Recommend_Exercise extends AppCompatActivity {
                            str_neck = set_neck.getText().toString();
                            dou_neck = Double.parseDouble(str_neck);
                            dou_neck +=2.5;
-                           str_neck=String.format("%.1f",dou_neck);
+                           str_neck=String.format(Locale.getDefault(),"%.1f",dou_neck);
                            set_neck.setText(str_neck);
                        }
                    });
@@ -238,7 +240,7 @@ public class Recommend_Exercise extends AppCompatActivity {
                                Toast.makeText(Recommend_Exercise.this, "더 이상 줄일 수 없습니다", Toast.LENGTH_SHORT).show();
                                dou_neck +=2.5;
                            }else {
-                               str_neck = String.format("%.1f", dou_neck);
+                               str_neck = String.format(Locale.getDefault(),"%.1f", dou_neck);
                                set_neck.setText(str_neck);
                            }
                        }
@@ -250,7 +252,7 @@ public class Recommend_Exercise extends AppCompatActivity {
                            str_barbell = set_barbell.getText().toString();
                            dou_barbell = Double.parseDouble(str_barbell);
                            dou_barbell +=2.5;
-                           str_barbell=String.format("%.1f",dou_barbell);
+                           str_barbell=String.format(Locale.getDefault(),"%.1f",dou_barbell);
                            set_barbell.setText(str_barbell);
                        }
                    });
@@ -265,7 +267,7 @@ public class Recommend_Exercise extends AppCompatActivity {
                                Toast.makeText(Recommend_Exercise.this, "더 이상 줄일 수 없습니다", Toast.LENGTH_SHORT).show();
                                dou_barbell +=2.5;
                            }else {
-                               str_barbell = String.format("%.1f", dou_barbell);
+                               str_barbell = String.format(Locale.getDefault(),"%.1f", dou_barbell);
                                set_barbell.setText(str_barbell);
                            }
                        }
