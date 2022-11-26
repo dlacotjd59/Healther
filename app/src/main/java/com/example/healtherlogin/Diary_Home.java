@@ -93,7 +93,6 @@ public class Diary_Home extends AppCompatActivity {
 
                 year = Integer.toString(i);
                 ++i1;
-
                 if(i1<10&&i1>0){
                      month = "0"+i1;
                 }else{
@@ -104,7 +103,6 @@ public class Diary_Home extends AppCompatActivity {
                 }else{
                     day = Integer.toString(i2);
                 }
-
 
                 date = year+month+day;
 
