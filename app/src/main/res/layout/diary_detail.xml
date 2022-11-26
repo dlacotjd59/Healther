@@ -21,8 +21,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:layout_width="381dp"
-        android:layout_height="624dp"
+        android:layout_width="323dp"
+        android:layout_height="623dp"
         android:layout_marginEnd="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +38,7 @@
 
             <TableRow
                 android:layout_width="342dp"
-                android:layout_height="296dp" >
+                android:layout_height="296dp">
 
                 <TextView
                     android:id="@+id/Date_Text"
@@ -59,38 +59,38 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textView34"
+                    android:id="@+id/Exercise_Text"
                     android:layout_width="102dp"
                     android:layout_height="50dp"
-                    android:text="TextView" />
+                    android:text="운동" />
 
                 <TextView
-                    android:id="@+id/textView35"
+                    android:id="@+id/Exercise"
                     android:layout_width="279dp"
                     android:layout_height="match_parent"
-                    android:text="TextView" />
+                    android:text="운동명" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textView36"
+                    android:id="@+id/Time_Text"
                     android:layout_width="102dp"
                     android:layout_height="50dp"
-                    android:text="TextView" />
+                    android:text="운동시간" />
 
                 <TextView
-                    android:id="@+id/textView37"
+                    android:id="@+id/TotalTime"
                     android:layout_width="279dp"
                     android:layout_height="match_parent"
-                    android:text="TextView" />
+                    android:text="시간" />
             </TableRow>
 
             <TableRow
                 android:layout_width="361dp"
-                android:layout_height="80dp" >
+                android:layout_height="80dp">
 
                 <TextView
                     android:id="@+id/textView38"

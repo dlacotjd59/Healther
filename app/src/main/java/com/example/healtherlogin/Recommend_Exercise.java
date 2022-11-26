@@ -37,7 +37,7 @@ public class Recommend_Exercise extends AppCompatActivity {
 
     private EditText set_squ,set_ben,set_neck,set_barbell;
     private Button add_squ,sub_squ,add_ben,sub_ben,add_neck,sub_neck,add_barbell,sub_barbell,FixButton;
-    private Button set,start;
+    private Button set,start,info;
     private ConstraintLayout dialogView;
 
     private ImageView imageView;
@@ -72,8 +72,10 @@ public class Recommend_Exercise extends AppCompatActivity {
 
         a = (TextView) findViewById(R.id.BMI);
         b = (TextView) findViewById(R.id.Recommend_Exercise);
+
         set = (Button) findViewById(R.id.Setting_Weight);
         start = (Button) findViewById(R.id.Exercise_Start);
+        info = (Button) findViewById(R.id.info);
 
         GoldenSix_Text = (TextView) findViewById(R.id.GoldenSIx_Weights);
         Squat_Text = (TextView) findViewById(R.id.SquatText);
@@ -273,8 +275,8 @@ public class Recommend_Exercise extends AppCompatActivity {
                    FixButton.setOnClickListener(new View.OnClickListener() {
                        @Override
                        public void onClick(View view) {
-                           if(dou_squ == 0.0 || dou_ben == 0.0 || dou_neck == 0.0 || dou_barbell == 0.0 ){
-                               Toast.makeText(Recommend_Exercise.this, "무게가 0인 운동이 있습니다. 수정하세요.", Toast.LENGTH_SHORT).show();
+                           if(str_squ.equals("0.0") || str_ben.equals("0.0") || str_neck.equals("0.0") || str_barbell.equals("0.0") ){
+                               Toast.makeText(Recommend_Exercise.this, "무게가 0인 운동이 있습니다. 무게를 0보다 높게 설정하세요.", Toast.LENGTH_SHORT).show();
                            }else{
                                str_squ = set_squ.getText().toString();
                                str_ben = set_ben.getText().toString();
@@ -318,13 +320,16 @@ public class Recommend_Exercise extends AppCompatActivity {
                     }
                 }
             });
+
+
+            info.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+
         }
-
-
-
-
-
-
 
 
         else{ // 유산소 운동 부분
@@ -355,6 +360,14 @@ public class Recommend_Exercise extends AppCompatActivity {
                     startActivity(start_ex);
                 }
             });
+
+            info.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+
         }
 
 

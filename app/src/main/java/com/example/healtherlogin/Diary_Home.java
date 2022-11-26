@@ -2,6 +2,8 @@ package com.example.healtherlogin;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,26 +27,29 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 public class Diary_Home extends AppCompatActivity {
 
 
     private final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    private final DatabaseReference databaseReference= firebaseDatabase.getInstance().getReference();
+    private final DatabaseReference databaseReference = firebaseDatabase.getInstance().getReference();
     private final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private final String UID = user.getUid();
 
-    private TextView Height, Weight,Age, Gender;
-    private TextView SelectedDate,SelectedDate_Exercise,SelectedDate_Time;
-    private EditText update_height,update_weight,update_age;
-    private ConstraintLayout Update_MyPhysicalInformation,Show_Details;
+    private TextView Height, Weight, Age, Gender;
+    private TextView SelectedDate, SelectedDate_Exercise, SelectedDate_Time;
+    private EditText update_height, update_weight, update_age;
+    private ConstraintLayout Update_MyPhysicalInformation, Show_Details;
     private CalendarView CalenderView;
 
 
-    private String str_Height,str_Weight, str_Age,str_Gender;
+    private String str_Height, str_Weight, str_Age, str_Gender;
     private String year, month, day, date;
     private Button Fix;
     private User og_user;
-    private Manage_Diary Diary_SelectedDay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,11 +73,12 @@ public class Diary_Home extends AppCompatActivity {
                     Weight.setText(og_user.getweight());
                     Age.setText(og_user.getage());
                     Gender.setText(og_user.getgender());
-                }catch (NullPointerException e){
+                } catch (NullPointerException e) {
                     Toast.makeText(Diary_Home.this, "정보를 가져올 수 없습니다", Toast.LENGTH_SHORT).show();
                 }
 
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -80,11 +86,13 @@ public class Diary_Home extends AppCompatActivity {
 
         });
 
-        CalenderView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() { // 날짜 선택시 그 날 상세내용
+
+       CalenderView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() { // 날짜 선택시 그 날 상세내용
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
 
                 year = Integer.toString(i);
+                ++i1;
                 if(i1<10&&i1>0){
                      month = "0"+i1;
                 }else{
@@ -96,28 +104,29 @@ public class Diary_Home extends AppCompatActivity {
                     day = Integer.toString(i2);
                 }
 
+
                 date = year+month+day;
 
-
-                    databaseReference.child("User").child(UID).child(date).addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                            Show_Details = (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.diary_detail,null);
-                            AlertDialog.Builder Diary = new AlertDialog.Builder(Diary_Home.this);
-                            Diary.setView(Show_Details);
+                databaseReference.child("User").child(UID).child(date).child("유산소운동").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Show_Details = (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.diary_detail,null);
+                        AlertDialog.Builder Diary = new AlertDialog.Builder(Diary_Home.this);
+                        Diary.setView(Show_Details);
 
                             SelectedDate = (TextView) Show_Details.findViewById(R.id.Date);
-                            Diary_SelectedDay = snapshot.getValue(Manage_Diary.class);
-                           // try {
+                            SelectedDate_Exercise = (TextView) Show_Details.findViewById(R.id.Exercise);
+                            SelectedDate_Time = (TextView) Show_Details.findViewById(R.id.TotalTime);
 
-                                Diary_SelectedDay.getdate();
-                                Diary_SelectedDay.getexercise();
-                                Diary_SelectedDay.gettime();
+                            Manage_Diary Diary_SelectedDay = snapshot.getValue(Manage_Diary.class);
+                            try {
+                                SelectedDate.setText(date);
+                                SelectedDate_Exercise.setText(Diary_SelectedDay.getexercise());
+                                SelectedDate_Time.setText(Diary_SelectedDay.gettime());
                                 Diary.show();
-                            //}catch (NullPointerException e){
-                           //     Toast.makeText(Diary_Home.this, "이날에는 운동을 하지 않았습니다", Toast.LENGTH_SHORT).show();
-                          // }
+                             }catch (NullPointerException e){
+                                Toast.makeText(Diary_Home.this, "이날에는 운동을 하지 않았습니다", Toast.LENGTH_SHORT).show();
+                               }
 
 
                         }
@@ -128,26 +137,20 @@ public class Diary_Home extends AppCompatActivity {
                         }
                     });
 
-
-
             }
         });
-
-
-
-
 
 
         Fix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Update_MyPhysicalInformation = (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.update_user,null);
+                Update_MyPhysicalInformation = (ConstraintLayout) View.inflate(Diary_Home.this, R.layout.update_user, null);
                 AlertDialog.Builder Update = new AlertDialog.Builder(Diary_Home.this);
                 Update.setView(Update_MyPhysicalInformation);
 
-                update_height=(EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Height);
-                update_weight=(EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Weight);
-                update_age=(EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Age);
+                update_height = (EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Height);
+                update_weight = (EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Weight);
+                update_age = (EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Age);
 
                 update_height.setText(og_user.getheight());
                 update_weight.setText(og_user.getweight());
@@ -157,13 +160,13 @@ public class Diary_Home extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        if(update_height.getText().toString().equals("")||
-                           update_weight.getText().toString().equals("")||
-                           update_age.getText().toString().equals("")){
+                        if (update_height.getText().toString().equals("") ||
+                                update_weight.getText().toString().equals("") ||
+                                update_age.getText().toString().equals("")) {
 
                             Toast.makeText(Diary_Home.this, "빈칸이 없어야 합니다.", Toast.LENGTH_SHORT).show();
 
-                        }else{
+                        } else {
                             str_Height = update_height.getText().toString();
                             str_Weight = update_weight.getText().toString();
                             str_Age = update_age.getText().toString();
@@ -196,12 +199,12 @@ public class Diary_Home extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                if(item.getItemId()==R.id.Diary){
+                if (item.getItemId() == R.id.Diary) {
                     Toast.makeText(Diary_Home.this, "현재 화면입니다", Toast.LENGTH_SHORT).show();
-                }else if(item.getItemId()==R.id.Recommendation){
+                } else if (item.getItemId() == R.id.Recommendation) {
                     str_Gender = Gender.getText().toString();
-                    Intent Recommendation= new Intent(Diary_Home.this, Program_BMI.class);
-                    Recommendation.putExtra("Gender",str_Gender);
+                    Intent Recommendation = new Intent(Diary_Home.this, Program_BMI.class);
+                    Recommendation.putExtra("Gender", str_Gender);
                     startActivity(Recommendation);
                 }
 
