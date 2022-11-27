@@ -100,6 +100,11 @@ public class Manage_Diary {
 
     }
 
+    public Manage_Diary(String date){
+        this.date = date;
+    }
+
+
     public Manage_Diary(String date, String exercise, String time){
         this.date = date;
         this.exercise = exercise;

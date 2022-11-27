@@ -115,10 +115,12 @@ public class Aerobic extends AppCompatActivity {
             public void onClick(View view) {
 
                 Manage_Diary Today_Diary= new Manage_Diary(date, "런닝",time_record.getText().toString());
-                databaseReference.child("User").child(user.getUid()).child(date).child("유산소운동").setValue(Today_Diary);
+                databaseReference.child("User").child(user.getUid()).child("일지").child("유산소운동").child(date).setValue(Today_Diary); // 일지만 저장
+                databaseReference.child("User").child(user.getUid()).child("일지").child("운동한 날").setValue(date); // 운동한 날짜만 저장
                 time_record.setText("00분 00초");
                 start_pause.setText("운동 시작");
                 Intent Finish_Aerobic= new Intent(Aerobic.this, Diary_Home.class);
+                Finish_Aerobic.putExtra("FinishAerobicDate",date);
                 startActivity(Finish_Aerobic);
                 Toast.makeText(Aerobic.this, "운동 완료", Toast.LENGTH_SHORT).show();
             }

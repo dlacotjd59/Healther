@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +27,7 @@ import com.github.sundeepk.compactcalendarview.domain.Event;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -56,34 +58,37 @@ public class Diary_Home extends AppCompatActivity {
     private TextView SelectedDate, SelectedDate_Exercise, SelectedDate_Time;
     private EditText update_height, update_weight, update_age;
     private ConstraintLayout Update_MyPhysicalInformation, Show_Details;
-
-    private CalendarView CalenderView;
-    private CompactCalendarView compactCalendarView;
     private MaterialCalendarView materialCalendarView;
-
+    private Button Fix;
 
     private String str_Height, str_Weight, str_Age, str_Gender;
-    private String year, month, day, date;
-    private ArrayList<String> result = new ArrayList<String>();
-    private Button Fix;
+    private String year, month, day, strDate;
+    private String FinishGoldenSixDate,FinishAerobicDate;
+    private final ArrayList<String> CompleteExerciseDates = new ArrayList<String>();
     private User og_user;
-
-
-    private final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMMM-yyyy", Locale.getDefault());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.diary_home);
 
+        Intent intent = getIntent();
+        try {
+            FinishAerobicDate = intent.getStringExtra(FinishAerobicDate);
+            FinishGoldenSixDate = intent.getStringExtra(FinishGoldenSixDate);
+            CompleteExerciseDates.add(FinishAerobicDate);
+            CompleteExerciseDates.add(FinishGoldenSixDate);
+        }catch (NullPointerException e){
+
+        }
+
+
         Fix = (Button) findViewById(R.id.Fix);
         Gender = (TextView) findViewById(R.id.Gender);
         Height = (TextView) findViewById(R.id.Height);
         Weight = (TextView) findViewById(R.id.Weight);
         Age = (TextView) findViewById(R.id.Age);
-        //CalenderView = (CalendarView) findViewById(R.id.calendarView);
-
-
+        materialCalendarView =  (MaterialCalendarView) findViewById(R.id.calendarView);
 
         databaseReference.child("User").child(UID).child("유저정보").addValueEventListener(new ValueEventListener() {
             @Override
@@ -107,14 +112,6 @@ public class Diary_Home extends AppCompatActivity {
 
         });
 
-
-
-
-
-
-
-
-        materialCalendarView =  (MaterialCalendarView) findViewById(R.id.calendarView);
         materialCalendarView.state().edit()
                 .setFirstDayOfWeek(Calendar.SUNDAY)
                 .setMinimumDate(CalendarDay.from(2010, 0, 1))
@@ -122,87 +119,78 @@ public class Diary_Home extends AppCompatActivity {
                 .setCalendarDisplayMode(CalendarMode.MONTHS)
                 .commit();
 
-
-
-        result.add("2022,11,18");
-        result.add("2022,12,18");
-        new ApiSimulator(result).executeOnExecutor(Executors.newSingleThreadExecutor());
-
-        materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
+        databaseReference.child("User").child(UID).child("일지").child("운동한날짜").addValueEventListener(new ValueEventListener() { //운동한 날짜만 가져오기
             @Override
-            public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
-                int Year = date.getYear();
-                int Month = date.getMonth() + 1;
-                int Day = date.getDay();
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                Log.i("Year test", Year + "");
-                Log.i("Month test", Month + "");
-                Log.i("Day test", Day + "");
+                String addDate  = snapshot.getValue(String.class);
+                CompleteExerciseDates.add(addDate);
+            }
 
-                String shot_Day = Year + "," + Month + "," + Day;
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-                Log.i("shot_Day test", shot_Day + "");
-                materialCalendarView.clearSelection();
-
-                Toast.makeText(getApplicationContext(), shot_Day , Toast.LENGTH_SHORT).show();
             }
         });
 
 
-       /*CalenderView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() { // 날짜 선택시 그 날 상세내용
+        new ApiSimulator(CompleteExerciseDates).executeOnExecutor(Executors.newSingleThreadExecutor()); // database에서 가져온 날짜 arraylist를 전달 및 표시
+
+        materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
             @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-
-                year = Integer.toString(i);
-                ++i1;
-                if(i1<10&&i1>0){
-                     month = "0"+i1; //
+            public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) { //선택된 날짜의 일지를 불러옴
+                year = Integer.toString(date.getYear());
+                if(date.getMonth()+1>0&&date.getMonth()+1<10){
+                    month = "0"+Integer.toString(date.getMonth() + 1);
                 }else{
-                    month = Integer.toString(i1);
-                }
-                if(i2<10&&i2>0){
-                     day = "0"+i2;
-                }else{
-                    day = Integer.toString(i2);
+                    month = Integer.toString(date.getMonth() + 1);
                 }
 
-                date = year+month+day;
+                if(date.getDay()>0&&date.getMonth()<10){
+                    day = "0"+Integer.toString(date.getDay());
+                }else{
+                    day = Integer.toString(date.getDay());
+                }
 
-                databaseReference.child("User").child(UID).child(date).child("유산소운동").addValueEventListener(new ValueEventListener() {
+
+                strDate = year+month +day;
+                materialCalendarView.clearSelection();
+
+                databaseReference.child("User").child(user.getUid()).child("일지").child("유산소운동").child(strDate).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         Show_Details = (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.diary_detail,null);
                         AlertDialog.Builder Diary = new AlertDialog.Builder(Diary_Home.this);
                         Diary.setView(Show_Details);
 
-                            SelectedDate = (TextView) Show_Details.findViewById(R.id.Date);
-                            SelectedDate_Exercise = (TextView) Show_Details.findViewById(R.id.Exercise);
-                            SelectedDate_Time = (TextView) Show_Details.findViewById(R.id.TotalTime);
+                        SelectedDate = (TextView) Show_Details.findViewById(R.id.Date);
+                        SelectedDate_Exercise = (TextView) Show_Details.findViewById(R.id.Exercise);
+                        SelectedDate_Time = (TextView) Show_Details.findViewById(R.id.TotalTime);
 
-                            Manage_Diary Diary_SelectedDay = snapshot.getValue(Manage_Diary.class);
-                            try {
-                                SelectedDate.setText(date);
-                                SelectedDate_Exercise.setText(Diary_SelectedDay.getexercise());
-                                SelectedDate_Time.setText(Diary_SelectedDay.gettime());
-                                Diary.show();
-                             }catch (NullPointerException e){
-                                Toast.makeText(Diary_Home.this, "이날에는 운동을 하지 않았습니다", Toast.LENGTH_SHORT).show();
-                               }
-
-
+                        Manage_Diary Diary_SelectedDay = snapshot.getValue(Manage_Diary.class);
+                        try {
+                            SelectedDate.setText(strDate);
+                            SelectedDate_Exercise.setText(Diary_SelectedDay.getexercise());
+                            SelectedDate_Time.setText(Diary_SelectedDay.gettime());
+                            Diary.show();
+                        }catch (NullPointerException e){
+                            Toast.makeText(Diary_Home.this, "이날에는 운동을 하지 않았습니다", Toast.LENGTH_SHORT).show();
                         }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+                    }
 
-                        }
-                    });
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
             }
-        }); */
+        });
 
 
-        Fix.setOnClickListener(new View.OnClickListener() {
+
+        Fix.setOnClickListener(new View.OnClickListener() { // 자신의 신체정보 수정
             @Override
             public void onClick(View view) {
                 Update_MyPhysicalInformation = (ConstraintLayout) View.inflate(Diary_Home.this, R.layout.update_user, null);
@@ -323,17 +311,30 @@ public class Diary_Home extends AppCompatActivity {
             /*월은 0이 1월 년,일은 그대로*/
             //string 문자열인 Time_Result 을 받아와서 ,를 기준으로짜르고 string을 int 로 변환
             for(int i = 0 ; i < Time_Result.size() ; i ++){
-                CalendarDay day = CalendarDay.from(calendar);
-                String[] time = Time_Result.get(i).split(",");
-                int year = Integer.parseInt(time[0]);
-                int month = Integer.parseInt(time[1]);
-                int dayy = Integer.parseInt(time[2]);
+                try {
+                    CalendarDay Day = CalendarDay.from(calendar);
+                    String time = Time_Result.get(i);
+                    int year,month,day;
+                    year = Integer.parseInt(time.substring(0,3));
 
-                dates.add(day);
-                calendar.set(year,month-1,dayy);
+                    if(time.substring(4).equals("0")){
+                        month = Integer.parseInt(time.substring(5));
+                    }else{
+                        month = Integer.parseInt(time.substring(4,5));
+                    }
+
+                    if(time.substring(6).equals("0")){
+                        day = Integer.parseInt(time.substring(7));
+                    }else{
+                        day = Integer.parseInt(time.substring(6,7));
+                    }
+
+                    dates.add(Day);
+                    calendar.set(year, month - 1, day);
+                }catch (NullPointerException e){
+
+                }
             }
-
-
 
             return dates;
         }

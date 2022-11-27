@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hint_background">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_marginLeft="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.129"
+        app:srcCompat="@drawable/squ_p"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.464"
+        app:srcCompat="@drawable/chin_p"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.632"
+        app:srcCompat="@drawable/neck_p"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        app:srcCompat="@drawable/curl_p"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.968"
+        app:srcCompat="@drawable/sit_p"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="245dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="21dp"
+        android:text="벤트 니 업"
+        android:textColor="@color/light_white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        tools:layout_editor_absoluteY="606dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.297"
+        app:srcCompat="@drawable/ben_p"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="245dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="21dp"
+        android:text="스쿼트"
+        android:textColor="@color/light_white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="81dp" />
+
+    <TextView
+        android:id="@+id/squ_sf"
+        android:layout_width="245dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="21dp"
+        android:gravity="center"
+        android:text="스쿼트 성공 실패"
+        android:textColor="@color/teal_200"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="125dp" />
+
+    <TextView
+        android:id="@+id/Date"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="yyyymmdd"
+        android:textColor="@color/light_white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:text="시간: (hh:mm:ss)"
+        android:textColor="@color/light_white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="6dp"
+        android:layout_height="0dp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="79dp" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="245dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="21dp"
+        android:text="와이드 그립 벤치 프레스"
+        android:textColor="@color/light_white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        tools:layout_editor_absoluteY="185dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/ben_sf"
+        android:layout_width="245dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="21dp"
+        android:gravity="center"
+        android:text="벤치 성공 실패"
+        android:textColor="@color/teal_200"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <TextView
+        android:id="@+id/chin_sf"
+        android:layout_width="245dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="21dp"
+        android:gravity="center"
+        android:text="친업 성공 실패"
+        android:textColor="@color/teal_200"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="330dp" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="245dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="21dp"
+        android:text="친업"
+        android:textColor="@color/light_white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        tools:layout_editor_absoluteY="290dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="245dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="21dp"
+        android:text="비하인드 넥 프레스"
+        android:textColor="@color/light_white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        tools:layout_editor_absoluteY="400dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/neck_sf"
+        android:layout_width="245dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="21dp"
+        android:gravity="center"
+        android:text="넥프레스 성공 실패"
+        android:textColor="@color/teal_200"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="435dp" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="245dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="21dp"
+        android:text="바벨 컬"
+        android:textColor="@color/light_white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        tools:layout_editor_absoluteY="501dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/curl_sf"
+        android:layout_width="245dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="21dp"
+        android:gravity="center"
+        android:text="바벨컬 성공 실패"
+        android:textColor="@color/teal_200"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="540dp" />
+
+    <TextView
+        android:id="@+id/situp_sf"
+        android:layout_width="245dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="21dp"
+        android:gravity="center"
+        android:text="벤트 니 업 성공 실패"
+        android:textColor="@color/teal_200"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="646dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
