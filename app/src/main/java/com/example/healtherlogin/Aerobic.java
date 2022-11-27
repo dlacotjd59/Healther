@@ -38,7 +38,7 @@ public class Aerobic extends AppCompatActivity {
 
     private Calendar cal = Calendar.getInstance();
     private Date today = cal.getInstance().getTime();
-    private String date = new SimpleDateFormat("yyyyMMdd").format(today);
+    private String date = new SimpleDateFormat("yyyy,MM,dd").format(today);
 
     private Button start_pause, finish;
     private ImageView running_image;
@@ -115,7 +115,7 @@ public class Aerobic extends AppCompatActivity {
             public void onClick(View view) {
 
                 Manage_Diary Today_Diary= new Manage_Diary(date, "런닝",time_record.getText().toString());
-                databaseReference.child("User").child(user.getUid()).child(date).child("유산소운동").setValue(Today_Diary);
+                databaseReference.child("User").child(user.getUid()).child("일지").child(date).setValue(Today_Diary);
                 time_record.setText("00분 00초");
                 start_pause.setText("운동 시작");
                 Intent Finish_Aerobic= new Intent(Aerobic.this, Diary_Home.class);

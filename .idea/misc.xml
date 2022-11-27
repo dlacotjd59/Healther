@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/LEE/AndroidStudioProjects/Healther-master/app/src/main/res/layout/diary_detail.xml" value="0.22780797101449277" />
+        <entry key="..\:/Users/LEE/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program.xml" value="0.22780797101449277" />
+        <entry key="..\:/Users/LEE/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program_do_ben.xml" value="0.22780797101449277" />
+        <entry key="..\:/Users/LEE/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program_do_chin.xml" value="0.22780797101449277" />
+        <entry key="..\:/Users/LEE/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program_do_neck.xml" value="0.22780797101449277" />
+        <entry key="..\:/Users/LEE/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program_do_squ.xml" value="0.22780797101449277" />
+        <entry key="..\:/Users/LEE/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program_input.xml" value="0.22780797101449277" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.39" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/drawable/ic_baseline_search.xml" value="0.379" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-Program/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.39" />
