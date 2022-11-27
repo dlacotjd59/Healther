@@ -11,9 +11,7 @@ import com.prolificinteractive.materialcalendarview.spans.DotSpan;
 import java.util.Collection;
 import java.util.HashSet;
 
-/**
- * Decorate several days with a dot
- */
+
 public class EventDecorator implements DayViewDecorator {
 
     private final Drawable drawable;

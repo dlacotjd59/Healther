@@ -49,7 +49,7 @@ public class Aerobic extends AppCompatActivity {
     private CountDownTimer countDownTimer;
     private boolean isRunning;
     private boolean animate;
-    private long Left_Time_ms = 100*1000;
+    private long Left_Time_ms = 100*1000; //시간이 지나는 것을 확인하기 위해 최대값을 100초로 설정 (기본은 60분)
     private long Init_Time_sec = 100;
 
 
@@ -71,15 +71,15 @@ public class Aerobic extends AppCompatActivity {
         Glide.with(this).load(R.raw.running).into(running_image);
 
 
-        start_pause.setOnClickListener(new View.OnClickListener() {
+        start_pause.setOnClickListener(new View.OnClickListener() { //시작을 누르면 타임바가 시작
             @Override
             public void onClick(View view) {
-                if(isRunning){ //달리기 멈춤
+                if(isRunning){ //달리고 있을 때 버튼을 누를면 달리기를 잠시 멈춤
                     countDownTimer.cancel();
                     isRunning = false;
 
                     start_pause.setText("다시 시작");
-                }else{//달리기 시작
+                }else{//달리고 있지 않을 때 버튼을 누를면 달리기를 다시 시작
 
                     Time_Bar.setProgress(Time_Bar.getMax()-(int)Left_Time_ms/1000);
 
@@ -87,8 +87,7 @@ public class Aerobic extends AppCompatActivity {
                         @Override
                         public void onTick(long l) {
                             Left_Time_ms = (int) (l);
-                            Time_Bar.setProgress(Time_Bar.getMax()-(int) Left_Time_ms/1000);
-
+                            Time_Bar.setProgress(Time_Bar.getMax()-(int) Left_Time_ms/1000); // 프로그레스바를 왼쪽에서 오른쪽으로 가도록 설정
                             int min = ((int)Init_Time_sec - (int)Left_Time_ms/1000)/60;
                             int sec = ((int)Init_Time_sec - (int)Left_Time_ms/1000)%60;
                             record = String.format(Locale.getDefault(),"%02d"+"분 "+"%02d"+"초",min,sec);
@@ -98,7 +97,7 @@ public class Aerobic extends AppCompatActivity {
                         public void onFinish() {
                             Left_Time_ms = 100*1000;
                             isRunning = false;
-                            Toast.makeText(Aerobic.this, "설정한 시간이 끝났습니다.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Aerobic.this, "설정한 시간이 끝났습니다.", Toast.LENGTH_SHORT).show(); // 설정한 시간이 모두 지나면 시간이 끝났음을 알림
                             Time_Bar.setProgress(0);
                         }
                     }.start();
@@ -110,16 +109,16 @@ public class Aerobic extends AppCompatActivity {
             }
         });
 
-        finish.setOnClickListener(new View.OnClickListener() {
+        finish.setOnClickListener(new View.OnClickListener() { // 운동 종료 버튼을 눌렀을 때
             @Override
             public void onClick(View view) {
 
                 Manage_Diary Today_Diary= new Manage_Diary(date, "런닝",time_record.getText().toString());
-                databaseReference.child("User").child(user.getUid()).child("일지").child("유산소운동").child(date).setValue(Today_Diary); // 일지만 저장
+                databaseReference.child("User").child(user.getUid()).child("일지").child("유산소운동").child(date).setValue(Today_Diary); // 일지를 저장
                 databaseReference.child("User").child(user.getUid()).child("일지").child("운동한 날").setValue(date); // 운동한 날짜만 저장
                 time_record.setText("00분 00초");
                 start_pause.setText("운동 시작");
-                Intent Finish_Aerobic= new Intent(Aerobic.this, Diary_Home.class);
+                Intent Finish_Aerobic= new Intent(Aerobic.this, Diary_Home.class); // 운동이 끝나면 메인 홈 화면으로 이동
                 Finish_Aerobic.putExtra("FinishAerobicDate",date);
                 startActivity(Finish_Aerobic);
                 Toast.makeText(Aerobic.this, "운동 완료", Toast.LENGTH_SHORT).show();

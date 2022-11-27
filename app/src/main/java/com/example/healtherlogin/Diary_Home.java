@@ -46,6 +46,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.Executors;
 
+/*
+ * 아직 미완성
+ */
+
+
 public class Diary_Home extends AppCompatActivity {
 
 
@@ -59,7 +64,7 @@ public class Diary_Home extends AppCompatActivity {
     private EditText update_height, update_weight, update_age;
     private ConstraintLayout Update_MyPhysicalInformation, Show_Details;
     private MaterialCalendarView materialCalendarView;
-    private Button Fix;
+    private Button Fix, Fix_user;
 
     private String str_Height, str_Weight, str_Age, str_Gender;
     private String year, month, day, strDate;
@@ -72,7 +77,7 @@ public class Diary_Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.diary_home);
 
-        Intent intent = getIntent();
+        Intent intent = getIntent(); // 아직 미구현
         try {
             FinishAerobicDate = intent.getStringExtra(FinishAerobicDate);
             FinishGoldenSixDate = intent.getStringExtra(FinishGoldenSixDate);
@@ -90,7 +95,7 @@ public class Diary_Home extends AppCompatActivity {
         Age = (TextView) findViewById(R.id.Age);
         materialCalendarView =  (MaterialCalendarView) findViewById(R.id.calendarView);
 
-        databaseReference.child("User").child(UID).child("유저정보").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("User").child(UID).child("유저정보").addValueEventListener(new ValueEventListener() { // 파이어베이스에서 유저 정보를 가져와 메인화면에 전시
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 og_user = snapshot.getValue(User.class);
@@ -114,12 +119,12 @@ public class Diary_Home extends AppCompatActivity {
 
         materialCalendarView.state().edit()
                 .setFirstDayOfWeek(Calendar.SUNDAY)
-                .setMinimumDate(CalendarDay.from(2010, 0, 1))
-                .setMaximumDate(CalendarDay.from(2030, 11, 31))
+                .setMinimumDate(CalendarDay.from(1970, 0, 1))
+                .setMaximumDate(CalendarDay.from(2040, 11, 31))
                 .setCalendarDisplayMode(CalendarMode.MONTHS)
-                .commit();
+                .commit(); // 달력의 최소 최대 일자를 설정, 시작 요일은 일요일
 
-        databaseReference.child("User").child(UID).child("일지").child("운동한날짜").addValueEventListener(new ValueEventListener() { //운동한 날짜만 가져오기
+        databaseReference.child("User").child(UID).child("일지").child("운동한날짜").addValueEventListener(new ValueEventListener() { //운동한 날짜만 가져오기, 아직 미완성
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -134,7 +139,7 @@ public class Diary_Home extends AppCompatActivity {
         });
 
 
-        new ApiSimulator(CompleteExerciseDates).executeOnExecutor(Executors.newSingleThreadExecutor()); // database에서 가져온 날짜 arraylist를 전달 및 표시
+        new ApiSimulator(CompleteExerciseDates).executeOnExecutor(Executors.newSingleThreadExecutor()); // database에서 가져온 날짜 arraylist를 전달
 
         materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
             @Override
@@ -152,22 +157,21 @@ public class Diary_Home extends AppCompatActivity {
                     day = Integer.toString(date.getDay());
                 }
 
-
-                strDate = year+month +day;
+                strDate = year+month +day; // 선택된 날자를 yyyymmdd 형식으로 변환
                 materialCalendarView.clearSelection();
 
-                databaseReference.child("User").child(user.getUid()).child("일지").child("유산소운동").child(strDate).addValueEventListener(new ValueEventListener() {
+                databaseReference.child("User").child(user.getUid()).child("일지").child("유산소운동").child(strDate).addValueEventListener(new ValueEventListener() { // 데이터베이스에 저장된 일지를 불러옴, 아직 미완성
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         Show_Details = (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.diary_detail,null);
-                        AlertDialog.Builder Diary = new AlertDialog.Builder(Diary_Home.this);
+                        AlertDialog.Builder Diary = new AlertDialog.Builder(Diary_Home.this); // 팝업창으로 일지의 상세정보를 보여줌
                         Diary.setView(Show_Details);
 
                         SelectedDate = (TextView) Show_Details.findViewById(R.id.Date);
                         SelectedDate_Exercise = (TextView) Show_Details.findViewById(R.id.Exercise);
                         SelectedDate_Time = (TextView) Show_Details.findViewById(R.id.TotalTime);
 
-                        Manage_Diary Diary_SelectedDay = snapshot.getValue(Manage_Diary.class);
+                        Manage_Diary Diary_SelectedDay = snapshot.getValue(Manage_Diary.class); //
                         try {
                             SelectedDate.setText(strDate);
                             SelectedDate_Exercise.setText(Diary_SelectedDay.getexercise());
@@ -194,21 +198,22 @@ public class Diary_Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Update_MyPhysicalInformation = (ConstraintLayout) View.inflate(Diary_Home.this, R.layout.update_user, null);
-                AlertDialog.Builder Update = new AlertDialog.Builder(Diary_Home.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(Diary_Home.this); // 팝업창을 사용해 신체정볼를 수정
+                AlertDialog Update = builder.create();
                 Update.setView(Update_MyPhysicalInformation);
 
                 update_height = (EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Height);
                 update_weight = (EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Weight);
                 update_age = (EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Age);
+                Fix_user = (Button) Update_MyPhysicalInformation.findViewById(R.id.Fix_user);
 
                 update_height.setText(og_user.getheight());
                 update_weight.setText(og_user.getweight());
                 update_age.setText(og_user.getage());
 
-                Update.setPositiveButton("수정하기", new DialogInterface.OnClickListener() {
+                Fix_user.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
+                    public void onClick(View view) {
                         if (update_height.getText().toString().equals("") ||
                                 update_weight.getText().toString().equals("") ||
                                 update_age.getText().toString().equals("")) {
@@ -229,12 +234,12 @@ public class Diary_Home extends AppCompatActivity {
                             og_user.setage(str_Age);
 
                             databaseReference.child("User").child(UID).child("유저정보").setValue(og_user);
-                            dialogInterface.dismiss();
+                            Update.dismiss();
                             Toast.makeText(Diary_Home.this, "수정됐습니다.", Toast.LENGTH_SHORT).show();
                         }
-
                     }
                 });
+
 
                 Update.show();
 
@@ -265,7 +270,7 @@ public class Diary_Home extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed() { //메인 화면이므로 뒤로 가기버튼을 누르면 앱을 종료
         AlertDialog.Builder off = new AlertDialog.Builder(this);
         off.setTitle("종료");
         off.setMessage("종료하시겠습니까?");
@@ -288,7 +293,7 @@ public class Diary_Home extends AppCompatActivity {
     }
 
 
-    private class ApiSimulator extends AsyncTask<Void, Void, List<CalendarDay>> {
+    private class ApiSimulator extends AsyncTask<Void, Void, List<CalendarDay>> { // 운동한 날짜들을 가져와 달려에 표시해주는 부분
 
         ArrayList<String> Time_Result;
 
@@ -307,9 +312,6 @@ public class Diary_Home extends AppCompatActivity {
             Calendar calendar = Calendar.getInstance();
             ArrayList<CalendarDay> dates = new ArrayList<>();
 
-            /*특정날짜 달력에 점표시해주는곳*/
-            /*월은 0이 1월 년,일은 그대로*/
-            //string 문자열인 Time_Result 을 받아와서 ,를 기준으로짜르고 string을 int 로 변환
             for(int i = 0 ; i < Time_Result.size() ; i ++){
                 try {
                     CalendarDay Day = CalendarDay.from(calendar);
