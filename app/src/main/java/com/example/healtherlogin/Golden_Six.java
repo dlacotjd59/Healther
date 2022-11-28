@@ -47,18 +47,21 @@ public class Golden_Six extends AppCompatActivity {
     private int countset = 0;
     private int[] setconfirm={0,0,0,1,0,0,2,0,0,3,0,0,0,4,0,0,5,0,0,0,6};
 
+    private Double tmp_weight= 2.5;
+
     private String [] weights = new String[4];
     private final String[] strS_or_F = new String[6];
 
     private ConstraintLayout dialogView;
     Date date = Calendar.getInstance().getTime();
-    private String strDate = new SimpleDateFormat("yyyyMMdd").format(date);
+    private String strDate = new SimpleDateFormat("yyyy,MM,dd").format(date);
 
     private long time_ms = 0;
-
+    long starttime,endtime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        starttime=System.currentTimeMillis();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.golden_six_program_do_squ);
         Next = (Button) findViewById(R.id.Next);
@@ -90,7 +93,6 @@ public class Golden_Six extends AppCompatActivity {
 
     public void Next(View v) {
 
-        Double tmp_weight = 0.0;
         switch(setconfirm[countcycle]) {
             case 0:
                 countcycle++;
@@ -142,16 +144,17 @@ public class Golden_Six extends AppCompatActivity {
             case 1:
                 if(setcount1.isChecked() && setcount2.isChecked() && setcount3.isChecked() && (setcount4.isChecked()||plus_weight.isChecked())) {
                     strS_or_F[0] = "스쿼트 성공";
+                    if(plus_weight.isChecked()){
+                        tmp_weight = Double.parseDouble(weights[0]);
+                        tmp_weight+=2.5;
+                        weights[0] = String.format(Locale.getDefault(),"%.1f",tmp_weight);
+                    }
                 }
                 else{
                     strS_or_F[0] = "스쿼트 실패";
                 }
 
-                if(Integer.parseInt(last_set_count.getText().toString())>=13){
-                    tmp_weight = Double.parseDouble(weights[0]);
-                    tmp_weight +=2.5;
-                    weights[0] = String.format(Locale.getDefault(),"%.1f", tmp_weight);
-                }
+
 
                 time_ms = 90*1000;
                 setContentView(R.layout.golden_six_program_do_ben);
@@ -169,15 +172,14 @@ public class Golden_Six extends AppCompatActivity {
             case 2:
                 if(setcount1.isChecked() && setcount2.isChecked() && (setcount3.isChecked()||plus_weight.isChecked())) {
                     strS_or_F[1] = "벤치프레스 성공";
+                    if(plus_weight.isChecked()){
+                        tmp_weight = Double.parseDouble(weights[1]);
+                        tmp_weight+=2.5;
+                        weights[1] = String.format(Locale.getDefault(),"%.1f",tmp_weight);
+                    }
                 }
                 else{
                     strS_or_F[1] = "벤치프레스 실패";
-                }
-
-                if(Integer.parseInt(last_set_count.getText().toString())>=13){
-                    tmp_weight = Double.parseDouble(weights[1]);
-                    tmp_weight +=2.5;
-                    weights[1] = String.format(Locale.getDefault(),"%.1f", tmp_weight);
                 }
 
                 setContentView(R.layout.golden_six_program_do_chin);
@@ -201,14 +203,13 @@ public class Golden_Six extends AppCompatActivity {
             case 4:
                 if(setcount1.isChecked() && setcount2.isChecked() && setcount3.isChecked() && (setcount4.isChecked()||plus_weight.isChecked())) {
                     strS_or_F[3] = "비하인드 넥 프레스 성공";
+                        if(plus_weight.isChecked()){
+                            tmp_weight = Double.parseDouble(weights[2]);
+                            tmp_weight+=2.5;
+                            weights[2] = String.format(Locale.getDefault(),"%.1f",tmp_weight);
+                        }
                 } else{
                     strS_or_F[3] = "비하인드 넥 프레스 실패";
-                }
-
-                if(Integer.parseInt(last_set_count.getText().toString())>=13){
-                    tmp_weight = Double.parseDouble(weights[2]);
-                    tmp_weight +=2.5;
-                    weights[2] = String.format(Locale.getDefault(),"%.1f", tmp_weight);
                 }
 
                 setContentView(R.layout.golden_six_program_do_curl);
@@ -227,14 +228,13 @@ public class Golden_Six extends AppCompatActivity {
             case 5:
                 if(setcount1.isChecked() && setcount2.isChecked() && setcount3.isChecked() && (setcount4.isChecked()||plus_weight.isChecked())) {
                     strS_or_F[4] = "바벨컬 성공";
+                        if(plus_weight.isChecked()){
+                            tmp_weight = Double.parseDouble(weights[3]);
+                            tmp_weight+=2.5;
+                            weights[3] = String.format(Locale.getDefault(),"%.1f",tmp_weight);
+                        }
                 } else{
                     strS_or_F[4] = "바벨컬 실패";
-                }
-
-                if(Integer.parseInt(last_set_count.getText().toString())>=13){
-                    tmp_weight = Double.parseDouble(weights[3]);
-                    tmp_weight +=2.5;
-                    weights[3] = String.format(Locale.getDefault(),"%.1f", tmp_weight);
                 }
 
                 setContentView(R.layout.golden_six_program_do_situp);
@@ -243,15 +243,19 @@ public class Golden_Six extends AppCompatActivity {
                 break;
             case 6:
                 strS_or_F[5] = "싯업 수행";
-                Manage_Diary Diary = new Manage_Diary(strDate, strS_or_F[0],strS_or_F[1],strS_or_F[2],strS_or_F[3],strS_or_F[4],strS_or_F[5]);
-                databaseReference.child("User").child(user.getUid()).child("일지").child("근력운동").child(strDate).setValue(Diary);
-                databaseReference.child("User").child(user.getUid()).child("일지").child("운동한 날").setValue(strDate);
+                endtime=System.currentTimeMillis();
+                int min = ((int)endtime - (int)starttime/1000)/60;
+                int sec = ((int)endtime - (int)starttime/1000)%60;
+                String record = String.format(Locale.getDefault(),"%02d"+"분 "+"%02d"+"초",min,sec);
+                Manage_Diary Diary = new Manage_Diary(strDate,"골든식스", strS_or_F[0],strS_or_F[1],strS_or_F[2],strS_or_F[3],strS_or_F[4],strS_or_F[5],record);
+                databaseReference.child("User").child(user.getUid()).child("일지").child(strDate).setValue(Diary);
+
                 Manage_Weights AfterGoldenSix = new Manage_Weights(weights[0],weights[1],weights[2],weights[3]);
                 databaseReference.child("User").child(user.getUid()).child("골든식스무게").setValue(AfterGoldenSix);
 
                 Toast.makeText(Golden_Six.this, "운동 완료", Toast.LENGTH_SHORT).show();
                 Intent end = new Intent(Golden_Six.this, Diary_Home.class);
-                end.putExtra("FinishGoldenSixDate",strDate);
+
                 startActivity(end);
                 finish();
                 break;

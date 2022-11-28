@@ -37,20 +37,26 @@
             android:layout_height="wrap_content">
 
             <TableRow
-                android:layout_width="342dp"
+                android:layout_width="match_parent"
                 android:layout_height="296dp">
 
                 <TextView
                     android:id="@+id/Date_Text"
                     android:layout_width="102dp"
                     android:layout_height="50dp"
-                    android:text="날짜" />
+                    android:gravity="center"
+                    android:text="날짜"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/Date"
-                    android:layout_width="279dp"
+                    android:layout_width="219dp"
                     android:layout_height="match_parent"
-                    android:text="yyyymmdd" />
+                    android:gravity="center"
+                    android:text="yyyymmdd"
+                    android:textColor="@color/teal_200"
+                    android:textSize="24sp" />
 
             </TableRow>
 
@@ -62,13 +68,19 @@
                     android:id="@+id/Exercise_Text"
                     android:layout_width="102dp"
                     android:layout_height="50dp"
-                    android:text="운동" />
+                    android:gravity="center"
+                    android:text="운동"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/Exercise"
-                    android:layout_width="279dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="운동명" />
+                    android:gravity="center"
+                    android:text="운동명"
+                    android:textColor="@color/teal_200"
+                    android:textSize="24sp" />
             </TableRow>
 
             <TableRow
@@ -79,30 +91,42 @@
                     android:id="@+id/Time_Text"
                     android:layout_width="102dp"
                     android:layout_height="50dp"
-                    android:text="운동시간" />
+                    android:gravity="center"
+                    android:text="운동시간"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/TotalTime"
-                    android:layout_width="279dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="시간" />
+                    android:gravity="center"
+                    android:text="시간"
+                    android:textColor="@color/teal_200"
+                    android:textSize="24sp" />
             </TableRow>
 
             <TableRow
-                android:layout_width="361dp"
-                android:layout_height="80dp">
+                android:layout_width="match_parent"
+                android:layout_height="210dp">
 
                 <TextView
                     android:id="@+id/textView38"
                     android:layout_width="102dp"
-                    android:layout_height="50dp"
-                    android:text="TextView" />
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:text="메모"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/textView39"
-                    android:layout_width="279dp"
+                <EditText
+                    android:id="@+id/editTextText2"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="TextView" />
+                    android:inputType="textPersonName"
+                    android:text="Memo"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
             </TableRow>
         </TableLayout>
     </ScrollView>

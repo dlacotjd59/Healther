@@ -100,25 +100,22 @@ public class Manage_Diary {
 
     }
 
-    public Manage_Diary(String date){
-        this.date = date;
-    }
-
-
     public Manage_Diary(String date, String exercise, String time){
         this.date = date;
         this.exercise = exercise;
         this.time = time;
     }
 
-    public Manage_Diary(String date,String s_or_f_squat,String s_or_f_bench, String s_or_f_chin, String s_or_f_neck, String s_or_f_curl, String s_or_f_situp){
+    public Manage_Diary(String date,String exercise,String s_or_f_squat,String s_or_f_bench, String s_or_f_chin, String s_or_f_neck, String s_or_f_curl, String s_or_f_situp,String time){
         this.date=date;
+        this.exercise=exercise;
         this.s_or_f_squat=s_or_f_squat;
         this.s_or_f_bench=s_or_f_bench;
         this.s_or_f_chin=s_or_f_chin;
         this.s_or_f_neck=s_or_f_neck;
         this.s_or_f_curl=s_or_f_curl;
         this.s_or_f_situp=s_or_f_situp;
+        this.time=time;
     }
 
 }
