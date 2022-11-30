@@ -48,8 +48,6 @@ public class Recommend_Exercise extends AppCompatActivity {
     private Double dou_ben= 0.0;
     private Double dou_neck= 0.0;
     private Double dou_barbell= 0.0;
-
-    private String[] weights = new String[4];
     private String str_squ,str_ben,str_neck,str_barbell;
 
     private Manage_Weights manage_weights;
@@ -171,7 +169,7 @@ public class Recommend_Exercise extends AppCompatActivity {
                            str_squ = set_squ.getText().toString();
                            dou_squ = Double.parseDouble(str_squ);
                            dou_squ +=2.5;
-                           str_squ=String.format("%.1f",dou_squ);
+                           str_squ=String.format(Locale.getDefault(),"%.1f",dou_squ);
                            set_squ.setText(str_squ);
                        }
                    });

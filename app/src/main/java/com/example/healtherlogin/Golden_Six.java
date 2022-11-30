@@ -110,9 +110,9 @@ public class Golden_Six extends AppCompatActivity {
                 circle_progressbar.setProgress((int)time_ms/1000);
                 circle_progressbar.setMax((int)time_ms/1000);
 
-                Animation anima = new RotateAnimation(0.0f, 90.0f);
-                anima.setFillAfter(false);
-                circle_progressbar.startAnimation(anima);
+                Animation animation = new RotateAnimation(0.0f, 90.0f);
+                animation.setFillAfter(false);
+                circle_progressbar.startAnimation(animation);
 
                 CountDownTimer countDownTimer = new CountDownTimer(time_ms,1000) {
 
@@ -124,7 +124,7 @@ public class Golden_Six extends AppCompatActivity {
                     @Override
                     public void onFinish() {
                         time.setText(String.format(Locale.getDefault(),"%d",TimeUnit.MILLISECONDS.toSeconds(time_ms)));
-                        circle_progressbar.setMax( (int)time_ms/1000);
+                        circle_progressbar.setMax((int)time_ms/1000);
                         Rest.dismiss();
                     }
                 }.start();
@@ -153,8 +153,6 @@ public class Golden_Six extends AppCompatActivity {
                 else{
                     strS_or_F[0] = "스쿼트 실패";
                 }
-
-
 
                 time_ms = 90*1000;
                 setContentView(R.layout.golden_six_program_do_ben);

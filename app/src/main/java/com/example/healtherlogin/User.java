@@ -28,9 +28,8 @@ public class User {
     public void setweight(String weight){this.weight = weight;}
     public void setgender(String gender){this.gender = gender;}
 
-    public User(String email, String password,String age, String height, String weight,String gender){
+    public User(String email,String age, String height, String weight,String gender){
         this.email=email;
-        this.password=password;
         this.age=age;
         this.height=height;
         this.weight=weight;

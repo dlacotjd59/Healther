@@ -77,7 +77,7 @@ public class Signup extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                        User new_user = new User(user.getEmail(), b, c, d, e, gender);
+                                        User new_user = new User(user.getEmail(), c, d, e, gender);
                                         databaseReference.child("User").child(user.getUid()).child("유저정보").setValue(new_user);
                                         Toast.makeText(Signup.this, "가입 성공", Toast.LENGTH_SHORT).show();
                                         Intent complete = new Intent(Signup.this, LoginActivity.class);

@@ -21,6 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Locale;
+
 public class Program_BMI extends AppCompatActivity {
 
     private final FirebaseDatabase database= FirebaseDatabase.getInstance();
@@ -57,7 +59,7 @@ public class Program_BMI extends AppCompatActivity {
                 Weight= Double.parseDouble(user.getweight());
                 Age= Double.parseDouble(user.getage());
                 BMI=Weight / Math.pow(Height/100.0,2.0);
-                strBMI = String.format("%.2f",BMI);
+                strBMI = String.format(Locale.getDefault(),"%.2f",BMI);
                 BMI_View.setText(strBMI);
                 if (BMI < 18.5) {
                     BMI_Type_View.setText("저체중");

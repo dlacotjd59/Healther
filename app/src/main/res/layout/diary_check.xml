@@ -133,25 +133,26 @@
 
     <TextView
         android:id="@+id/Date"
-        android:layout_width="160dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:text="yyyymmdd"
         android:textColor="@color/light_white"
-        android:textSize="30sp"
+        android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/date"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022"
+        app:layout_constraintVertical_bias="0.444"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/date"
-        android:layout_width="180dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="24dp"
         android:gravity="center"
         android:text="시간: (hh:mm:ss)"
         android:textColor="@color/light_white"
@@ -159,6 +160,24 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/title_golden"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="28dp"
+        android:gravity="center"
+        android:text="골든 식스"
+        android:textColor="@color/light_white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/date"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Date"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022"
         tools:ignore="MissingConstraints" />
