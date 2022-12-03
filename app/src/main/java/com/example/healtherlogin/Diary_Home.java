@@ -1,7 +1,5 @@
 package com.example.healtherlogin;
 
-import android.app.DownloadManager;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,19 +9,15 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.github.sundeepk.compactcalendarview.CompactCalendarView;
-import com.github.sundeepk.compactcalendarview.domain.Event;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -38,15 +32,10 @@ import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 
-import org.checkerframework.checker.units.qual.A;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Queue;
 import java.util.concurrent.Executors;
 
 public class Diary_Home extends AppCompatActivity {
@@ -57,24 +46,26 @@ public class Diary_Home extends AppCompatActivity {
     private final String UID = user.getUid();
 
     private TextView Height, Weight, Age, Gender;
-    private TextView SelectedDate, SelectedDate_Exercise, SelectedDate_Time;
+    private TextView SelectedDate, SelectedDate_Exercise, SelectedDate_Time; // 상세정보_런닝 팝업창의 텍스트뷰
+    private TextView Squat_SorF,Bench_SorF,Chin_SorF,Neck_SorF,Curl_SorF,Situp_SorF;
     private EditText update_height, update_weight, update_age;
-    private ConstraintLayout Update_MyPhysicalInformation, Show_Details;
+    private ConstraintLayout Update_MyPhysicalInformation, Show_Details_Running,Show_Details_Golden;
 
     private MaterialCalendarView materialCalendarView;
 
 
-    private String str_Height, str_Weight, str_Age, str_Gender, selectday;
+    private String str_Height, str_Weight, str_Age, str_Gender, selectday,strBMI,BMI_Type,BMI_Image;
+    private double BMI;
     private ArrayList<String> listdate = new ArrayList<String>();
     private Button Fix, Fix_user;
-    private User og_user;
-    private final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMMM-yyyy", Locale.getDefault());
-    Query qdate = databaseReference.child("User").child(UID).child("일지");
+    private User_information og_userInformation;
+
+    Query qdate = databaseReference.child(UID).child("일지");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.diary_home);
+        setContentView(R.layout.diary_home_ui);
 
         Fix = (Button) findViewById(R.id.Fix);
         Gender = (TextView) findViewById(R.id.Gender);
@@ -82,15 +73,54 @@ public class Diary_Home extends AppCompatActivity {
         Weight = (TextView) findViewById(R.id.Weight);
         Age = (TextView) findViewById(R.id.Age);
 
-        databaseReference.child("User").child(UID).child("유저정보").addValueEventListener(new ValueEventListener() {
+        databaseReference.child(UID).child("유저정보").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                og_user = snapshot.getValue(User.class);
+                og_userInformation = snapshot.getValue(User_information.class);
                 try {
-                    Height.setText(og_user.getheight());
-                    Weight.setText(og_user.getweight());
-                    Age.setText(og_user.getage());
-                    Gender.setText(og_user.getgender());
+                    Height.setText(og_userInformation.getheight());
+                    Weight.setText(og_userInformation.getweight());
+                    Age.setText(og_userInformation.getage());
+                    Gender.setText(og_userInformation.getgender());
+                    BMI=Double.valueOf(og_userInformation.getBMI());
+                    if (BMI < 18.5) {
+                        BMI_Type="저체중";
+                        BMI_Image="male1";
+                        if(og_userInformation.getgender().equals("여자")){
+                            BMI_Image="fe"+BMI_Image;
+                        }
+                    } else if (BMI >= 18.5 && BMI < 23) {
+                        BMI_Type="정상";
+                        BMI_Image="male2";
+                        if(og_userInformation.getgender().equals("여자")){
+                            BMI_Image="fe"+BMI_Image;
+                        }
+                    } else if (BMI >= 23 && BMI < 25) {
+                        BMI_Type="과체중";
+                        BMI_Image="male3";
+                        if(og_userInformation.getgender().equals("여자")){
+                            BMI_Image="fe"+BMI_Image;
+                        }
+                    } else if (BMI >= 25 && BMI < 30) {
+                        BMI_Type="1단계 비만";
+                        BMI_Image="male4";
+                        if(og_userInformation.getgender().equals("여자")){
+                            BMI_Image="fe"+BMI_Image;
+                        }
+                    } else if (BMI >= 30 && BMI < 35) {
+                        BMI_Type="2단계 비만";
+                        BMI_Image="male5";
+                        if(og_userInformation.getgender().equals("여자")){
+                            BMI_Image="fe"+BMI_Image;
+                        }
+                    } else {
+                        BMI_Type="3단계 비만";
+                        BMI_Image="male5";
+                        if(og_userInformation.getgender().equals("여자")){
+                            BMI_Image="fe"+BMI_Image;
+                        }
+                    }
+
                 } catch (NullPointerException e) {
                     Toast.makeText(Diary_Home.this, "정보를 가져올 수 없습니다", Toast.LENGTH_SHORT).show();
                 }
@@ -138,34 +168,58 @@ public class Diary_Home extends AppCompatActivity {
                 int Year = date.getYear();
                 int Month = date.getMonth() + 1;
                 int Day = date.getDay();
-                if(Month<10) {
-                    selectday = Year + ",0" + Month + "," + Day;
-                }
-                else{
-                    selectday = Year + "," + Month + "," + Day;
-                }
-                databaseReference.child("User").child(UID).child("일지").child(selectday).addValueEventListener(new ValueEventListener() {
+
+                selectday = String.format(Locale.getDefault(),"%02d"+","+"%02d"+","+"%02d",Year,Month,Day);
+
+                databaseReference.child(UID).child("일지").child(selectday).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Show_Details = (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.diary_detail,null);
-                        AlertDialog.Builder Diary = new AlertDialog.Builder(Diary_Home.this);
-                        Diary.setView(Show_Details);
-
-                        SelectedDate = (TextView) Show_Details.findViewById(R.id.Date);
-                        SelectedDate_Exercise = (TextView) Show_Details.findViewById(R.id.Exercise);
-                        SelectedDate_Time = (TextView) Show_Details.findViewById(R.id.TotalTime);
-
                         Manage_Diary Diary_SelectedDay = snapshot.getValue(Manage_Diary.class);
                         try {
-                            SelectedDate.setText(selectday);
-                            SelectedDate_Exercise.setText(Diary_SelectedDay.getexercise());
-                            SelectedDate_Time.setText(Diary_SelectedDay.gettime());
+                            String ex = Diary_SelectedDay.getexercise();
+                            switch(ex){
+                                case "골든식스":
+                                    Show_Details_Golden = (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.diary_check,null);
+                                    AlertDialog.Builder Diary_Golden = new AlertDialog.Builder(Diary_Home.this);
+                                    Diary_Golden.setView(Show_Details_Golden);
+                                    SelectedDate = (TextView) Show_Details_Golden.findViewById(R.id.Date);
+                                    SelectedDate_Time = (TextView) Show_Details_Golden.findViewById(R.id.time_golden);
 
-                            Diary.show();
-                        }catch (NullPointerException e){
+                                    Squat_SorF = (TextView) Show_Details_Golden.findViewById(R.id.squ_sf);
+                                    Bench_SorF = (TextView) Show_Details_Golden.findViewById(R.id.ben_sf);
+                                    Chin_SorF = (TextView) Show_Details_Golden.findViewById(R.id.chin_sf);
+                                    Neck_SorF = (TextView) Show_Details_Golden.findViewById(R.id.neck_sf);
+                                    Curl_SorF = (TextView) Show_Details_Golden.findViewById(R.id.curl_sf);
+                                    Situp_SorF = (TextView) Show_Details_Golden.findViewById(R.id.situp_sf);
+
+                                    Squat_SorF.setText(Diary_SelectedDay.getS_or_f_squat());
+                                    Bench_SorF.setText(Diary_SelectedDay.getS_or_f_bench());
+                                    Chin_SorF.setText(Diary_SelectedDay.getS_or_f_chin());
+                                    Neck_SorF.setText(Diary_SelectedDay.getS_or_f_neck());
+                                    Curl_SorF.setText(Diary_SelectedDay.getS_or_f_curl());
+                                    Situp_SorF.setText(Diary_SelectedDay.getS_or_f_situp());
+
+                                    SelectedDate.setText(selectday);
+                                    SelectedDate_Time.setText(Diary_SelectedDay.gettime());
+
+                                    Diary_Golden.show();
+                                    break;
+                                case "런닝":
+                                    Show_Details_Running = (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.diary_detail,null);
+                                    AlertDialog.Builder Diary_Running = new AlertDialog.Builder(Diary_Home.this);
+                                    Diary_Running.setView(Show_Details_Running);
+                                    SelectedDate = (TextView) Show_Details_Running.findViewById(R.id.Date);
+                                    SelectedDate_Exercise = (TextView) Show_Details_Running.findViewById(R.id.Exercise);
+                                    SelectedDate_Time = (TextView) Show_Details_Running.findViewById(R.id.TotalTime);
+                                    SelectedDate.setText(selectday);
+                                    SelectedDate_Exercise.setText(Diary_SelectedDay.getexercise());
+                                    SelectedDate_Time.setText(Diary_SelectedDay.gettime());
+                                    Diary_Running.show();
+                                    break;
+                            }
+                        }catch(NullPointerException e){
                             Toast.makeText(Diary_Home.this, "이날에는 운동을 하지 않았습니다", Toast.LENGTH_SHORT).show();
                         }
-
 
                     }
 
@@ -195,9 +249,9 @@ public class Diary_Home extends AppCompatActivity {
                 update_age = (EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Age);
                 Fix_user = (Button) Update_MyPhysicalInformation.findViewById(R.id.Fix_user);
 
-                update_height.setText(og_user.getheight());
-                update_weight.setText(og_user.getweight());
-                update_age.setText(og_user.getage());
+                update_height.setText(og_userInformation.getheight());
+                update_weight.setText(og_userInformation.getweight());
+                update_age.setText(og_userInformation.getage());
 
                 Fix_user.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -217,11 +271,15 @@ public class Diary_Home extends AppCompatActivity {
                             Weight.setText(str_Weight);
                             Age.setText(str_Age);
 
-                            og_user.setheight(str_Height);
-                            og_user.setweight(str_Weight);
-                            og_user.setage(str_Age);
+                            og_userInformation.setheight(str_Height);
+                            og_userInformation.setweight(str_Weight);
+                            og_userInformation.setage(str_Age);
 
-                            databaseReference.child("User").child(UID).child("유저정보").setValue(og_user);
+                            BMI= Double.parseDouble(str_Weight) / Math.pow(Double.parseDouble(str_Height)/100.0,2.0);
+                            strBMI = String.format(Locale.getDefault(),"%.2f",BMI);
+                            og_userInformation.setBMI(strBMI);
+
+                            databaseReference.child(UID).child("유저정보").setValue(og_userInformation);
                             Update.dismiss();
                             Toast.makeText(Diary_Home.this, "수정됐습니다.", Toast.LENGTH_SHORT).show();
                         }
@@ -245,8 +303,11 @@ public class Diary_Home extends AppCompatActivity {
                     Toast.makeText(Diary_Home.this, "현재 화면입니다", Toast.LENGTH_SHORT).show();
                 } else if (item.getItemId() == R.id.Recommendation) {
                     str_Gender = Gender.getText().toString();
-                    Intent Recommendation = new Intent(Diary_Home.this, Program_BMI.class);
+                    Intent Recommendation = new Intent(Diary_Home.this, Recommend.class);
                     Recommendation.putExtra("Gender", str_Gender);
+                    Recommendation.putExtra("BMI",BMI);
+                    Recommendation.putExtra("BMI_Type",BMI_Type);
+                    Recommendation.putExtra("BMI_Image",BMI_Image);
                     startActivity(Recommendation);
                 }
 
@@ -263,18 +324,19 @@ public class Diary_Home extends AppCompatActivity {
         off.setTitle("종료");
         off.setMessage("종료하시겠습니까?");
 
-        off.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+        off.setPositiveButton("아니요", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
             }
         });
 
-        off.setPositiveButton("네", new DialogInterface.OnClickListener() {
+        off.setNegativeButton("네", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finishAffinity();
             }
         });
+
 
         off.show();
 
@@ -328,10 +390,5 @@ public class Diary_Home extends AppCompatActivity {
             materialCalendarView.addDecorator(new EventDecorator(Color.GREEN, calendarDays,Diary_Home.this));
         }
     }
-
-
-
-
-
 
 }

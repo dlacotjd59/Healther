@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HealtherLogin"
         tools:targetApi="31">
-        <activity android:name=".LoginActivity"
+        <activity android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,9 +24,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Program_BMI"/>
         <activity android:name=".Golden_Six"/>
-        <activity android:name=".Recommend_Exercise"/>
+        <activity android:name=".Recommend"/>
         <activity android:name=".Aerobic"/>
         <activity android:name=".Diary_Home" />
         <activity android:name=".Signup" />

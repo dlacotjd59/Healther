@@ -3,14 +3,8 @@ package com.example.healtherlogin;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.RotateAnimation;
-import android.view.animation.ScaleAnimation;
 import android.widget.Button;
-import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -28,7 +22,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
 public class Aerobic extends AppCompatActivity {
 
@@ -49,8 +42,8 @@ public class Aerobic extends AppCompatActivity {
     private CountDownTimer countDownTimer;
     private boolean isRunning;
     private boolean animate;
-    private long Left_Time_ms = 100*1000;
-    private long Init_Time_sec = 100;
+    private long Left_Time_ms = 100*1000;  // 100초로 임의로 설정
+    private long Init_Time_sec = 100; // 100초로 임의로 설정
 
 
     @Override
@@ -62,11 +55,9 @@ public class Aerobic extends AppCompatActivity {
         finish = (Button) findViewById(R.id.Finish_Running);
         running_image = (ImageView) findViewById(R.id.running_image);
         Time_Bar = (ProgressBar) findViewById(R.id.time_bar);
-        time_record = (TextView) findViewById(R.id.time);
 
         Time_Bar.setProgress(0);
         Time_Bar.setMax((int)Left_Time_ms/1000);
-        time_record.setText("00분 00초");
 
         Glide.with(this).load(R.raw.running).into(running_image);
 
@@ -92,7 +83,6 @@ public class Aerobic extends AppCompatActivity {
                             int min = ((int)Init_Time_sec - (int)Left_Time_ms/1000)/60;
                             int sec = ((int)Init_Time_sec - (int)Left_Time_ms/1000)%60;
                             record = String.format(Locale.getDefault(),"%02d"+"분 "+"%02d"+"초",min,sec);
-                            time_record.setText(record);
                         }
                         @Override
                         public void onFinish() {
@@ -114,9 +104,8 @@ public class Aerobic extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Manage_Diary Today_Diary= new Manage_Diary(date, "런닝",time_record.getText().toString());
-                databaseReference.child("User").child(user.getUid()).child("일지").child(date).setValue(Today_Diary);
-                time_record.setText("00분 00초");
+                Manage_Diary Today_Diary= new Manage_Diary(date, "런닝",record);
+                databaseReference.child(user.getUid()).child("일지").child(date).setValue(Today_Diary);
                 start_pause.setText("운동 시작");
                 Intent Finish_Aerobic= new Intent(Aerobic.this, Diary_Home.class);
                 startActivity(Finish_Aerobic);

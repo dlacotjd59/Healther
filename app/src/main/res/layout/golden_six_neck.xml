@@ -4,19 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/hint_background">
-
+    android:background="#ED3D4155">
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="422dp"
         android:layout_height="100dp"
         android:gravity="center"
-        android:text="와이드 그립 벤치프레스"
+        android:text="비하인드 넥 프레스"
         android:textColor="#86B3EA"
         android:textSize="38dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,22 +23,21 @@
         android:id="@+id/Next"
         android:layout_width="122dp"
         android:layout_height="55dp"
-        android:layout_marginStart="277dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="@color/light_white"
         android:onClick="Next"
-        android:text="다음 운동"
-        android:textColor="@color/hint_background"
+        android:text="다음 세트"
+        android:textColor="#ED3D4155"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="416dp"
         android:layout_height="562dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
         tools:ignore="SpeakableTextPresentCheck">
@@ -49,35 +47,20 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/ben"
-                android:layout_width="280dp"
-                android:layout_height="280dp"
-
+                android:id="@+id/neck"
+                android:layout_width="282dp"
+                android:layout_height="282dp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-                app:srcCompat="@drawable/ben_p" />
-            <!-- <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/textView97"
-                    android:layout_width="250dp"
-                    android:layout_height="60dp"
-                    android:gravity="center_vertical"
-                    android:text="와이드 그립 벤치 프레스"
-                    android:textColor="@color/light_white"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="50dp"
-                    app:autoSizeTextType="uniform" />
-            </TableRow>-->
+                app:srcCompat="@drawable/neck_p" />
 
             <TableRow
                 android:id="@+id/Squat_Row"
-                android:layout_width="366dp"
-                android:layout_height="243dp"
-                android:layout_marginLeft="10dp">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
 
                 <TableLayout
                     android:layout_width="match_parent"
@@ -88,8 +71,8 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView102"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/textView41"
+                            android:layout_width="53dp"
                             android:layout_height="62.5dp"
                             android:gravity="center"
                             android:text="세트"
@@ -97,8 +80,8 @@
                             android:textSize="18dp" />
 
                         <TextView
-                            android:id="@+id/textView103"
-                            android:layout_width="78dp"
+                            android:id="@+id/textView42"
+                            android:layout_width="75dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="중량(kg)"
@@ -106,8 +89,8 @@
                             android:textSize="18dp" />
 
                         <TextView
-                            android:id="@+id/textView104"
-                            android:layout_width="86dp"
+                            android:id="@+id/textView43"
+                            android:layout_width="113dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="횟수"
@@ -115,14 +98,13 @@
                             android:textSize="18dp" />
 
                         <TextView
-                            android:id="@+id/textView105"
-                            android:layout_width="74dp"
+                            android:id="@+id/textView44"
+                            android:layout_width="69dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="성공여부"
-                            android:textColor="@color/hint_light_white"
+                            android:textColor="@color/light_white"
                             android:textSize="16dp" />
-
 
                     </TableRow>
 
@@ -131,7 +113,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView107"
+                            android:id="@+id/textView51"
                             android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
@@ -141,15 +123,15 @@
 
                         <TextView
                             android:id="@+id/weight_set1"
-                            android:layout_width="78dp"
+                            android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="중량"
                             android:textColor="@color/light_white"
                             android:textSize="22dp" />
 
-                        <EditText
-                            android:id="@+id/editTextNumber41"
+                        <TextView
+                            android:id="@+id/editTextNumber2"
                             android:layout_width="50dp"
                             android:layout_height="62.5dp"
                             android:ems="10"
@@ -163,7 +145,7 @@
                             android:id="@+id/setcount1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:textColor="@color/hint_light_white"
+                            android:textColor="@color/light_white"
                             android:text="성공" />
 
                     </TableRow>
@@ -173,7 +155,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView108"
+                            android:id="@+id/textView52"
                             android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
@@ -190,8 +172,8 @@
                             android:textColor="@color/light_white"
                             android:textSize="22dp" />
 
-                        <EditText
-                            android:id="@+id/editTextNumber43"
+                        <TextView
+                            android:id="@+id/editTextNumber4"
                             android:layout_width="50dp"
                             android:layout_height="62.5dp"
                             android:ems="10"
@@ -200,13 +182,13 @@
                             android:inputType="number"
                             android:textColorHint="@color/hint_light_white"
                             tools:ignore="SpeakableTextPresentCheck" />
-
                         <CheckBox
                             android:id="@+id/setcount2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:textColor="@color/hint_light_white"
+                            android:textColor="@color/light_white"
                             android:text="성공" />
+
 
                     </TableRow>
 
@@ -215,7 +197,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView109"
+                            android:id="@+id/textView53"
                             android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
@@ -232,30 +214,74 @@
                             android:textColor="@color/light_white"
                             android:textSize="22dp" />
 
-                        <EditText
+                        <TextView
+                            android:id="@+id/editTextNumber6"
+                            android:layout_width="50dp"
+                            android:layout_height="62.5dp"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="10회"
+                            android:inputType="number"
+                            android:textColorHint="@color/hint_light_white"
+                            tools:ignore="SpeakableTextPresentCheck" />
+                        <CheckBox
+                            android:id="@+id/setcount3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/light_white"
+                            android:text="성공" />
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView54"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="4"
+                            android:textColor="@color/light_white"
+                            android:textSize="22dp" />
+
+                        <TextView
+                            android:id="@+id/weight_set4"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="중량"
+                            android:textColor="@color/light_white"
+                            android:textSize="22dp" />
+
+                        <TextView
                             android:id="@+id/last_set_count"
                             android:layout_width="50dp"
                             android:layout_height="62.5dp"
                             android:ems="10"
                             android:gravity="center"
-                            android:hint="많이"
-                            android:inputType="number"
+                            android:text="최대한 많이"
+                            android:textColor="@color/light_white"
                             android:textColorHint="@color/hint_light_white"
                             tools:ignore="SpeakableTextPresentCheck" />
 
                         <CheckBox
-                            android:id="@+id/setcount3"
+                            android:id="@+id/final_set"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:textColor="@color/hint_light_white"
+                            android:textColor="@color/light_white"
                             android:text="성공" />
 
                         <CheckBox
                             android:id="@+id/plus_weight"
-                            android:layout_width="110dp"
+                            android:layout_width="101dp"
                             android:layout_height="match_parent"
                             android:text="13회 이상"
-                            android:textColor="@color/hint_light_white" />
+                            android:onClick="plus_weight"
+                            android:textColor="@color/light_white" />
+
 
                     </TableRow>
                 </TableLayout>

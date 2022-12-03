@@ -2,9 +2,14 @@
   <library name="Gradle: com.google.firebase:firebase-database:20.1.0@aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b436f69ebd79e79c4ff5497fd4f9a537/transformed/firebase-database-20.1.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4f4dfd2e80380535e886f8b5ee6cf115/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/4f4dfd2e80380535e886f8b5ee6cf115/transformed/jetified-firebase-database-20.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4f4dfd2e80380535e886f8b5ee6cf115/transformed/jetified-firebase-database-20.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c120826aca5fa101f87ba75c85e4639b/transformed/jetified-firebase-database-20.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5bd6ab98916bf4ee6b7fc9e2341e046a/transformed/jetified-firebase-database-20.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3d4f51ac9f8edb6f9d38cb0a5b69d11d/transformed/firebase-database-20.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4af972e1ba0e93ad2168dcea08d15ba0/transformed/jetified-firebase-database-20.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2becbd34df13b5b2b8f19d9e84ff99db/transformed/jetified-firebase-database-20.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2becbd34df13b5b2b8f19d9e84ff99db/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2becbd34df13b5b2b8f19d9e84ff99db/transformed/jetified-firebase-database-20.1.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-database/20.1.0/813195391e1faddfc9130908f17c76dd11a1da8b/firebase-database-20.1.0-javadoc.jar!/" />

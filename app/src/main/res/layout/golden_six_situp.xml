@@ -11,7 +11,7 @@
         android:layout_width="422dp"
         android:layout_height="100dp"
         android:gravity="center"
-        android:text="친 업"
+        android:text="벤트 니 업"
         android:textColor="#86B3EA"
         android:textSize="38dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,15 +23,14 @@
         android:id="@+id/Next"
         android:layout_width="122dp"
         android:layout_height="55dp"
-        android:layout_marginStart="277dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="@color/light_white"
         android:onClick="Next"
-        android:text="다음 운동"
+        android:text="다음 세트"
         android:textColor="@color/hint_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.975"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -47,33 +46,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
-                android:id="@+id/chin"
+                android:id="@+id/situp"
                 android:layout_width="282dp"
                 android:layout_height="282dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-                app:srcCompat="@drawable/chin_p" />
+                app:srcCompat="@drawable/sit_p" />
             <TableRow
                 android:id="@+id/Squat_Row"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-<!--                <TextView
-                    android:id="@+id/textView98"
-                    android:layout_width="88dp"
-                    android:layout_height="250dp"
-                    android:background="#2196F3"
-                    android:gravity="center_vertical"
-                    android:text="친업"
-                    app:autoSizeTextType="uniform" />
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent"
-                    android:text="세트 간 90초 휴식" />-->
 
                 <TableLayout
                     android:layout_width="match_parent"
@@ -84,9 +69,9 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView119"
-                            android:layout_width="72dp"
-                            android:layout_height="62.5dp"
+                            android:id="@+id/textView46"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="세트"
                             android:textColor="@color/light_white"
@@ -94,8 +79,8 @@
 
 
                         <TextView
-                            android:id="@+id/textView121"
-                            android:layout_width="139dp"
+                            android:id="@+id/textView48"
+                            android:layout_width="152dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="횟수"
@@ -103,11 +88,13 @@
                             android:textSize="18dp" />
 
                         <TextView
-                            android:layout_width="109dp"
+                            android:id="@+id/textView49"
+                            android:layout_width="105dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
+                            android:text="성공여부"
                             android:textColor="@color/light_white"
-                            android:text="성공여부" />
+                            app:autoSizeTextType="uniform" />
 
                     </TableRow>
 
@@ -116,7 +103,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView124"
+                            android:id="@+id/textView55"
                             android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:text="1"
@@ -125,23 +112,25 @@
                             android:textColor="@color/light_white"/>
 
 
-                        <EditText
-                            android:id="@+id/editTextNumber47"
-                            android:layout_width="50dp"
+                        <TextView
+                            android:id="@+id/editTextNumber10"
+                            android:layout_width="121dp"
                             android:layout_height="62.5dp"
                             android:ems="10"
+                            android:gravity="center"
                             android:hint="최대한 많이"
                             android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck"
-                            android:gravity="center"
-                            android:textColorHint="@color/hint_light_white"/>
+                            android:textColorHint="@color/hint_light_white"
+                            tools:ignore="SpeakableTextPresentCheck" />
 
                         <CheckBox
                             android:id="@+id/setcount1"
-                            android:textColor="@color/light_white"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="성공" />
+                            android:textColor="@color/light_white"
+                            android:text="성공"
+                            android:checked="true"
+                            android:clickable="false"/>
 
                     </TableRow>
 
@@ -150,7 +139,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView125"
+                            android:id="@+id/textView56"
                             android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:text="2"
@@ -159,22 +148,25 @@
                             android:textColor="@color/light_white"/>
 
 
-                        <EditText
-                            android:id="@+id/editTextNumber49"
+                        <TextView
+                            android:id="@+id/editTextNumber12"
                             android:layout_width="50dp"
                             android:layout_height="62.5dp"
                             android:ems="10"
+                            android:gravity="center"
                             android:hint="최대한 많이"
                             android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck"
-                            android:gravity="center"
-                            android:textColorHint="@color/hint_light_white"/>
+                            android:textColorHint="@color/hint_light_white"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
                         <CheckBox
                             android:id="@+id/setcount2"
-                            android:textColor="@color/light_white"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="성공" />
+                            android:textColor="@color/light_white"
+                            android:text="성공"
+                            android:checked="true"
+                            android:clickable="false" />
 
                     </TableRow>
 
@@ -183,7 +175,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView126"
+                            android:id="@+id/textView57"
                             android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:text="3"
@@ -192,24 +184,62 @@
                             android:textColor="@color/light_white"/>
 
 
-                        <EditText
-                            android:id="@+id/editTextNumber51"
+                        <TextView
+                            android:id="@+id/editTextNumber14"
                             android:layout_width="50dp"
                             android:layout_height="62.5dp"
                             android:ems="10"
+                            android:gravity="center"
                             android:hint="최대한 많이"
                             android:inputType="number"
-                            tools:ignore="SpeakableTextPresentCheck"
-                            android:gravity="center"
-                            android:textColorHint="@color/hint_light_white"/>
+                            android:textColorHint="@color/hint_light_white"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
                         <CheckBox
                             android:id="@+id/setcount3"
-                            android:textColor="@color/light_white"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="성공" />
+                            android:textColor="@color/light_white"
+                            android:text="성공"
+                            android:checked="true"
+                            android:clickable="false"/>
 
-                        <ImageView/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView58"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:text="4"
+                            android:textSize="22dp"
+                            android:gravity="center"
+                            android:textColor="@color/light_white"/>
+
+
+                        <TextView
+                            android:id="@+id/editTextNumber16"
+                            android:layout_width="50dp"
+                            android:layout_height="62.5dp"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="최대한 많이"
+                            android:inputType="number"
+                            android:textColorHint="@color/hint_light_white"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <CheckBox
+                            android:id="@+id/final_set"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/light_white"
+                            android:text="성공"
+                            android:checked="true"
+                            android:clickable="false" />
+
                     </TableRow>
                 </TableLayout>
             </TableRow>

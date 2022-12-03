@@ -12,6 +12,8 @@ buildscript {
     dependencies {
         // Add the dependency for the Google services Gradle plugin
         classpath 'com.google.gms:google-services:4.3.14'
+        classpath"de.mannodermaus.gradle.plugins:android-junit5:1.8.2.1"
+        classpath 'org.junit.jupiter:junit-jupiter-api:5.9.1'
     }
 
 }

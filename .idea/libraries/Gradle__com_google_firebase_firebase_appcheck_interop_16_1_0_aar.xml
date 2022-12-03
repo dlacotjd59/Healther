@@ -2,9 +2,14 @@
   <library name="Gradle: com.google.firebase:firebase-appcheck-interop:16.1.0@aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/50ab714da10cd09bcde77170f01daa39/transformed/firebase-appcheck-interop-16.1.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/13a61df5ab27ad446e50ad44a38b4d76/transformed/jetified-firebase-appcheck-interop-16.1.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/13a61df5ab27ad446e50ad44a38b4d76/transformed/jetified-firebase-appcheck-interop-16.1.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/13a61df5ab27ad446e50ad44a38b4d76/transformed/jetified-firebase-appcheck-interop-16.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/223cfd5afe9ac25776dc47bbdf694a99/transformed/jetified-firebase-appcheck-interop-16.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fce42497327807641ac24f749dc67412/transformed/jetified-firebase-appcheck-interop-16.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6e14a199ad785f2820797fa66bbb56eb/transformed/firebase-appcheck-interop-16.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/121d1243e25ee1c149e8be45341125ea/transformed/jetified-firebase-appcheck-interop-16.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/5987fd61c644992239286f02df8f3af7/transformed/jetified-firebase-appcheck-interop-16.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5987fd61c644992239286f02df8f3af7/transformed/jetified-firebase-appcheck-interop-16.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5987fd61c644992239286f02df8f3af7/transformed/jetified-firebase-appcheck-interop-16.1.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-appcheck-interop/16.1.0/27bb4881dc6d25e53f69cc070de71912c0800b7c/firebase-appcheck-interop-16.1.0-javadoc.jar!/" />

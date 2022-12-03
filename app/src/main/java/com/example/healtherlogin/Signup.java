@@ -33,10 +33,12 @@ public class Signup extends AppCompatActivity {
     private final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private final DatabaseReference databaseReference= firebaseDatabase.getInstance().getReference();
+    Manage_Weights weights = new Manage_Weights();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sign_up);
+        setContentView(R.layout.sign_up_ui);
         Email_join = (EditText) findViewById(R.id.save_ID);
         Pwd_join = (EditText) findViewById(R.id.save_PW);
         Age_join=(EditText)findViewById(R.id.save_AGE);
@@ -52,8 +54,16 @@ public class Signup extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if(i==R.id.btn_man){
                     gender = radioButton_man.getText().toString();
+                    weights.setSquat("32.0");
+                    weights.setBench("35.0");
+                    weights.setCurl("20.0");
+                    weights.setNeck("20.0");
                 } else if(i==R.id.btn_woman){
                     gender = radioButton_woman.getText().toString();
+                    weights.setSquat("20.0");
+                    weights.setBench("20.0");
+                    weights.setCurl("10.0");
+                    weights.setNeck("10.0");
                 }
             }
         });
@@ -64,23 +74,25 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (gender !=null) {
-                    final String a = Email_join.getText().toString().trim();
-                    final String b = Pwd_join.getText().toString().trim();
-                    final String c = Age_join.getText().toString().trim();
-                    final String d = Height_join.getText().toString().trim();
-                    final String e = Weight_join.getText().toString().trim();
+                    final String Email = Email_join.getText().toString().trim();
+                    final String Age = Age_join.getText().toString().trim();
+                    final String Height = Height_join.getText().toString().trim();
+                    final String Weight = Weight_join.getText().toString().trim();
+                    final double BMI= Double.valueOf(Weight) / Math.pow(Double.valueOf(Height)/100.0,2.0);
+                    final String strBMI = String.format("%.2f",BMI);
                     //공백인 부분을 제거하고 보여주는 trim();
 
-                    firebaseAuth.createUserWithEmailAndPassword(a, b)
+                    firebaseAuth.createUserWithEmailAndPassword(Email, Pwd_join.getText().toString().trim())
                             .addOnCompleteListener(Signup.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                        User new_user = new User(user.getEmail(), c, d, e, gender);
-                                        databaseReference.child("User").child(user.getUid()).child("유저정보").setValue(new_user);
+                                        User_information new_userInformation = new User_information(user.getEmail(), Age, Height, Weight, gender,strBMI);
+                                        databaseReference.child(user.getUid()).child("골든식스무게").setValue(weights);
+                                        databaseReference.child(user.getUid()).child("유저정보").setValue(new_userInformation);
                                         Toast.makeText(Signup.this, "가입 성공", Toast.LENGTH_SHORT).show();
-                                        Intent complete = new Intent(Signup.this, LoginActivity.class);
+                                        Intent complete = new Intent(Signup.this, Login.class);
                                         startActivity(complete);
                                         finish();
 

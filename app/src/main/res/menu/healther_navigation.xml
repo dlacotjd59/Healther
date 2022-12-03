@@ -7,12 +7,12 @@
         android:enabled="true"
         app:showAsAction="always"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="일지" />
+         />
 
     <item
         android:id="@+id/Recommendation"
         android:enabled="true"
         app:showAsAction="always"
-        android:title="추천"
+
         android:icon="@drawable/ic_recommend"/>
 </menu>
