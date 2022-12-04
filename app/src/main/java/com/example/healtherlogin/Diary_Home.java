@@ -82,7 +82,7 @@ public class Diary_Home extends AppCompatActivity {
                     Weight.setText(og_userInformation.getweight());
                     Age.setText(og_userInformation.getage());
                     Gender.setText(og_userInformation.getgender());
-                    BMI=Double.valueOf(og_userInformation.getBMI());
+                    BMI=Double.parseDouble(og_userInformation.getBMI());
                     if (BMI < 18.5) {
                         BMI_Type="저체중";
                         BMI_Image="male1";
@@ -257,9 +257,8 @@ public class Diary_Home extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (update_height.getText().toString().equals("") ||
-                                update_weight.getText().toString().equals("") ||
-                                update_age.getText().toString().equals("")) {
-
+                            update_weight.getText().toString().equals("") ||
+                            update_age.getText().toString().equals("")) {
                             Toast.makeText(Diary_Home.this, "빈칸이 없어야 합니다.", Toast.LENGTH_SHORT).show();
 
                         } else {

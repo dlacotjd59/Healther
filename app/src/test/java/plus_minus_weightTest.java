@@ -18,7 +18,7 @@ class plus_minus_weightTest extends plus_minus_weight {
 
     @Test
     void testMinus() {
-        assertEquals("2.0", plus_minus_weight.minus("4.5"));
+        assertEquals("2.0", plus_minus_weight.minus("5.5"));
         System.out.println(plus_minus_weight.minus("4.5"));
         System.out.println(plus_minus_weight.minus("1.5"));
     }

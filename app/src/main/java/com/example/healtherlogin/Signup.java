@@ -21,6 +21,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Locale;
+
 public class Signup extends AppCompatActivity {
 
     private EditText Email_join;
@@ -78,8 +80,8 @@ public class Signup extends AppCompatActivity {
                     final String Age = Age_join.getText().toString().trim();
                     final String Height = Height_join.getText().toString().trim();
                     final String Weight = Weight_join.getText().toString().trim();
-                    final double BMI= Double.valueOf(Weight) / Math.pow(Double.valueOf(Height)/100.0,2.0);
-                    final String strBMI = String.format("%.2f",BMI);
+                    final double BMI= Double.parseDouble(Weight) / Math.pow(Double.parseDouble(Height)/100.0,2.0);
+                    final String strBMI = String.format(Locale.getDefault(),"%.2f",BMI);
                     //공백인 부분을 제거하고 보여주는 trim();
 
                     firebaseAuth.createUserWithEmailAndPassword(Email, Pwd_join.getText().toString().trim())
