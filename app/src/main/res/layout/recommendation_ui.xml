@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hint_background">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="410dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Recommendation_title"
+            android:layout_width="410dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="운동 추천"
+            android:textColor="@color/light_white"
+            app:autoSizeTextType="uniform" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="@drawable/show_ui_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintHeight_percent=".78"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/CurlText"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="바벨컬"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@+id/Exercise_Start"
+            app:layout_constraintEnd_toStartOf="@+id/Weight_Curl" />
+
+        <TextView
+            android:id="@+id/BMI"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="81dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="BMI"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@+id/GoldenSIx_Weights"
+            app:layout_constraintEnd_toStartOf="@+id/Recommend_Exercise"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/BenchText"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="벤치"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@+id/CurlText"
+            app:layout_constraintEnd_toStartOf="@+id/Weight_Bench"
+            app:layout_constraintTop_toBottomOf="@+id/GoldenSIx_Weights"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/NeckText"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="넥프레스"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@+id/Setting_Weight"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/SquatText"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="스쿼트"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@+id/NeckText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GoldenSIx_Weights"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/Weight_Bench"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="중량"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@+id/Weight_Curl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GoldenSIx_Weights"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/Weight_Squat"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="중량"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@+id/Weight_Neck"
+            app:layout_constraintStart_toEndOf="@+id/SquatText"
+            app:layout_constraintTop_toBottomOf="@+id/GoldenSIx_Weights"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/Weight_Curl"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="중량"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@+id/Exercise_Start"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/Weight_Neck"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="중량"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@+id/Setting_Weight"
+            app:layout_constraintStart_toEndOf="@+id/NeckText" />
+
+        <TextView
+            android:id="@+id/Recommend_Exercise"
+            android:layout_width="140dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginEnd="68dp"
+            android:gravity="center"
+            android:text="추천운동"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/GoldenSIx_Weights"
+            android:layout_width="140dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="골든 식스 중량"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Recommend_Exercise" />
+
+        <Button
+            android:id="@+id/Exercise_Start"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginEnd="44dp"
+            android:text="운동 시작"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Recommend_Exercise" />
+
+        <Button
+            android:id="@+id/Setting_Weight"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="160dp"
+            android:text="무게 수정"
+            app:layout_constraintEnd_toStartOf="@+id/Exercise_Start"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BMI" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="81dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/round_corner"
+        android:elevation="2dp"
+        app:itemIconSize="35dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@color/teal_200"
+        app:labelVisibilityMode="selected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/healther_navigation" />
+
+    <Button
+        android:id="@+id/info"
+        android:layout_width="42dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/circle"
+        android:text="Info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:ignore="TouchTargetSizeCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

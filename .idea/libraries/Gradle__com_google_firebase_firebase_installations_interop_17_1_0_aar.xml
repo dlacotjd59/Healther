@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.firebase:firebase-installations-interop:17.1.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d6947da7a232205745a0738d29a90fea/transformed/firebase-installations-interop-17.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1a0e0881534f834e25ea9a09e448b2a8/transformed/jetified-firebase-installations-interop-17.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/89d5e2248c739e2d2a2a632a76db40c2/transformed/jetified-firebase-installations-interop-17.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fb505f1e0b6516832c90e963e14e7d47/transformed/jetified-firebase-installations-interop-17.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c258a62228c414199dfcd7f90ddc5559/transformed/firebase-installations-interop-17.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/aee3afc8d3f8080b597da156651e5da3/transformed/jetified-firebase-installations-interop-17.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6051006fc38be85d89058c9aebcb34dd/transformed/jetified-firebase-installations-interop-17.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6051006fc38be85d89058c9aebcb34dd/transformed/jetified-firebase-installations-interop-17.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/6051006fc38be85d89058c9aebcb34dd/transformed/jetified-firebase-installations-interop-17.1.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-installations-interop/17.1.0/4fd04ebe2d8d8f9bf658db62a507d7a0161c362a/firebase-installations-interop-17.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-installations-interop/17.1.0/5998843857375da90db2675c2dce6814d97d16ff/firebase-installations-interop-17.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.firebase:firebase-firestore:24.4.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6bdef85ca8744aa2f17e1dbe5e6fdc18/transformed/firebase-firestore-24.4.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cf154e16073a52728325aa8d07a3af88/transformed/jetified-firebase-firestore-24.4.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/80f6f2a8d1143b0724322fa9b98acc72/transformed/jetified-firebase-firestore-24.4.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/336ec1e889da2d2f29eab2a55e11327b/transformed/jetified-firebase-firestore-24.4.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2ddf50c89112cb63106ec2b187fd4eb8/transformed/firebase-firestore-24.4.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/24e1d75cd44ebc8889b3319080afb63a/transformed/jetified-firebase-firestore-24.4.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/56b50cfea1a2b5711f45c734c1a7faa2/transformed/jetified-firebase-firestore-24.4.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/56b50cfea1a2b5711f45c734c1a7faa2/transformed/jetified-firebase-firestore-24.4.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/56b50cfea1a2b5711f45c734c1a7faa2/transformed/jetified-firebase-firestore-24.4.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-firestore/24.4.1/da64cdd7ddd0d385bc8bde98cec599deaae91c7a/firebase-firestore-24.4.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-firestore/24.4.1/823b6d952e9609cefa219f224787dbc8b581c277/firebase-firestore-24.4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

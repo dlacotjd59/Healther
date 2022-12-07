@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "449172918019",
+    "firebase_url": "https://precise-treat-312208-default-rtdb.firebaseio.com",
+    "project_id": "precise-treat-312208",
+    "storage_bucket": "precise-treat-312208.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449172918019:android:69b4bb001261d3d0a62336",
+        "android_client_info": {
+          "package_name": "com.example.healtherlogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449172918019-mr9n2f9p6lc8h7oqt2qmfo3b5u7cubea.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByg_62Bt8_15y8Y8w-KLu_dpdGdre3qgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449172918019-mr9n2f9p6lc8h7oqt2qmfo3b5u7cubea.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

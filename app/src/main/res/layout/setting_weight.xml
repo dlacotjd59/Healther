@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hint_background">
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView83"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="스쿼트"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+
+        <EditText
+            android:id="@+id/Set_Squat"
+            android:layout_width="169dp"
+            android:layout_height="68dp"
+            android:ems="10"
+            android:hint="스쿼트 중량 입력"
+            android:textColor="@color/light_white"
+            android:textColorHint="@color/light_white"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView84"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="kg"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/add_squat_weight"
+                android:layout_width="45dp"
+                android:layout_height="30dp"
+                android:background="@drawable/triangle_up"
+                android:backgroundTintMode="screen"
+
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/hint_background" />
+
+            <Button
+                android:id="@+id/substract_squat_weight"
+                android:layout_width="45dp"
+                android:layout_height="31dp"
+                android:background="@drawable/triangle_down"
+                android:backgroundTint="@color/teal_200"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        </LinearLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow4">
+
+        <TextView
+            android:id="@+id/textView85"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="와이드 그립 벤치 프레스"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+
+        <EditText
+            android:id="@+id/Set_Bench"
+            android:layout_width="169dp"
+            android:layout_height="68dp"
+            android:ems="10"
+            android:hint="벤치 프레스 중량 입력"
+            android:textColor="@color/light_white"
+            android:textColorHint="@color/light_white"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textView86"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="kg"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/add_bench_weight"
+                android:layout_width="48dp"
+                android:layout_height="30dp"
+                android:background="@drawable/triangle_up"
+                android:onClick="add_ben"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/hint_background" />
+
+            <Button
+                android:id="@+id/substract_bench_weight"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:background="@drawable/triangle_down"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow">
+
+        <TextView
+            android:id="@+id/textView99"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="비하인드 넥 프레스"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+
+        <EditText
+            android:id="@+id/Set_Neck"
+            android:layout_width="169dp"
+            android:layout_height="68dp"
+            android:ems="10"
+            android:hint="넥 프레스 중량 입력"
+            android:textColor="@color/light_white"
+            android:textColorHint="@color/light_white"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textView100"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="kg"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/add_neck_weight"
+                android:layout_width="47dp"
+                android:layout_height="30dp"
+                android:background="@drawable/triangle_up"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/hint_background" />
+
+            <Button
+                android:id="@+id/substract_neck_weight"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:background="@drawable/triangle_down"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow2">
+
+        <TextView
+            android:id="@+id/textView101"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="바벨 컬"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+
+        <EditText
+            android:id="@+id/Set_Barbell"
+            android:layout_width="169dp"
+            android:layout_height="68dp"
+            android:ems="10"
+            android:hint="바벨 컬 중량 입력"
+            android:textColor="@color/light_white"
+            android:textColorHint="@color/light_white"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textView110"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="kg"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/add_barbell_weight"
+                android:layout_width="49dp"
+                android:layout_height="30dp"
+                android:background="@drawable/triangle_up"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <View
+                android:id="@+id/divider7"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/hint_background" />
+
+            <Button
+                android:id="@+id/substract_barbell_weight"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:background="@drawable/triangle_down"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </LinearLayout>
+    </TableRow>
+
+    <Button
+        android:id="@+id/FIxButton"
+        android:layout_width="208dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="28dp"
+        android:text="수정하기"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
