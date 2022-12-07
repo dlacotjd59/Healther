@@ -65,6 +65,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Diary_home_title"
         app:mcv_selectionColor="#a9dbf0cb"
+        app:mcv_arrowColor="#a9dbf0cb"
+
+        android:theme="@style/CalenderViewCustom"
+        app:mcv_weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+        app:mcv_dateTextAppearance="@style/CalenderViewDateCustomText"
+
+
         app:mcv_showOtherDates="defaults" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
