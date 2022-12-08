@@ -1,6 +1,13 @@
 package com.example.healtherlogin;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -10,9 +17,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -23,7 +35,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class Aerobic extends AppCompatActivity {
+public class Aerobic extends AppCompatActivity implements LocationListener {
 
     private final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private final DatabaseReference databaseReference= firebaseDatabase.getInstance().getReference();
@@ -36,16 +48,19 @@ public class Aerobic extends AppCompatActivity {
     private Button start_pause, finish;
     private ImageView running_image;
     private ProgressBar Time_Bar;
-    private TextView time_record;
+    private TextView Speed,Distance;
+    private LocationManager locationManager;
+    private Location L_location = null;
+
 
     private String record;
     private CountDownTimer countDownTimer;
     private boolean isRunning;
-    private boolean animate;
     private long Left_Time_ms = 100*1000;  // 100초로 임의로 설정
-    private long Init_Time_sec = 100; // 100초로 임의로 설정
+    private final long Init_Time_sec = 100; // 100초로 임의로 설정
 
 
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,11 +70,35 @@ public class Aerobic extends AppCompatActivity {
         finish = (Button) findViewById(R.id.Finish_Running);
         running_image = (ImageView) findViewById(R.id.running_image);
         Time_Bar = (ProgressBar) findViewById(R.id.time_bar);
+        Speed = (TextView) findViewById(R.id.speed);
+        Distance= (TextView) findViewById(R.id.distance);
 
+        int permissionCheck1 = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
+
+        if(permissionCheck1 == PackageManager.PERMISSION_DENIED){
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},0); //GPS를 이용한 위치 권한 요청
+        }
+
+        int permissionCheck2 = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION);
+
+        if(permissionCheck2 == PackageManager.PERMISSION_DENIED){
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION},0); // 백그라운드 위치 권한 요청
+        }
+
+        int permissionCheck3 = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
+
+        if(permissionCheck3 == PackageManager.PERMISSION_DENIED){
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},0); // 백그라운드 위치 권한 요청
+        }
+
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,1000,0,this);
+        L_location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        onLocationChanged(L_location);
+
+        Glide.with(this).load(R.raw.run).into(running_image);
         Time_Bar.setProgress(0);
         Time_Bar.setMax((int)Left_Time_ms/1000);
-
-        Glide.with(this).load(R.raw.running).into(running_image);
 
 
         start_pause.setOnClickListener(new View.OnClickListener() {
@@ -69,9 +108,11 @@ public class Aerobic extends AppCompatActivity {
                     countDownTimer.cancel();
                     isRunning = false;
 
+                    ((GifDrawable)running_image.getDrawable()).stop();
                     start_pause.setText("다시 시작");
                 }else{//달리기 시작
 
+                    ((GifDrawable)running_image.getDrawable()).start();
                     Time_Bar.setProgress(Time_Bar.getMax()-(int)Left_Time_ms/1000);
 
                     countDownTimer = new CountDownTimer(Left_Time_ms,1000) {
@@ -86,7 +127,7 @@ public class Aerobic extends AppCompatActivity {
                         }
                         @Override
                         public void onFinish() {
-                            Left_Time_ms = 100*1000;
+                            Left_Time_ms = Init_Time_sec;
                             isRunning = false;
                             Toast.makeText(Aerobic.this, "설정한 시간이 끝났습니다.", Toast.LENGTH_SHORT).show();
                             Time_Bar.setProgress(0);
@@ -115,5 +156,9 @@ public class Aerobic extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onLocationChanged(@NonNull Location location) {
+
+    }
 }
 
