@@ -92,9 +92,9 @@ public class Aerobic extends AppCompatActivity implements LocationListener {
         }
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,1000,0,this);
-        L_location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        onLocationChanged(L_location);
+
+
+
 
         Glide.with(this).load(R.raw.run).into(running_image);
         Time_Bar.setProgress(0);
@@ -159,6 +159,16 @@ public class Aerobic extends AppCompatActivity implements LocationListener {
     @Override
     public void onLocationChanged(@NonNull Location location) {
 
+        String speed = String.format("%.3f",location.getSpeed());
+        Speed.setText(speed);
+
+
+        if(L_location != null){
+            Distance.setText((int) L_location.distanceTo(location));
+        }
+        L_location = location;
     }
+
+
 }
 
