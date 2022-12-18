@@ -3,19 +3,14 @@ package com.example.healtherlogin;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -51,66 +46,57 @@ public class Signup extends AppCompatActivity {
         radioButton_man = (RadioButton) findViewById(R.id.btn_man);
         radioButton_woman = (RadioButton) findViewById(R.id.btn_woman);
 
-        radioGroup_gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if(i==R.id.btn_man){
-                    gender = radioButton_man.getText().toString();
-                    weights.setSquat("32.0");
-                    weights.setBench("35.0");
-                    weights.setCurl("20.0");
-                    weights.setNeck("20.0");
-                } else if(i==R.id.btn_woman){
-                    gender = radioButton_woman.getText().toString();
-                    weights.setSquat("20.0");
-                    weights.setBench("20.0");
-                    weights.setCurl("10.0");
-                    weights.setNeck("10.0");
-                }
+        radioGroup_gender.setOnCheckedChangeListener((radioGroup, i) -> {
+            if(i==R.id.btn_man){
+                gender = radioButton_man.getText().toString();
+                weights.setSquat("32.0");
+                weights.setBench("35.0");
+                weights.setCurl("20.0");
+                weights.setNeck("20.0");
+            } else if(i==R.id.btn_woman){
+                gender = radioButton_woman.getText().toString();
+                weights.setSquat("20.0");
+                weights.setBench("20.0");
+                weights.setCurl("10.0");
+                weights.setNeck("10.0");
             }
         });
 
 
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (gender !=null) {
-                    final String Email = Email_join.getText().toString().trim();
-                    final String Age = Age_join.getText().toString().trim();
-                    final String Height = Height_join.getText().toString().trim();
-                    final String Weight = Weight_join.getText().toString().trim();
-                    final double BMI= Double.parseDouble(Weight) / Math.pow(Double.parseDouble(Height)/100.0,2.0);
-                    final String strBMI = String.format(Locale.getDefault(),"%.2f",BMI);
-                    //공백인 부분을 제거하고 보여주는 trim();
+        btn.setOnClickListener(v -> {
+            if (gender !=null) {
+                final String Email = Email_join.getText().toString().trim();
+                final String Age = Age_join.getText().toString().trim();
+                final String Height = Height_join.getText().toString().trim();
+                final String Weight = Weight_join.getText().toString().trim();
+                final double BMI= Double.parseDouble(Weight) / Math.pow(Double.parseDouble(Height)/100.0,2.0);
+                final String strBMI = String.format(Locale.getDefault(),"%.2f",BMI);
+                //공백인 부분을 제거하고 보여주는 trim();
 
-                    firebaseAuth.createUserWithEmailAndPassword(Email, Pwd_join.getText().toString().trim())
-                            .addOnCompleteListener(Signup.this, new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                        User_information new_userInformation = new User_information(user.getEmail(), Age, Height, Weight, gender,strBMI);
-                                        databaseReference.child(user.getUid()).child("골든식스무게").setValue(weights);
-                                        databaseReference.child(user.getUid()).child("유저정보").setValue(new_userInformation);
-                                        Toast.makeText(Signup.this, "가입 성공", Toast.LENGTH_SHORT).show();
-                                        Intent complete = new Intent(Signup.this, Login.class);
-                                        startActivity(complete);
-                                        finish();
+                firebaseAuth.createUserWithEmailAndPassword(Email, Pwd_join.getText().toString().trim())
+                        .addOnCompleteListener(Signup.this, task -> {
+                            if (task.isSuccessful()) {
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                User_information new_userInformation = new User_information(user.getEmail(), Age, Height, Weight, gender,strBMI);
+                                databaseReference.child(user.getUid()).child("골든식스무게").setValue(weights);
+                                databaseReference.child(user.getUid()).child("유저정보").setValue(new_userInformation);
+                                Toast.makeText(Signup.this, "가입 성공", Toast.LENGTH_SHORT).show();
+                                Intent complete = new Intent(Signup.this, Login.class);
+                                startActivity(complete);
+                                finish();
 
-                                    } else {
-                                        Toast.makeText(Signup.this, "등록 에러", Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
-
-                }
-
-                else{
-                    Toast.makeText(Signup.this, "해당하는 성별 버튼을 눌러주세요!", Toast.LENGTH_SHORT).show();
-                }
+                            } else {
+                                Toast.makeText(Signup.this, "등록 에러", Toast.LENGTH_SHORT).show();
+                            }
+                        });
 
             }
+
+            else{
+                Toast.makeText(Signup.this, "해당하는 성별 버튼을 눌러주세요!", Toast.LENGTH_SHORT).show();
+            }
+
         });
 
 

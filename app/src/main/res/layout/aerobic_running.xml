@@ -31,8 +31,8 @@
 
     <ImageView
         android:id="@+id/running_image"
-        android:layout_width="239dp"
-        android:layout_height="241dp"
+        android:layout_width="393dp"
+        android:layout_height="411dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -45,16 +45,14 @@
         android:layout_width="351dp"
         android:layout_height="71dp"
         android:layout_centerInParent="true"
-        android:layout_marginTop="38dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginTop="16dp"
         android:indeterminate="false"
         android:max="3600"
         android:progress="0"
         android:progressDrawable="@drawable/progressbar2"
-        app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/running_image"
         tools:progress="807" />
 
     <Button
@@ -90,98 +88,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:text="0(분)"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/Start_Pause_Running"
+        app:layout_constraintEnd_toStartOf="@+id/textView15"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time_bar"
-        app:layout_constraintVertical_bias="0.29" />
+        app:layout_constraintTop_toBottomOf="@+id/time_bar" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="60(분)"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/Start_Pause_Running"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/time_bar"
-        app:layout_constraintVertical_bias="0.724" />
+        app:layout_constraintTop_toBottomOf="@+id/time_bar" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="132dp"
         android:text="30(분)"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/Start_Pause_Running"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/time_bar"
-        app:layout_constraintVertical_bias="0.724" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="center"
-        android:text="현재속도"
-        android:textColor="@color/white"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintEnd_toStartOf="@+id/speed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/running_image" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="center"
-        android:text="이동거리"
-        android:textColor="@color/white"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/time_bar"
-        app:layout_constraintEnd_toStartOf="@+id/distance"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.18" />
-
-    <TextView
-        android:id="@+id/speed"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="28dp"
-        android:gravity="center"
-        android:textColor="@color/white"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/running_image" />
-
-    <TextView
-        android:id="@+id/distance"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="28dp"
-        android:gravity="center"
-        android:textColor="@color/white"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/time_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/speed"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintEnd_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/time_bar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
