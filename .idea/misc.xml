@@ -94,7 +94,7 @@
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_bench.xml" value="0.2669706180344478" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_chin.xml" value="0.2669706180344478" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_curl.xml" value="0.2669706180344478" />
-        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_neck.xml" value="0.2669706180344478" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_neck.xml" value="0.33" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program.xml" value="0.5453125" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program_do_ben.xml" value="0.5453125" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program_do_chin.xml" value="0.5453125" />
@@ -105,12 +105,15 @@
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_program_input.xml" value="0.5489583333333333" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_situp.xml" value="0.2669706180344478" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/golden_six_squat.xml" value="0.2669706180344478" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/login_ui.xml" value="0.53125" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/program_bmi.xml" value="0.5494791666666666" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/recommendation_exercise.xml" value="0.5" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/recommendation_ui.xml" value="0.53125" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/setting_weight.xml" value="0.5" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/show_ui_bg.xml" value="0.3188405797101449" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/sign_up.xml" value="0.33" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/sign_up_ui.xml" value="0.53125" />
+        <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/sss.xml" value="0.5302083333333333" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/timer.xml" value="0.5" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/layout/update_user.xml" value="0.67" />
         <entry key="..\:/Users/joonl_lwfg6mz/AndroidStudioProjects/Healther-master/app/src/main/res/menu/healther_navigation.xml" value="0.5489583333333333" />

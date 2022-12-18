@@ -42,7 +42,7 @@ public class Golden_Six extends AppCompatActivity {
     private TextView weight_set1,weight_set2,weight_set3,weight_set4;
 
     private int countcycle = 0;
-    private int[] setconfirm={0,0,0,1,0,0,2,0,0,3,0,0,0,4,0,0,5,0,0,0,6};
+    private final int[] setconfirm={0,0,0,1,0,0,2,0,0,3,0,0,0,4,0,0,5,0,0,0,6};
 
     private String [] weights = new String[4];
     private final String[] strS_or_F = new String[6];
@@ -137,12 +137,9 @@ public class Golden_Six extends AppCompatActivity {
 
                 countDownTimer.start();
 
-                Skip.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Rest.dismiss();
-                        countDownTimer.cancel();
-                    }
+                Skip.setOnClickListener(view -> {
+                    Rest.dismiss();
+                    countDownTimer.cancel();
                 });
 
                 Rest.show();

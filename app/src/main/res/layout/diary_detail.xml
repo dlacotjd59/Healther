@@ -106,28 +106,6 @@
                     android:textSize="24sp" />
             </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="210dp">
-
-                <TextView
-                    android:id="@+id/textView38"
-                    android:layout_width="102dp"
-                    android:layout_height="200dp"
-                    android:gravity="center"
-                    android:text="메모"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/editTextText2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="textPersonName"
-                    android:text="Memo"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-            </TableRow>
         </TableLayout>
     </ScrollView>
 

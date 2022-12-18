@@ -1,12 +1,10 @@
 package com.example.healtherlogin;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,7 +28,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
-import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -56,7 +53,7 @@ public class Diary_Home extends AppCompatActivity {
 
     private String str_Height, str_Weight, str_Age, str_Gender, selectday,strBMI,BMI_Type,BMI_Image;
     private double BMI;
-    private ArrayList<String> listdate = new ArrayList<String>();
+    private final ArrayList<String> listdate = new ArrayList<>();
     private Button Fix, Fix_user;
     private User_information og_userInformation;
 
@@ -162,156 +159,143 @@ public class Diary_Home extends AppCompatActivity {
             }
         });
 
-        materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
-            @Override
-            public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
-                int Year = date.getYear();
-                int Month = date.getMonth() + 1;
-                int Day = date.getDay();
+        materialCalendarView.setOnDateChangedListener((widget, date, selected) -> {
+            int Year = date.getYear();
+            int Month = date.getMonth() + 1;
+            int Day = date.getDay();
 
-                selectday = String.format(Locale.getDefault(),"%02d"+","+"%02d"+","+"%02d",Year,Month,Day);
+            selectday = String.format(Locale.getDefault(),"%02d"+","+"%02d"+","+"%02d",Year,Month,Day);
 
-                databaseReference.child(UID).child("일지").child(selectday).addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Manage_Diary Diary_SelectedDay = snapshot.getValue(Manage_Diary.class);
-                        try {
-                            String ex = Diary_SelectedDay.getexercise();
-                            switch(ex){
-                                case "골든식스":
-                                    Show_Details_Golden = (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.diary_check,null);
-                                    AlertDialog.Builder Diary_Golden = new AlertDialog.Builder(Diary_Home.this);
-                                    Diary_Golden.setView(Show_Details_Golden);
-                                    SelectedDate = (TextView) Show_Details_Golden.findViewById(R.id.Date);
-                                    SelectedDate_Time = (TextView) Show_Details_Golden.findViewById(R.id.time_golden);
+            databaseReference.child(UID).child("일지").child(selectday).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    Manage_Diary Diary_SelectedDay = snapshot.getValue(Manage_Diary.class);
+                    try {
+                        String ex = Diary_SelectedDay.getexercise();
+                        switch(ex){
+                            case "골든식스":
+                                Show_Details_Golden = (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.diary_check,null);
+                                AlertDialog.Builder Diary_Golden = new AlertDialog.Builder(Diary_Home.this);
+                                Diary_Golden.setView(Show_Details_Golden);
+                                SelectedDate = (TextView) Show_Details_Golden.findViewById(R.id.Date);
+                                SelectedDate_Time = (TextView) Show_Details_Golden.findViewById(R.id.time_golden);
 
-                                    Squat_SorF = (TextView) Show_Details_Golden.findViewById(R.id.squ_sf);
-                                    Bench_SorF = (TextView) Show_Details_Golden.findViewById(R.id.ben_sf);
-                                    Chin_SorF = (TextView) Show_Details_Golden.findViewById(R.id.chin_sf);
-                                    Neck_SorF = (TextView) Show_Details_Golden.findViewById(R.id.neck_sf);
-                                    Curl_SorF = (TextView) Show_Details_Golden.findViewById(R.id.curl_sf);
-                                    Situp_SorF = (TextView) Show_Details_Golden.findViewById(R.id.situp_sf);
+                                Squat_SorF = (TextView) Show_Details_Golden.findViewById(R.id.squ_sf);
+                                Bench_SorF = (TextView) Show_Details_Golden.findViewById(R.id.ben_sf);
+                                Chin_SorF = (TextView) Show_Details_Golden.findViewById(R.id.chin_sf);
+                                Neck_SorF = (TextView) Show_Details_Golden.findViewById(R.id.neck_sf);
+                                Curl_SorF = (TextView) Show_Details_Golden.findViewById(R.id.curl_sf);
+                                Situp_SorF = (TextView) Show_Details_Golden.findViewById(R.id.situp_sf);
 
-                                    Squat_SorF.setText(Diary_SelectedDay.getS_or_f_squat());
-                                    Bench_SorF.setText(Diary_SelectedDay.getS_or_f_bench());
-                                    Chin_SorF.setText(Diary_SelectedDay.getS_or_f_chin());
-                                    Neck_SorF.setText(Diary_SelectedDay.getS_or_f_neck());
-                                    Curl_SorF.setText(Diary_SelectedDay.getS_or_f_curl());
-                                    Situp_SorF.setText(Diary_SelectedDay.getS_or_f_situp());
+                                Squat_SorF.setText(Diary_SelectedDay.getS_or_f_squat());
+                                Bench_SorF.setText(Diary_SelectedDay.getS_or_f_bench());
+                                Chin_SorF.setText(Diary_SelectedDay.getS_or_f_chin());
+                                Neck_SorF.setText(Diary_SelectedDay.getS_or_f_neck());
+                                Curl_SorF.setText(Diary_SelectedDay.getS_or_f_curl());
+                                Situp_SorF.setText(Diary_SelectedDay.getS_or_f_situp());
 
-                                    SelectedDate.setText(selectday);
-                                    SelectedDate_Time.setText(Diary_SelectedDay.gettime());
+                                SelectedDate.setText(selectday);
+                                SelectedDate_Time.setText(Diary_SelectedDay.gettime());
 
-                                    Diary_Golden.show();
-                                    break;
-                                case "런닝":
-                                    Show_Details_Running = (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.diary_detail,null);
-                                    AlertDialog.Builder Diary_Running = new AlertDialog.Builder(Diary_Home.this);
-                                    Diary_Running.setView(Show_Details_Running);
-                                    SelectedDate = (TextView) Show_Details_Running.findViewById(R.id.Date);
-                                    SelectedDate_Exercise = (TextView) Show_Details_Running.findViewById(R.id.Exercise);
-                                    SelectedDate_Time = (TextView) Show_Details_Running.findViewById(R.id.TotalTime);
-                                    SelectedDate.setText(selectday);
-                                    SelectedDate_Exercise.setText(Diary_SelectedDay.getexercise());
-                                    SelectedDate_Time.setText(Diary_SelectedDay.gettime());
-                                    Diary_Running.show();
-                                    break;
-                            }
-                        }catch(NullPointerException e){
-                            Toast.makeText(Diary_Home.this, "이날에는 운동을 하지 않았습니다", Toast.LENGTH_SHORT).show();
+                                Diary_Golden.show();
+                                break;
+                            case "런닝":
+                                Show_Details_Running = (ConstraintLayout) View.inflate(Diary_Home.this,R.layout.diary_detail,null);
+                                AlertDialog.Builder Diary_Running = new AlertDialog.Builder(Diary_Home.this);
+                                Diary_Running.setView(Show_Details_Running);
+                                SelectedDate = (TextView) Show_Details_Running.findViewById(R.id.Date);
+                                SelectedDate_Exercise = (TextView) Show_Details_Running.findViewById(R.id.Exercise);
+                                SelectedDate_Time = (TextView) Show_Details_Running.findViewById(R.id.TotalTime);
+                                SelectedDate.setText(selectday);
+                                SelectedDate_Exercise.setText(Diary_SelectedDay.getexercise());
+                                SelectedDate_Time.setText(Diary_SelectedDay.gettime());
+                                Diary_Running.show();
+                                break;
                         }
-
+                    }catch(NullPointerException e){
+                        Toast.makeText(Diary_Home.this, "이날에는 운동을 하지 않았습니다", Toast.LENGTH_SHORT).show();
                     }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+                }
 
-                    }
-                });
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-                materialCalendarView.clearSelection();
-            }
+                }
+            });
+
+            materialCalendarView.clearSelection();
         });
 
 
+        // 자신의 신체정보 수정
+        Fix.setOnClickListener(view -> {
+            Update_MyPhysicalInformation = (ConstraintLayout) View.inflate(Diary_Home.this, R.layout.update_user, null);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Diary_Home.this); // 팝업창을 사용해 신체정볼를 수정
+            AlertDialog Update = builder.create();
+            Update.setView(Update_MyPhysicalInformation);
+
+            update_height = (EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Height);
+            update_weight = (EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Weight);
+            update_age = (EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Age);
+            Fix_user = (Button) Update_MyPhysicalInformation.findViewById(R.id.Fix_user);
+
+            update_height.setText(og_userInformation.getheight());
+            update_weight.setText(og_userInformation.getweight());
+            update_age.setText(og_userInformation.getage());
+
+            Fix_user.setOnClickListener(view1 -> {
+                if (update_height.getText().toString().equals("") ||
+                    update_weight.getText().toString().equals("") ||
+                    update_age.getText().toString().equals("")) {
+                    Toast.makeText(Diary_Home.this, "빈칸이 없어야 합니다.", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    str_Height = update_height.getText().toString();
+                    str_Weight = update_weight.getText().toString();
+                    str_Age = update_age.getText().toString();
+
+                    Height.setText(str_Height);
+                    Weight.setText(str_Weight);
+                    Age.setText(str_Age);
+
+                    og_userInformation.setheight(str_Height);
+                    og_userInformation.setweight(str_Weight);
+                    og_userInformation.setage(str_Age);
+
+                    BMI= Double.parseDouble(str_Weight) / Math.pow(Double.parseDouble(str_Height)/100.0,2.0);
+                    strBMI = String.format(Locale.getDefault(),"%.2f",BMI);
+                    og_userInformation.setBMI(strBMI);
+
+                    databaseReference.child(UID).child("유저정보").setValue(og_userInformation);
+                    Update.dismiss();
+                    Toast.makeText(Diary_Home.this, "수정됐습니다.", Toast.LENGTH_SHORT).show();
+                }
+            });
 
 
-        Fix.setOnClickListener(new View.OnClickListener() { // 자신의 신체정보 수정
-            @Override
-            public void onClick(View view) {
-                Update_MyPhysicalInformation = (ConstraintLayout) View.inflate(Diary_Home.this, R.layout.update_user, null);
-                AlertDialog.Builder builder = new AlertDialog.Builder(Diary_Home.this); // 팝업창을 사용해 신체정볼를 수정
-                AlertDialog Update = builder.create();
-                Update.setView(Update_MyPhysicalInformation);
-
-                update_height = (EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Height);
-                update_weight = (EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Weight);
-                update_age = (EditText) Update_MyPhysicalInformation.findViewById(R.id.Update_Age);
-                Fix_user = (Button) Update_MyPhysicalInformation.findViewById(R.id.Fix_user);
-
-                update_height.setText(og_userInformation.getheight());
-                update_weight.setText(og_userInformation.getweight());
-                update_age.setText(og_userInformation.getage());
-
-                Fix_user.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (update_height.getText().toString().equals("") ||
-                            update_weight.getText().toString().equals("") ||
-                            update_age.getText().toString().equals("")) {
-                            Toast.makeText(Diary_Home.this, "빈칸이 없어야 합니다.", Toast.LENGTH_SHORT).show();
-
-                        } else {
-                            str_Height = update_height.getText().toString();
-                            str_Weight = update_weight.getText().toString();
-                            str_Age = update_age.getText().toString();
-
-                            Height.setText(str_Height);
-                            Weight.setText(str_Weight);
-                            Age.setText(str_Age);
-
-                            og_userInformation.setheight(str_Height);
-                            og_userInformation.setweight(str_Weight);
-                            og_userInformation.setage(str_Age);
-
-                            BMI= Double.parseDouble(str_Weight) / Math.pow(Double.parseDouble(str_Height)/100.0,2.0);
-                            strBMI = String.format(Locale.getDefault(),"%.2f",BMI);
-                            og_userInformation.setBMI(strBMI);
-
-                            databaseReference.child(UID).child("유저정보").setValue(og_userInformation);
-                            Update.dismiss();
-                            Toast.makeText(Diary_Home.this, "수정됐습니다.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+            Update.show();
 
 
-                Update.show();
-
-
-            }
         });
 
 
         BottomNavigationView bottom_navi = findViewById(R.id.bottom_navi);
-        bottom_navi.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        bottom_navi.setOnNavigationItemSelectedListener(item -> {
 
-                if (item.getItemId() == R.id.Diary) {
-                    Toast.makeText(Diary_Home.this, "현재 화면입니다", Toast.LENGTH_SHORT).show();
-                } else if (item.getItemId() == R.id.Recommendation) {
-                    str_Gender = Gender.getText().toString();
-                    Intent Recommendation = new Intent(Diary_Home.this, Recommend.class);
-                    Recommendation.putExtra("Gender", str_Gender);
-                    Recommendation.putExtra("BMI",BMI);
-                    Recommendation.putExtra("BMI_Type",BMI_Type);
-                    Recommendation.putExtra("BMI_Image",BMI_Image);
-                    startActivity(Recommendation);
-                }
-
-                return false;
+            if (item.getItemId() == R.id.Diary) {
+                Toast.makeText(Diary_Home.this, "현재 화면입니다", Toast.LENGTH_SHORT).show();
+            } else if (item.getItemId() == R.id.Recommendation) {
+                str_Gender = Gender.getText().toString();
+                Intent Recommendation = new Intent(Diary_Home.this, Recommend.class);
+                Recommendation.putExtra("Gender", str_Gender);
+                Recommendation.putExtra("BMI",BMI);
+                Recommendation.putExtra("BMI_Type",BMI_Type);
+                Recommendation.putExtra("BMI_Image",BMI_Image);
+                startActivity(Recommendation);
             }
+
+            return false;
         });
 
 
@@ -323,18 +307,9 @@ public class Diary_Home extends AppCompatActivity {
         off.setTitle("종료");
         off.setMessage("종료하시겠습니까?");
 
-        off.setPositiveButton("아니요", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
+        off.setPositiveButton("아니요", (dialog, which) -> {});
 
-        off.setNegativeButton("네", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finishAffinity();
-            }
-        });
+        off.setNegativeButton("네", (dialog, which) -> finishAffinity());
 
 
         off.show();

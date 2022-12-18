@@ -28,15 +28,16 @@
 
     </LinearLayout>
 
+
     <ImageView
         android:id="@+id/running_image"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toTopOf="@+id/time_bar"
+        android:layout_width="393dp"
+        android:layout_height="411dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"/>
-
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <ProgressBar
         android:id="@+id/time_bar"
@@ -44,16 +45,14 @@
         android:layout_width="351dp"
         android:layout_height="71dp"
         android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
         android:indeterminate="false"
         android:max="3600"
         android:progress="0"
         android:progressDrawable="@drawable/progressbar2"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653"
+        app:layout_constraintTop_toBottomOf="@+id/running_image"
         tools:progress="807" />
 
     <Button
@@ -61,11 +60,11 @@
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="@color/light_white"
         android:onClick="Finish_Running"
         android:text="운동 종료"
         android:textColor="@color/hint_background"
-        android:backgroundTint="@color/light_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -74,7 +73,7 @@
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="28dp"
         android:backgroundTint="@color/light_white"
         android:onClick="Start_Pause_Running"
         android:text="운동 시작"
@@ -89,35 +88,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:text="0(분)"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/Start_Pause_Running"
+        app:layout_constraintEnd_toStartOf="@+id/textView15"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time_bar"
-        app:layout_constraintVertical_bias="0.29" />
+        app:layout_constraintTop_toBottomOf="@+id/time_bar" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="364dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:text="60(분)"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/Start_Pause_Running"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time_bar"
-        app:layout_constraintVertical_bias="0.29" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_bar" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="184dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="132dp"
         android:text="30(분)"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/Start_Pause_Running"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time_bar"
-        app:layout_constraintVertical_bias="0.29" />
+        app:layout_constraintEnd_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/time_bar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
